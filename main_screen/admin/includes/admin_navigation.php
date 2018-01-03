@@ -12,7 +12,8 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-               <li><a href="../index.php">HOME SITE</a></li>
+               <li><a target="_blank" style="color: white;font-weight: bold;" href="../index.php"><span style="color: red;">MU</span>Bazaar</a></li>
+                <li><a target="_blank"  style="color: white;font-weight: bold;" href="../movies/index.php"><span style="color:red;">MU</span>Movies</a></li>
                 
                 
                 <li class="dropdown">

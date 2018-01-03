@@ -272,7 +272,7 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
       <ul class="nav navbar-nav">
         <li class="active"><a href="../../index.php">Home</a></li>
 
-        
+
         <!--            <li><a href="#">Page 3</a></li>-->
       </ul>
 
