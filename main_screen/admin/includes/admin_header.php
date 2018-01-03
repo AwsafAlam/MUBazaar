@@ -32,6 +32,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+
     <style type="text/css">
         .tooltip {
             position: relative;

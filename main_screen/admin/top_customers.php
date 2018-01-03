@@ -58,6 +58,24 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 ?>
     <link rel="stylesheet" type="text/css" href="includes/admin_header.php">
 
+<script>
+    // The $ is the shorthand for a jquery function, you can then use jquery
+    // selectors which are essentially the same as css selectors, so here
+    // we select your select field and then bind a function to
+    // it's change event handler
+    $('#top_no').change(function(){
+
+    // You can access the value of your select field using the .val() method
+    alert('Select field value has changed to' + $('top_no').val());
+
+    // You can perform an ajax request using the .ajax() method
+    $.ajax({
+
+    });
+
+    });
+</script>
+
     <div id="wrapper">
 
     <!--  Navigation -->
@@ -94,7 +112,7 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
                     <div style="display: inline-block;" class="form-group">
                         <label for="sel1"></label>
                         <form id="top_form" action="" method="post">
-                        <select name="top_no" class="form-control" id="sel1" >
+                        <select name="top_no" class="form-control" id="top_no" >
                             <option <?php if($top_no == 1) {  ?> selected <?php } ?>>1</option>
                             <option <?php if($top_no == 2) {  ?> selected <?php } ?>>2</option>
                             <option <?php if($top_no == 3) { ?> selected <?php } ?>>3</option>

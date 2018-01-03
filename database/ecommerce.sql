@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2017 at 04:42 PM
+-- Generation Time: Jan 03, 2018 at 09:37 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -21,6 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROCEDURE3` (IN `CUST_ID` INT)  BEGIN
+	SELECT * FROM movie_cart WHERE customer_id = CUST_ID;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -206,10 +216,12 @@ INSERT INTO `credit_card` (`ID`, `Password`, `Card_Type`, `CVV`, `Credit_No`, `C
 (1152017, '123456', 'master', '1234', '1509010115172583', 580879),
 (1152017, '123456', 'master', '1234', '516728118938273', 410204),
 (1152017, '123456', 'visa', '1234', '1806346937862585', 243151),
-(1152022, '123456', 'visa', '1234', '1778665406544689', 28687),
+(1152017, '123456', 'visa', '1234', '4485306253891722', 2),
+(1152020, '123456', 'visa', '1234', '4249547810258841', 84103),
+(1152022, '123456', 'visa', '1234', '1778665406544689', 21927),
 (1152028, '123456', 'visa', '1234', '1017520029927776', 128945),
 (1152029, '123456', 'master', '1234', '1629961468922839', 729878),
-(1152029, '123456', 'visa', '1234', '1532498874997477', 16987);
+(1152029, '123456', 'visa', '1234', '1532498874997477', 15687);
 
 -- --------------------------------------------------------
 
@@ -236,17 +248,18 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`ID`, `Customer_Name`, `Password`, `Mobile`, `Address`, `Email`, `Status`, `Confirm_Code`, `point`, `image`) VALUES
 (1152015, 'Yunus Khan', '123456', '+8801111111111', 'House No.72, Road No. 2, West Polashi,Dhaka', 'yunus@gmail.com', 'verified', 0, 16700, '1152015.jpg'),
-(1152017, 'Farhan Utshaw', '123456', '+8801781973546', 'Narayanganj,Bangladesh', 'farhan.tanvir.utshaw@gmail.com', 'verified', 0, 95308, 'myAvatar.png'),
+(1152017, 'Farhan Utshaw', '123456', '+8801781973546', 'Narayanganj,Bangladesh', 'farhan.tanvir.utshaw@gmail.com', 'verified', 0, 95308, 'Creative-Tail-People-boy.svg.png'),
 (1152019, 'Nasir Hossain', '123456', '+8801111111111', 'Dhaka,Bangladesh', 'nasir@example.com', 'unverified', 1392166867, 0, ''),
 (1152020, 'Masfiq', '123456', '+8801521332156', 'Cantonment, Dhaka, Bangladesh', 'masfiq111@gmail.com', 'verified', 0, 0, ''),
 (1152021, 'Miadad Hassan', '123456', '+8801111111111', 'Chittagong , Bangladesh', 'unregistered@example.com', 'unverified', 2014392384, 0, ''),
-(1152022, 'Akif Bhuiyan', '123456', '+8801111111111', 'Dhaka,Bangladesh', 'buetmatrix@gmail.com', 'verified', 0, 2830, ''),
+(1152022, 'Akif Bhuiyan', '123456', '+8801111111111', 'Dhaka,Bangladesh', 'buetmatrix@gmail.com', 'verified', 0, 2830, 'avatar2.png'),
 (1152025, 'FARHAN', '123456', '+8801781973546', 'Narayanganj', '1505105.ftu@ugrad.cse.buet.ac.bd', 'verified', 481572938, 0, ''),
 (1152026, 'Level2 Term2', '123456', '+8801811563457', 'Dhaka, Bangladesh', 'level2term2@gmail.com', 'verified', 0, 0, ''),
 (1152027, 'TED', '123456', '+8801555555', 'DD', 'ted@gmail.com', 'unverified', 726963770, 0, ''),
 (1152028, 'MUBazaar Shop', '123456', '+88', 'Dhaka', 'mubazaar@gmail.com', 'blocked', 0, 0, ''),
 (1152029, 'Utshaw', '123456', '+8801811563457', 'Dhaka, Bangladesh', 'utshaw105@gmail.com', 'verified', 0, 41000, ''),
-(1152033, 'Farhan Utshaw', '123456', '+8801811563457', 'House-27, North Masdair Gabtoli, Narayanganj', 'farhan.utshaw@outlook.com', 'unverified', 812102028, 0, '');
+(1152033, 'Farhan Utshaw', '123456', '+8801811563457', 'House-27, North Masdair Gabtoli, Narayanganj', 'farhan.utshaw@outlook.com', 'unverified', 812102028, 0, ''),
+(1152034, 'Masfiqur Rahaman', '123456', '01521332156', 'Dhaka', 'masfiqallid@gmail.com', 'unverified', 1527754256, 0, '');
 
 -- --------------------------------------------------------
 
@@ -366,17 +379,60 @@ CREATE TABLE `movie` (
   `category` varchar(25) NOT NULL,
   `name` varchar(255) NOT NULL,
   `year` int(11) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  `summary` varchar(2000) NOT NULL,
+  `trailer` varchar(255) NOT NULL,
   `price` double NOT NULL,
   `poster` varchar(255) NOT NULL,
-  `source` varchar(255) NOT NULL
+  `source` varchar(255) NOT NULL,
+  `imdb_rating` double NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `sold` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`id`, `category`, `name`, `year`, `price`, `poster`, `source`) VALUES
-(1, 'animation', 'The Croods', 2013, 1300, 'The_Croods.jpg', 'The_Croods.mp4');
+INSERT INTO `movie` (`id`, `category`, `name`, `year`, `country`, `summary`, `trailer`, `price`, `poster`, `source`, `imdb_rating`, `image`, `sold`) VALUES
+(1, 'Animation', 'The Croods', 2013, 'USA', '\"The Croods\" are an eccentric family of cavemen, who survive the harsh terrain by living accordingly to a strict set of rules. But when their home is destroyed in the wake of an impending disaster known as \"The End\", they are forced to leave their home of shelter and security, and into the wilderness of the unknown to find a new home.', 'https://www.youtube.com/embed/4fVCKy69zUY', 1300, 'The_Croods.jpg', 'The_Croods.mp4', 7.2, 'the_croods.jpg', 0),
+(2, 'Animation', 'Big Hero 6', 2014, 'USA', 'The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.', 'https://www.youtube.com/embed/d2S8D_SCAJY', 4560, 'Big_Hero_6.jpg', 'Big_Hero_6.mp4', 7.8, 'big_hero_6.jpg', 2),
+(3, 'Adventure', 'Dipu Number 2', 1996, 'Bangladesh', 'An adventure story for young boys, Dipu Number Two is the second film of a talented director from Bangladesh who is one of the few who concentrate on quality filmmaking in a country with a rich commercial film industry. The story is taken from a youth-oriented novel in which Dipu, a boy belonging to the educated class, is teased by the school bully but eventually forms a deep relationship with him. The rest is totally escapist in nature, including a scene in which the two youths manage to capture single-handedly an entire group of robbers.', 'https://www.youtube.com/embed/qEnSRwHD1S4', 900, 'Dipu_number_2.jpg', 'The_Croods.mp4', 8.9, 'Dipu_no_2.jpg', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_cart`
+--
+
+CREATE TABLE `movie_cart` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_comment`
+--
+
+CREATE TABLE `movie_comment` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  `comment_content` varchar(255) NOT NULL,
+  `comment_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movie_comment`
+--
+
+INSERT INTO `movie_comment` (`id`, `customer_id`, `movie_id`, `comment_content`, `comment_date`) VALUES
+(2, 1152017, 2, 'sample comment', '2018-01-01'),
+(3, 1152022, 2, 'This is null image comment', '2018-01-01'),
+(4, 1152020, 3, 'One of the best movies I have ever seen!! ', '2018-01-01');
 
 -- --------------------------------------------------------
 
@@ -389,6 +445,42 @@ CREATE TABLE `movie_customer` (
   `movie_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movie_customer`
+--
+
+INSERT INTO `movie_customer` (`id`, `movie_id`, `customer_id`) VALUES
+(1, 1, 1152017),
+(2, 2, 1152017),
+(3, 2, 1152029),
+(4, 1, 1152029),
+(5, 3, 1152022),
+(6, 2, 1152022),
+(7, 1, 1152022),
+(8, 3, 1152020),
+(9, 2, 1152020);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_subscriber`
+--
+
+CREATE TABLE `movie_subscriber` (
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movie_subscriber`
+--
+
+INSERT INTO `movie_subscriber` (`email`) VALUES
+('sample3@gmail.com'),
+('sample4@example.com'),
+('sample5@example.com'),
+('sample7@example.com'),
+('sample@example.com');
 
 -- --------------------------------------------------------
 
@@ -550,7 +642,7 @@ CREATE TABLE `shop_branch` (
 --
 
 INSERT INTO `shop_branch` (`id`, `place`, `latitude`, `longitude`) VALUES
-(1, 'North Masdair, Narayanganj', 23.631221, 90.488338),
+(1, 'Gabtoli Majar Rd, Narayanganj 1400, Bangladesh', 23.631221, 90.488338),
 (2, '17 No. West Bakalia Ward, Chittagong', 22.350227, 91.843986);
 
 -- --------------------------------------------------------
@@ -713,10 +805,28 @@ ALTER TABLE `movie`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `movie_cart`
+--
+ALTER TABLE `movie_cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movie_comment`
+--
+ALTER TABLE `movie_comment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `movie_customer`
 --
 ALTER TABLE `movie_customer`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movie_subscriber`
+--
+ALTER TABLE `movie_subscriber`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `office_supplies`
@@ -815,7 +925,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1152034;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1152035;
 
 --
 -- AUTO_INCREMENT for table `customer_order`
@@ -839,13 +949,25 @@ ALTER TABLE `electronics`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `movie_cart`
+--
+ALTER TABLE `movie_cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `movie_comment`
+--
+ALTER TABLE `movie_comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `movie_customer`
 --
 ALTER TABLE `movie_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `office_supplies`
