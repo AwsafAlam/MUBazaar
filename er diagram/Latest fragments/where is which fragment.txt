@@ -1,0 +1,17 @@
+missing (01) : shopping cart
+06:
+order
+gift
+wishlist
+03:
+review
+recently_viewed
+chat
+
+Level Term
+-----------------------
+1-01: copy of master ER
+comm_poll contact => in one document
+Credit
+1-2:
+shopping cart

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<style type="text/css">
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:17px;
+        line-height:1.6;
+    }
+
+    .button{
+        background:#e44f2b;
+        padding:1em 2em;
+        color:#fff;
+        border:0;
+    }
+
+    .button:hover{
+        background:#333;
+    }
+
+    .modal{
+        display:none;
+        position: fixed;
+        z-index:1;
+        left: 0;
+        top:0;
+        height: 100%;
+        width:100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content{
+        background-color:#f4f4f4;
+        margin: 20% auto;
+        width:70%;
+        box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+        animation-name:modalopen;
+        animation-duration:1s;
+    }
+
+    .modal-header h2, .modal-footer h3{
+        margin:0;
+    }
+
+    .modal-header{
+        background:#e44f2b;
+        padding:15px;
+        color:#fff;
+    }
+
+    .modal-body{
+        padding:10px 20px;
+    }
+
+    .modal-footer{
+        background:#e44f2b;
+        padding:10px;
+        color:#fff;
+        text-align: center;
+    }
+
+    .closeBtn{
+        color:#ccc;
+        float: right;
+        font-size:30px;
+        color:#fff;
+    }
+
+    .closeBtn:hover,.closeBtn:focus{
+        color:#000;
+        text-decoration: none;
+        cursor:pointer;
+    }
+
+    @keyframes modalopen{
+        from{ opacity: 0}
+        to {opacity: 1}
+    }
+</style>
+<body>
+
+<button id="modalBtn" class="button">Click Here</button>
+
+<div id="simpleModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeBtn">&times;</span>
+            <h2>Winter Offer on MUBazaar</h2>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <!--<p>Hello...I am a modal</p>-->
+            <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus nisi, sunt consectetur ipsa velit repudiandae aperiam modi quisquam nihil nam asperiores doloremque mollitia dolor deleniti quibusdam nemo commodi ab.</p>-->
+            <img src="winter.jpg">
+        </div>
+        <div class="modal-footer">
+            <h3>Enjoy Shopping!!!</h3>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // Get modal element
+    var modal = document.getElementById('simpleModal');
+    // Get open modal button
+    var modalBtn = document.getElementById('modalBtn');
+    // Get close button
+    var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+    // Listen for open click
+    modalBtn.addEventListener('click', openModal);
+    // Listen for close click
+    closeBtn.addEventListener('click', closeModal);
+    // Listen for outside click
+    window.addEventListener('click', outsideClick);
+
+    // Function to open modal
+    function openModal(){
+        modal.style.display = 'block';
+    }
+
+    modal.style.display = 'block';
+
+    // Function to close modal
+    function closeModal(){
+        modal.style.display = 'none';
+    }
+
+    // Function to close modal if outside click
+    function outsideClick(e){
+        if(e.target == modal){
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

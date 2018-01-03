@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="beb67d37-c10e-4323-ae9c-259626d9d3f0" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/google-maps/samples/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="133" column="64" lean-forward="true" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
+              <folding>
+                <marker date="1514917844787" expanded="true" signature="150:172" ph="SELECT * FRO... customer" />
+                <marker date="1514917844787" expanded="true" signature="438:463" ph="SELECT * FRO... shop_branch" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sample.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/google-maps/samples/sample.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/google-maps/samples/cart_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <element signature="e#2827#2853#0#HTML" expanded="true" />
+                <marker date="1514916904945" expanded="true" signature="33:81" ph="SELECT * FRO... shopping_cart" />
+                <marker date="1514916904945" expanded="true" signature="2680:2692" ph="..." />
+                <marker date="1514916904945" expanded="true" signature="3510:3608" ph="SELECT Credi... credit_card" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxPHP.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/google-maps/samples/ajaxPHP.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>NEW</find>
+      <find>register</find>
+      <find>Movie</find>
+      <find>cart_form</find>
+      <find>cart</find>
+      <find>$total_cost</find>
+      <find>TV</find>
+      <find>small-dialog</find>
+      <find>$_SESSION</find>
+      <find>customer_id</find>
+      <find>subs</find>
+      <find>footer</find>
+      <find>checkout</find>
+      <find>25</find>
+      <find>action</find>
+      <find>Comments</find>
+      <find>$query</find>
+      <find>class=&quot;col-sm-8 single-left&quot;</find>
+      <find>class=&quot;text&quot;</find>
+      <find>loader</find>
+      <find>Top</find>
+      <find>Comment</find>
+      <find>update</find>
+      <find>comment</find>
+      <find>minDist</find>
+      <find>$delivery_cost</find>
+      <find>$_SESSION[</find>
+      <find>echo</find>
+      <find>deliveryCost</find>
+      <find>$minDistance</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>poll</replace>
+      <replace>card</replace>
+      <replace>checkout</replace>
+      <replace>$credit_card_no</replace>
+      <replace>checkout_final_btn</replace>
+      <replace>$query_table</replace>
+      <replace>country</replace>
+      <replace>movie_id</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/admin/view_contacts.php" />
+        <option value="$PROJECT_DIR$/admin/categories.php" />
+        <option value="$PROJECT_DIR$/buying_history.php" />
+        <option value="$PROJECT_DIR$/show_buying_history.php" />
+        <option value="$PROJECT_DIR$/buying_history_table.php" />
+        <option value="$PROJECT_DIR$/bootstrap-confirmation.js" />
+        <option value="$PROJECT_DIR$/tester.php" />
+        <option value="$PROJECT_DIR$/my_profile.php" />
+        <option value="$PROJECT_DIR$/Tester/samples/index.html" />
+        <option value="$PROJECT_DIR$/Tester/samples/index.php" />
+        <option value="$PROJECT_DIR$/js/jquery.placepicker.js" />
+        <option value="$PROJECT_DIR$/show_content.php" />
+        <option value="$PROJECT_DIR$/admin/includes/admin_navigation.php" />
+        <option value="$PROJECT_DIR$/admin/offers.php" />
+        <option value="$PROJECT_DIR$/movies.php" />
+        <option value="$PROJECT_DIR$/movies_page/One Movie/web/index.html" />
+        <option value="$PROJECT_DIR$/movies_page/One Movie/web/index.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/tester.html" />
+        <option value="$PROJECT_DIR$/google-maps/samples/index.html" />
+        <option value="$PROJECT_DIR$/movies/genres.php" />
+        <option value="$PROJECT_DIR$/movies/country.php" />
+        <option value="$PROJECT_DIR$/movies/search.php" />
+        <option value="$PROJECT_DIR$/preview_edit.php" />
+        <option value="$PROJECT_DIR$/show_cart_body.php" />
+        <option value="$PROJECT_DIR$/movies/checkout_credit.php" />
+        <option value="$PROJECT_DIR$/movies/playgraound.php" />
+        <option value="$PROJECT_DIR$/movies/collection.php" />
+        <option value="$PROJECT_DIR$/movies/show_a_movie.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/map_request.js" />
+        <option value="$PROJECT_DIR$/movies/index.php" />
+        <option value="$PROJECT_DIR$/movies/cart.php" />
+        <option value="$PROJECT_DIR$/movies/header.php" />
+        <option value="$PROJECT_DIR$/movies/list.php" />
+        <option value="$PROJECT_DIR$/movies/footer.php" />
+        <option value="$PROJECT_DIR$/admin/less/style.less" />
+        <option value="$PROJECT_DIR$/admin/admin_login_2.php" />
+        <option value="$PROJECT_DIR$/admin/js/index.js" />
+        <option value="$PROJECT_DIR$/admin/index.html" />
+        <option value="$PROJECT_DIR$/admin/admin-login.php" />
+        <option value="$PROJECT_DIR$/admin/top_customers.php" />
+        <option value="$PROJECT_DIR$/movies/movie_credit.php" />
+        <option value="$PROJECT_DIR$/checkout_credit.php" />
+        <option value="$PROJECT_DIR$/movies/single.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/mailer.php" />
+        <option value="$PROJECT_DIR$/cart_table.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/cart_table.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/index.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/ajaxPHP.php" />
+        <option value="$PROJECT_DIR$/google-maps/samples/sample.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="basketball" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="basketball" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="customer" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jquery.placepicker.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="samples" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="google-maps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="movies" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="movies" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="movies" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="phpmailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="phpmailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="phpmailer" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="main_screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main_screen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sample_modal" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="C:/Program Files/nodejs/node_modules" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="SearchEverywhereHistoryKey" value="book&#9;ACTION&#9;EditBookmarksGroup&#10;plugin&#9;ACTION&#9;WelcomeScreen.Plugins" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\demo\e-commerce\main_screen\google-maps\samples" />
+      <recent name="C:\xampp\htdocs\demo\e-commerce\main_screen\google-maps\src\js" />
+      <recent name="C:\xampp\htdocs\demo\e-commerce\main_screen\admin\css" />
+      <recent name="C:\xampp\htdocs\demo\e-commerce\main_screen\admin\images" />
+      <recent name="C:\xampp\htdocs\demo\e-commerce\main_screen\admin\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="beb67d37-c10e-4323-ae9c-259626d9d3f0" name="Default" comment="" />
+      <created>1510201532241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1510201532241</updated>
+      <workItem from="1510201533736" duration="14528000" />
+      <workItem from="1510241574717" duration="6774000" />
+      <workItem from="1510277813337" duration="9417000" />
+      <workItem from="1510330684432" duration="721000" />
+      <workItem from="1510362124604" duration="1732000" />
+      <workItem from="1510367114369" duration="20000" />
+      <workItem from="1511050859456" duration="860000" />
+      <workItem from="1511066012416" duration="1522000" />
+      <workItem from="1511158437252" duration="789000" />
+      <workItem from="1511282179379" duration="125000" />
+      <workItem from="1511359785157" duration="25000" />
+      <workItem from="1511360708009" duration="42000" />
+      <workItem from="1511446317654" duration="4823000" />
+      <workItem from="1512046733866" duration="7931000" />
+      <workItem from="1512087697397" duration="6151000" />
+      <workItem from="1512106314235" duration="1185000" />
+      <workItem from="1512397640274" duration="210000" />
+      <workItem from="1512400503736" duration="769000" />
+      <workItem from="1513324847423" duration="810000" />
+      <workItem from="1513335160427" duration="5533000" />
+      <workItem from="1513354875307" duration="6200000" />
+      <workItem from="1513383724585" duration="27386000" />
+      <workItem from="1513470132644" duration="7971000" />
+      <workItem from="1513481564686" duration="107000" />
+      <workItem from="1513522150117" duration="737000" />
+      <workItem from="1513559621401" duration="1081000" />
+      <workItem from="1513561437127" duration="1069000" />
+      <workItem from="1513576287548" duration="454000" />
+      <workItem from="1513671798535" duration="833000" />
+      <workItem from="1513791930029" duration="195000" />
+      <workItem from="1514089012091" duration="11526000" />
+      <workItem from="1514294661743" duration="5823000" />
+      <workItem from="1514301938388" duration="799000" />
+      <workItem from="1514336566668" duration="5534000" />
+      <workItem from="1514440420682" duration="72000" />
+      <workItem from="1514619082427" duration="1526000" />
+      <workItem from="1514647547895" duration="3858000" />
+      <workItem from="1514678831924" duration="37982000" />
+      <workItem from="1514784471255" duration="19455000" />
+      <workItem from="1514827517495" duration="2544000" />
+      <workItem from="1514874861659" duration="5341000" />
+      <workItem from="1514891168668" duration="2097000" />
+      <workItem from="1514915549556" duration="2546000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="209103000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1380597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19609967" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.063921995" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12676056" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4936034" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.049837485" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1705757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/movies/images/m22.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/images/m2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="165" column="121" lean-forward="true" selection-start-line="165" selection-start-column="106" selection-end-line="165" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="118" column="67" lean-forward="false" selection-start-line="118" selection-start-column="67" selection-end-line="118" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="187" column="44" lean-forward="true" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/genres.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2326">
+          <caret line="195" column="32" lean-forward="false" selection-start-line="195" selection-start-column="32" selection-end-line="195" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/horror.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/images/m7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/images/h1-1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/checkout_credit.php" />
+    <entry file="file://$PROJECT_DIR$/show_cart_body.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="150" column="53" lean-forward="false" selection-start-line="150" selection-start-column="38" selection-end-line="150" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/playgraound.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/show_a_movie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/collection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view_polls.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1513420671248" expanded="true" signature="1323:1360" ph="SELECT SUM(c... community_poll" />
+            <marker date="1513420671248" expanded="true" signature="1717:1745" ph="SELECT * FRO... community_poll" />
+            <marker date="1513420671248" expanded="true" signature="2406:2425" ph="..." />
+            <marker date="1513420671248" expanded="true" signature="2628:2647" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1212">
+          <caret line="610" column="11" lean-forward="false" selection-start-line="610" selection-start-column="5" selection-end-line="610" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="181" column="112" lean-forward="false" selection-start-line="181" selection-start-column="112" selection-end-line="181" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="250" column="90" lean-forward="true" selection-start-line="250" selection-start-column="90" selection-end-line="250" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random_credit_no_generator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preview_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="517" column="0" lean-forward="true" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/less/style.less" />
+    <entry file="file://$PROJECT_DIR$/admin/admin-login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="229" column="80" lean-forward="false" selection-start-line="229" selection-start-column="62" selection-end-line="229" selection-end-column="80" />
+          <folding>
+            <marker date="1514805422117" expanded="true" signature="6812:6856" ph="..." />
+            <marker date="1514805422117" expanded="true" signature="7583:7627" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/js/index.js" />
+    <entry file="file://$PROJECT_DIR$/admin/js/ChunkFive_400.font.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3724">
+          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+          <folding>
+            <marker date="1514805422117" expanded="true" signature="6812:6856" ph="..." />
+            <marker date="1514805422117" expanded="true" signature="7583:7627" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4104">
+          <caret line="216" column="99" lean-forward="false" selection-start-line="216" selection-start-column="99" selection-end-line="216" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/top_customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2128">
+          <caret line="112" column="164" lean-forward="false" selection-start-line="112" selection-start-column="164" selection-end-line="112" selection-end-column="164" />
+          <folding>
+            <marker date="1514811532549" expanded="true" signature="298:330" ph="DELETE FROM " />
+            <marker date="1514811532549" expanded="true" signature="947:998" ph="UPDATE custo... " />
+            <marker date="1514811532549" expanded="true" signature="1626:1676" ph="UPDATE custo... " />
+            <marker date="1514811532549" expanded="true" signature="5398:5525" ph="SELECT * FRO... customer" />
+            <marker date="1514811532549" expanded="true" signature="5443:5501" ph="SELECT COUNT... customer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/movie_credit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2375">
+          <caret line="125" column="40" lean-forward="false" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checkout_credit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3173">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies/single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6308">
+          <caret line="332" column="71" lean-forward="false" selection-start-line="332" selection-start-column="71" selection-end-line="332" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sign_process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/js/index-admin-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/map_request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/src/js/jquery-3.2.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tester.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="1" selection-end-column="24" />
+          <folding>
+            <marker date="1514828877851" expanded="true" signature="440:462" ph="SELECT * FRO... customer" />
+            <marker date="1514828877851" expanded="true" signature="2897:2931" ph="SELECT Categ... category" />
+            <marker date="1514828877851" expanded="true" signature="3301:3335" ph="SELECT DISTI... ${strtolower(str_replace(&quot; &quot;,&quot;_&quot;,$category_name))}" />
+            <marker date="1514828877851" expanded="true" signature="5350:5406" ph="SELECT COUNT... shopping_cart" />
+            <marker date="1514828877851" expanded="true" signature="5662:5675" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3401">
+          <caret line="179" column="42" lean-forward="false" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
+          <folding>
+            <marker date="1513398473039" expanded="true" signature="1562:1596" ph="SELECT Email... customer" />
+            <marker date="1513398473039" expanded="true" signature="2416:2494" ph="INSERT INTO customer... " />
+            <marker date="1513398473039" expanded="true" signature="4281:4349" ph="SELECT * FRO... customer" />
+            <marker date="1513398473039" expanded="true" signature="5427:5489" ph="UPDATE custo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding>
+            <marker date="1514828256255" expanded="true" signature="1088:1194" ph="SELECT Custo... customer" />
+            <marker date="1514828256255" expanded="true" signature="2041:2110" ph="UPDATE custo... " />
+            <marker date="1514828256255" expanded="true" signature="5341:5413" ph="SELECT name,... ${{$single_table}}" />
+            <marker date="1514828256255" expanded="true" signature="9086:9120" ph="SELECT Categ... category" />
+            <marker date="1514828256255" expanded="true" signature="11057:11108" ph="SELECT name,... ${{$single_table}}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/ajaxPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="133" column="64" lean-forward="true" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
+          <folding>
+            <marker date="1514917844787" expanded="true" signature="150:172" ph="SELECT * FRO... customer" />
+            <marker date="1514917844787" expanded="true" signature="438:463" ph="SELECT * FRO... shop_branch" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/cart_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#2827#2853#0#HTML" expanded="true" />
+            <marker date="1514916904945" expanded="true" signature="33:81" ph="SELECT * FRO... shopping_cart" />
+            <marker date="1514916904945" expanded="true" signature="2680:2692" ph="..." />
+            <marker date="1514916904945" expanded="true" signature="3510:3608" ph="SELECT Credi... credit_card" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google-maps/samples/sample.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

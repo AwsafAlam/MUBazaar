@@ -1,0 +1,25 @@
+Q: There is a primary key email in customer entity . why use another ID ? 
+A: The primary key will be used as foreign key to many entities. So, it is an INT data type using 4 byte . email is usually very long
+using many bytes. Using email would increase memory usage.
+
+Q: Why product is didvided into many tables ?
+A: Query becomes faster and reducing memory usage . Otherwise, product wntity would have many rows named 'electronics', 'appliances' etc
+
+Q: reviewer have FK customer_email instead of customer_id. Why ?
+A: review and corresponding email can be sent to manufacturer so that they can know about reviews on their product. ID is redundant here. 
+
+Q: Why there is an ID in customer_ordered_products ?
+A: This entity is huge . If there wasn't any ID then same customer, same prod category, same prod id, same quantity would
+ create duplicates. This would require again and again query before entering this entity portion . 
+So, we defined an ID.
+
+
+Q: Why there is a password field in credit_card ?
+A: That's actually 'transaction_password' which simulated the need of a bank account . Ref: https://www.youtube.com/watch?v=U3qm2GcJbck
+
+
+Common Concepts:
+If I didn't use review_id to uniqully identify every reviews then there would be no primary key for review entity & If a customer
+opens more than one browser gives same review at the same time hits enter to all of them @ the same time then there would be possibility
+of same row in the review table. 
+
