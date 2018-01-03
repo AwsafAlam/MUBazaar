@@ -44,10 +44,10 @@ if(isset($_GET['id'])){
                 $set_rslt = mysqli_query($connect, $set_query);
             }
             else {
-                echo "<script>'Already added to cart!'</script>";
+                echo "<script>alert('Already added to cart!')</script>";
             }
         } else {
-            echo "<script>'Sign in as a customer first'</script>";
+            echo "<script>alert('Sign in as a customer first')</script>";
         }
 
 
@@ -254,7 +254,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-sm-8 single-left">
 					<div class="song">
 						<div class="song-info">
-							<h3><?php echo $movie_name  ?></h3>
+							<h3 style="text-align: center"><?php echo $movie_name  ?></h3>
 					    </div>
 
 
@@ -265,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-						<div class="video-grid-single-page-agileits">
+						<div class="video-grid-single-page-agileits" style="margin-left: 75px;" >
 
 
                             <iframe width="560" height="315" src="<?php echo $movie_trailer; ?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
@@ -276,7 +276,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         </div>
 
-                        <div>
+                        <div style="margin-left: 20px; margin-top: 25px;">
                             <?php echo $movie_summary; ?><br>
 
                             <?php if($cart_flag){ ?>

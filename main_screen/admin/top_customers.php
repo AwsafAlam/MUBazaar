@@ -59,21 +59,23 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
     <link rel="stylesheet" type="text/css" href="includes/admin_header.php">
 
 <script>
-    // The $ is the shorthand for a jquery function, you can then use jquery
-    // selectors which are essentially the same as css selectors, so here
-    // we select your select field and then bind a function to
-    // it's change event handler
-    $('#top_no').change(function(){
 
-    // You can access the value of your select field using the .val() method
-    alert('Select field value has changed to' + $('top_no').val());
 
-    // You can perform an ajax request using the .ajax() method
-    $.ajax({
 
+
+    jQuery(document).ready(function () {
+       jQuery('#top_select').change(function () {
+//           alert('Changed to ' + jQuery('#top_select').val());
+
+           window.location.replace("top_customers.php?top_no=" +  jQuery('#top_select').val());
+
+//           xhttp.open("GET", "top_customers.php?top_no=" +  jQuery('#top_select').val() , true);
+//           xhttp.send();
+
+       });
     });
 
-    });
+
 </script>
 
     <div id="wrapper">
@@ -98,8 +100,8 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 
                     <?php
 
-                    if(isset($_POST['top_no'])){
-                        $top_no = $_POST['top_no'];
+                    if(isset($_GET['top_no'])){
+                        $top_no = $_GET['top_no'];
                     }
 
 
@@ -111,8 +113,8 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 
                     <div style="display: inline-block;" class="form-group">
                         <label for="sel1"></label>
-                        <form id="top_form" action="" method="post">
-                        <select name="top_no" class="form-control" id="top_no" >
+                        <form id="top_form" action="" method="get">
+                        <select name="top_no" class="form-control" id="top_select" >
                             <option <?php if($top_no == 1) {  ?> selected <?php } ?>>1</option>
                             <option <?php if($top_no == 2) {  ?> selected <?php } ?>>2</option>
                             <option <?php if($top_no == 3) { ?> selected <?php } ?>>3</option>
@@ -131,7 +133,7 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
                     <h1 style="display: inline-block">     ranks of customers of <span style="color: red; font-weight: bold">MU</span><span style="font-weight: bold">Bazaar</span></h1>
 
 
-                    <button  style="margin-left: 5px;" form="top_form" name="top_btn" type="submit" class="btn btn-info">Query</button>
+<!--                    <button  style="margin-left: 5px;" form="top_form" name="top_btn" type="submit" class="btn btn-info">Query</button>-->
 
 
 

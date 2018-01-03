@@ -19,6 +19,8 @@ echo $_POST['shipping_address'];
 
 echo " --> ";
 
+$_SESSION['total_cost'] = $_SESSION['total_cost'] +$_SESSION['delivery_cost'];
+
 echo $_SESSION['total_cost'];
 
 echo " --> ";

@@ -174,7 +174,7 @@
                 $row = mysqli_fetch_assoc($rslt);
 
                 echo "<li>";
-                echo "<a href='show_content.php?source=cart#content_zoom'>My Cart(<span style='color: white;'>{$row['COUNT(*)']}</span>)</a>";
+                echo "<a href='google-maps/samples/index.php'>My Cart(<span style='color: white;'>{$row['COUNT(*)']}</span>)</a>";
                 echo "</li>";
                 
                 // Wishlist

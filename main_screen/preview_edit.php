@@ -282,7 +282,66 @@ $table_name
 
                                 <div class="button">
                                     <p style="font-weight:bold;color:red;font-size: 110%;">
+                                        <?php
 
+
+                                        if (isset($_POST['add_cart'])) {
+                                            if (isset($_SESSION['customer_id'])) {
+                                                $prod_category = $_GET['table'];
+                                                $prod_id = $_GET['id'];
+                                                $prod_quantity = $_POST['qty'];
+                                                $customer_id = $_SESSION['customer_id'];
+                                                $customer_name = $_SESSION['customer_name'];
+                                                $get_query = "SELECT cart_id,prod_quantity FROM shopping_cart WHERE customer_id = {$customer_id} AND ";
+                                                $get_query .= "prod_category = '{$prod_category}' AND prod_id = {$prod_id};";
+
+                                                $get_result = mysqli_query($connect, $get_query);
+                                                $num_rows = mysqli_num_rows($get_result);
+
+                                                $check_query = "SELECT units_in_stock FROM `{$prod_category}` WHERE id = {$prod_id};";
+                                                $check_query_result = mysqli_query($connect, $check_query);
+                                                $check_query_row = mysqli_fetch_assoc($check_query_result);
+
+                                                $units_in_stock = $check_query_row['units_in_stock'];
+
+
+                                                $set_query = "";
+                                                if ($num_rows == 0) {
+                                                    if ($units_in_stock >= $prod_quantity) {
+                                                        $prod_category = mysqli_real_escape_string($connect, $prod_category);
+                                                        $prod_id = mysqli_real_escape_string($connect, $prod_id);
+                                                        $prod_name = mysqli_real_escape_string($connect, $prod_name);
+                                                        $prod_quantity = mysqli_real_escape_string($connect, $prod_quantity);
+                                                        $prod_price = mysqli_real_escape_string($connect, $prod_price);
+                                                        $customer_id = mysqli_real_escape_string($connect, $customer_id);
+
+                                                        $set_query = "INSERT INTO `shopping_cart`( prod_category, prod_id, prod_name, prod_quantity, price_per_product, customer_id)  VALUES('{$prod_category}', '{$prod_id}', '{$prod_name}',  '{$prod_quantity}', '{$prod_price}', '{$customer_id}')";
+                                                        $set_rslt = mysqli_query($connect, $set_query);
+                                                        if(!$set_rslt){
+                                                            die(mysqli_error($connect));
+                                                        }
+                                                        echo "Added to cart";
+                                                    } else {
+                                                        echo "You have added more to your cart than available!";
+                                                    }
+                                                } else {
+                                                    $get_rows = mysqli_fetch_assoc($get_result);
+                                                    $prev_quantity = $get_rows['prod_quantity'];
+                                                    if ($units_in_stock >= ($prod_quantity + $prev_quantity)) {
+                                                        $set_query = "UPDATE `shopping_cart` SET prod_quantity = (prod_quantity + {$prod_quantity}) WHERE customer_id = {$customer_id};";
+                                                        mysqli_query($connect, $set_query);
+                                                        echo "Added to cart";
+                                                    } else {
+                                                        echo "You have added more to your cart than available!";
+                                                    }
+                                                }
+                                            } else {
+                                                echo "Sign in as a customer first!";
+                                            }
+                                        }
+
+
+                                        ?>
 
                                     </p>
                                 </div>
@@ -578,55 +637,55 @@ $table_name
 
 
 
-                        ?>
+                            ?>
 
 
-                        <li>
-                            <h4><a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
-                            <a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $query_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
-                            <div class="price-details">
-                                <div class="price-number">
-                                    <p><span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></p>
-                                    </p>
+                            <li>
+                                <h4><a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                                <a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $query_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
+                                <div class="price-details">
+                                    <div class="price-number">
+                                        <p><span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></p>
+                                        </p>
+                                    </div>
+                                    <div class="add-cart">
+                                        <h4><a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>">More Info</a></h4>
+                                    </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="add-cart">
-                                    <h4><a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>">More Info</a></h4>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </li>
+                            </li>
 
                         <?php } ?>
 
 
-<!--                        <li>-->
-<!--                            <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                            <a href="preview.html"><img src="images/product-img3.jpg" alt=""/></a>-->
-<!--                            <div class="price-details">-->
-<!--                                <div class="price-number">-->
-<!--                                    <p><span class="rupees line-through">$899.95 </span> &nbsp; <span class="rupees">$839.93 </span>-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                                <div class="add-cart">-->
-<!--                                    <h4><a href="preview.html">More Info</a></h4>-->
-<!--                                </div>-->
-<!--                                <div class="clear"></div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                            <a href="preview.html"><img src="images/product-img4.jpg" alt=""/></a>-->
-<!--                            <div class="price-details">-->
-<!--                                <div class="price-number">-->
-<!--                                    <p><span class="rupees line-through">$899.95 </span> &nbsp; <span class="rupees">$839.93 </span>-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                                <div class="add-cart">-->
-<!--                                    <h4><a href="preview.html">More Info</a></h4>-->
-<!--                                </div>-->
-<!--                                <div class="clear"></div>-->
-<!--                            </div>-->
-<!--                        </li>-->
+                        <!--                        <li>-->
+                        <!--                            <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
+                        <!--                            <a href="preview.html"><img src="images/product-img3.jpg" alt=""/></a>-->
+                        <!--                            <div class="price-details">-->
+                        <!--                                <div class="price-number">-->
+                        <!--                                    <p><span class="rupees line-through">$899.95 </span> &nbsp; <span class="rupees">$839.93 </span>-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="add-cart">-->
+                        <!--                                    <h4><a href="preview.html">More Info</a></h4>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="clear"></div>-->
+                        <!--                            </div>-->
+                        <!--                        </li>-->
+                        <!--                        <li>-->
+                        <!--                            <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
+                        <!--                            <a href="preview.html"><img src="images/product-img4.jpg" alt=""/></a>-->
+                        <!--                            <div class="price-details">-->
+                        <!--                                <div class="price-number">-->
+                        <!--                                    <p><span class="rupees line-through">$899.95 </span> &nbsp; <span class="rupees">$839.93 </span>-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="add-cart">-->
+                        <!--                                    <h4><a href="preview.html">More Info</a></h4>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="clear"></div>-->
+                        <!--                            </div>-->
+                        <!--                        </li>-->
 
 
                     </ul>
@@ -695,43 +754,43 @@ $table_name
                         $recent_list_rslt = mysqli_query($connect,$recent_list_query);
 
                         if(mysqli_num_rows($recent_list_rslt) > 0){
-                            while($recent_list_row = mysqli_fetch_assoc($recent_list_rslt)){
-                                $recent_list_primary_key = $recent_list_row['id'];
-                                $product_table =  $recent_list_row['product_table'];
-                                $product_id = $recent_list_row['product_id'];
+                        while($recent_list_row = mysqli_fetch_assoc($recent_list_rslt)){
+                        $recent_list_primary_key = $recent_list_row['id'];
+                        $product_table =  $recent_list_row['product_table'];
+                        $product_id = $recent_list_row['product_id'];
 
-                                $single_product_query = "SELECT name, image_1, id FROM `{$product_table}` WHERE id = {$product_id};";
-                                $single_product_rslt = mysqli_query($connect, $single_product_query);
-                                $single_product_row =  mysqli_fetch_assoc($single_product_rslt);
+                        $single_product_query = "SELECT name, image_1, id FROM `{$product_table}` WHERE id = {$product_id};";
+                        $single_product_rslt = mysqli_query($connect, $single_product_query);
+                        $single_product_row =  mysqli_fetch_assoc($single_product_rslt);
 
-                                if(!$single_product_rslt ){
-                                    die(mysqli_error($connect));
-                                }
+                        if(!$single_product_rslt ){
+                            die(mysqli_error($connect));
+                        }
 
-                                $prod_name = $single_product_row['name'];
-                                $prod_image_1 = $single_product_row['image_1'];
-                                $prod_id = $single_product_row['id'];
+                        $prod_name = $single_product_row['name'];
+                        $prod_image_1 = $single_product_row['image_1'];
+                        $prod_id = $single_product_row['id'];
 
 
 
-                            ?>
+                        ?>
 
                         <a href="preview_edit.php?table=<?php echo  $product_table; ?>&id=<?php echo $prod_id; ?>" title="img1"> <img src="images/<?php echo $product_table . "/" . $prod_image_1 ; ?>" width="100px" height="100px" alt="<?php echo $prod_name;?>"/>
 
-                        <?php } } } ?>
+                            <?php } } } ?>
 
 
-                        <!--                            <a href="#" title="img2"> <img src="images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>-->
-                        <!--                            <a href="#" title="img3"> <img src="images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>-->
-                        <!--                            <a href="#" title="img4"> <img src="images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>-->
-                        <!--                            <a href="#" title="img5"> <img src="images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>-->
-                        <!--                            <a href="#" title="img6"> <img src="images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>-->
-                        <!--                            <a href="#" title="img1"> <img src="images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>-->
-                        <!--                            <a href="#" title="img2"> <img src="images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>-->
-                        <!--                            <a href="#" title="img3"> <img src="images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>-->
-                        <!--                            <a href="#" title="img4"> <img src="images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>-->
-                        <!--                            <a href="#" title="img5"> <img src="images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>-->
-                        <!--                            <a href="#" title="img6"> <img src="images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>-->
+                            <!--                            <a href="#" title="img2"> <img src="images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>-->
+                            <!--                            <a href="#" title="img3"> <img src="images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>-->
+                            <!--                            <a href="#" title="img4"> <img src="images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>-->
+                            <!--                            <a href="#" title="img5"> <img src="images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>-->
+                            <!--                            <a href="#" title="img6"> <img src="images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>-->
+                            <!--                            <a href="#" title="img1"> <img src="images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>-->
+                            <!--                            <a href="#" title="img2"> <img src="images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>-->
+                            <!--                            <a href="#" title="img3"> <img src="images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>-->
+                            <!--                            <a href="#" title="img4"> <img src="images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>-->
+                            <!--                            <a href="#" title="img5"> <img src="images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>-->
+                            <!--                            <a href="#" title="img6"> <img src="images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>-->
 
 
                     </div>

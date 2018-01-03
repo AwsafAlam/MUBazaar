@@ -134,6 +134,10 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
                   if(hr.readyState === 4 && hr.status === 200) {
                       var return_data = hr.responseText;
                       document.getElementById("deliveryCost").innerHTML =   return_data + " Tk.";
+                      var total_cost = parseFloat(document.getElementById('total_cost').innerHTML);
+                      var grand_total_cost = total_cost + parseFloat(return_data);
+                      document.getElementById('total_cost').innerHTML = grand_total_cost;
+
                   }
               };
               // Send the data to PHP now... and wait for response to update the status div
@@ -268,7 +272,7 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
       <ul class="nav navbar-nav">
         <li class="active"><a href="../../index.php">Home</a></li>
 
-        <li><a href="">Chat</a></li>
+        
         <!--            <li><a href="#">Page 3</a></li>-->
       </ul>
 
@@ -290,7 +294,7 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
       <div class="row" data-example>
 
          <div class="col-md-6">
-           <form id="proceedCheckoutForm" action="sample.php" method="post">
+           <form id="proceedCheckoutForm" action="../../checkout_credit.php" method="post">
              <div class="form-group">
                <input form="proceedCheckoutForm" id="advanced-placepicker" name="shipping_address" class="form-control" data-map-container-id="collapseTwo" />
              </div>
@@ -299,8 +303,8 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
                <div class="another-map-class thumbnail"></div>
              </div>
 
-           </form>
          </div>
+
 
 
         <div class="col-md-6">
@@ -313,7 +317,11 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
             </table>
 
 
-            <button form="proceedCheckoutForm" id="proceedCheckout" disabled type="submit" class="btn btn-default">Submit</button>
+            <?php if($cart_empty == false){ ?>
+
+            <button form="proceedCheckoutForm" id="proceedCheckout" disabled   type="submit" class="btn btn-default">Proceed to checkout</button>
+
+            <?php  } ?>
 
         </div>
 

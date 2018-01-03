@@ -9,13 +9,22 @@ $card_name = "Select Card Type";
 
 $customer_id = $_SESSION['customer_id'];
 
+
+$_SESSION['total_cost'] = $_SESSION['total_cost'] +$_SESSION['delivery_cost'];
+
+
 $total_cost = $_SESSION['total_cost'];
 
-if(isset($_POST['shipping_address'])){
-    $ship_address = $_POST['shipping_address'];
 
-    $_SESSION['ship_address'] = $ship_address;
+$shipping_address  = '';
+if(isset($_POST['shipping_address'])){
+    $shipping_address = $_POST['shipping_address'];
+    $_SESSION['shipping_address'] = $shipping_address;
+}else if(isset($_SESSION['shipping_address'])){
+    $shipping_address = $_SESSION['shipping_address'];
 }
+
+
 
 
 $credit_card_no = "Enter Card No";
@@ -126,12 +135,12 @@ if(isset($_GET['card_no'])){
 
         $query = "SELECT * FROM credit_card WHERE ID = {$customer_id} AND Card_Type = '{$card_type}' AND Credit_No = '{$credit_card_no}' ";
         $query .= "AND Password = '{$password}' AND CVV = '{$CVV}';";
-        echo $query;
         $rslt = mysqli_query($connect,$query);
 
         if(mysqli_num_rows($rslt) != 0){
-            $shipping_address = $_SESSION['ship_address'];
-            echo $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost) VALUES({$customer_id}, '{$shipping_address}', {$total_cost});";
+
+
+            $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost) VALUES({$customer_id}, '{$shipping_address}', {$total_cost});";
             $rslt = mysqli_query($connect, $query);
             $order_id = $connect->insert_id;
 
@@ -159,28 +168,30 @@ if(isset($_GET['card_no'])){
 
                 $prod_query = "INSERT INTO customer_ordered_products (order_id, product_category, product_id, product_quantity) ";
                 $prod_query .= "VALUES( {$order_id}, '{$product_category}', '{$product_id}', '{$product_quantity}');";
-                echo $prod_query;
-
-
-                unset($_SESSION['total_cost']);
-
 
 
                 mysqli_query($connect, $prod_query);
+
+
+                $reduce_balance_query = "UPDATE credit_card SET Credit_Balance = (Credit_Balance  - $total_cost) WHERE ID = {$customer_id} AND Card_Type = '{$card_type}' AND Credit_No = '{$credit_card_no}' ";
+                mysqli_query($connect, $reduce_balance_query);
+
+                $delete_query = "DELETE FROM shopping_cart WHERE customer_id = {$customer_id};";
+                mysqli_query($connect, $delete_query);
+
+                $point_query = "UPDATE customer SET point = point + $total_cost * 0.1 WHERE ID = {$customer_id};";
+                mysqli_query($connect, $point_query);
+
+                unset($_SESSION['total_cost']);
+
+                header("Location: buying_history.php#content_zoom");
             }
 
+        }else{
+            $checkout_message = "Password or CVV error";
         }
 
-        $reduce_balance_query = "UPDATE credit_card SET Credit_Balance = (Credit_Balance  - $total_cost) WHERE ID = {$customer_id} AND Card_Type = '{$card_type}' AND Credit_No = '{$credit_card_no}' ";
-        mysqli_query($connect, $reduce_balance_query);
 
-        $delete_query = "DELETE FROM shopping_cart WHERE customer_id = {$customer_id};";
-        mysqli_query($connect, $delete_query);
-
-        $point_query = "UPDATE customer SET point = point + $total_cost * 0.1 WHERE ID = {$customer_id};";
-        mysqli_query($connect, $point_query);
-
-        header("Location: buying_history.php#content_zoom");
 
 
     }

@@ -226,7 +226,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                     echo "<li><a href='cart.php'>Movie Cart (  {$total_num_cart_movies} )</a></li>";
                                     echo "<li><a href='../my_profile.php'>{$_SESSION['customer_name']}</a></li>";
                                 }else{
-                                    echo "<li><a href='../sign_process.php'>Sign In / Register</a></li>";
+                                    echo "<li><a href='./sign_process_movies.php'>Sign In / Register</a></li>";
                                 }
                                 ?>
 
@@ -254,12 +254,12 @@ if (session_status() == PHP_SESSION_NONE) {
                         <?php
                         if(isset($_SESSION['customer_name'])){
                             echo "<li>";
-                            echo "<a href='../logout.php?type=customer'>Sign Out</a>";
+                            echo "<a href='./logout.php?type=customer'>Sign Out</a>";
                             echo "</li>";
                         }
                         else if(isset($_SESSION['admin_name'])){
                             echo "<li>";
-                            echo "<a href='../logout.php?type=admin'>Sign Out</a>";
+                            echo "<a href='./logout.php?type=admin'>Sign Out</a>";
                             echo "</li>";
                         }
 

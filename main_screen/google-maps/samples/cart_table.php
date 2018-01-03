@@ -1,8 +1,10 @@
 <?php
+$cart_empty = true;
 $total_cost = 0;
 $query = "SELECT * FROM shopping_cart WHERE customer_id = {$_SESSION['customer_id']};";
 $query_result = mysqli_query($connect,$query);
 if(mysqli_num_rows($query_result) !== 0){
+    $cart_empty = false;
 
 
     ?>
@@ -64,7 +66,7 @@ if(mysqli_num_rows($query_result) !== 0){
 
         <tr>
 
-            <td style="text-align:center;" colspan="7">Delivery Cost: <span id="deliveryCost"></span></td>
+            <td style="text-align:center;" colspan="7">Delivery Cost: <span id="deliveryCost"></span> (2.00 Tk/km)</td>
         </tr>
 
 
@@ -73,7 +75,7 @@ if(mysqli_num_rows($query_result) !== 0){
 
 
         <tr>
-            <td style="text-align:center;" colspan="7">Your Total Cost: <?php echo $total_cost; ?></td>
+            <td style="text-align:center;" colspan="7">Your Total Cost:<span id="total_cost"><?php echo $total_cost; ?> </span>  </td>
         </tr>
 
 
