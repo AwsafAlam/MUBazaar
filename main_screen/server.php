@@ -148,6 +148,9 @@ if(isset($_POST['signin'])){
                 $row = mysqli_fetch_assoc($result);
                 if($row['Status'] === 'verified'){
 
+                    $customer_active_query = "UPDATE customer SET  customer_active = 'Y' WHERE id = {$row['ID']};";
+                    mysqli_query($connect, $customer_active_query);
+
                     $_SESSION['customer_name'] = $row['Customer_Name'];
                     $_SESSION['customer_email'] = $row['Email'];
                     $_SESSION['customer_id'] = $row['ID'];

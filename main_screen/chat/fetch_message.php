@@ -21,7 +21,7 @@ $result_array = array();
 
 $admin_id = $_POST['adminId'];
 
-$message_query  = "SELECT * FROM chat WHERE (sender_id = {$customer_id} AND recipient_id = {$admin_id}) OR (sender_id = {$admin_id} AND recipient_id = {$customer_id});";
+$message_query  = "SELECT * FROM chat WHERE (sender_id = {$customer_id} AND recipient_id = {$admin_id}) OR (sender_id = {$admin_id} AND recipient_id = {$customer_id}) ORDER BY chat_id ASC;";
 
 
 $admin_name_q = "SELECT admin_name FROM admin WHERE id = {$admin_id};";
@@ -36,13 +36,13 @@ $admin_name = $admin_row['admin_name'];
 $message_rslt = mysqli_query($connect, $message_query);
 while($message_row = mysqli_fetch_assoc($message_rslt)){
 
-    if($message_row['sender_id'] > 1152000){
+    if($message_row['sender_id'] >= 1152000){
         $sender_name = $customer_name;
     }else{
         $sender_name = $admin_name;
     }
 
-    $myArray = array("sender_name" => $sender_name, "chat_content" => $message_row['chat_content'], "customer_name" => $customer_name, "chat_time" => $message_row['chat_time']);
+    $myArray = array("sender_name" => $sender_name, "sender_id" => $message_row['sender_id'], "chat_content" => $message_row['chat_content'], "customer_name" => $customer_name, "chat_time" => $message_row['chat_time']);
     array_push($result_array, $myArray);
 }
 

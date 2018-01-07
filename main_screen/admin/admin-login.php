@@ -1,7 +1,9 @@
 
 <?php ob_start(); ?>
 
-<?php session_start(); ?>
+<?php if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+} ?>
 
 <!DOCTYPE html>
 <html >
@@ -218,7 +220,11 @@
                             $admin_email = $row['admin_email'];
                             $admin_password = $row['admin_password'];
                             if($admin_input_email == $admin_email && $admin_input_password == $admin_password){
+                                $admin_active_query = "UPDATE admin SET  admin_active = 'Y' WHERE id = {$row['id']};";
+                                mysqli_query($connect, $admin_active_query);
+
                                 $_SESSION['admin_name'] = $admin_name;
+                                $_SESSION['admin_id'] = $row['id'];
                                 header("Location: index.php");
                             }
                             else{

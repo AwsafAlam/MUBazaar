@@ -79,7 +79,7 @@
                     </li>
                     
                     <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
+                        <a href="chat/admin_chat_index.php"><i class="fa fa-wechat"></i> Chat</a>
                     </li>
                     
                 </ul>

@@ -44,6 +44,9 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
         $row = mysqli_fetch_assoc($result);
         if ($row['Status'] === "verified") {
 
+            $customer_active_query = "UPDATE customer SET  customer_active = 'Y' WHERE id = {$row['ID']};";
+            mysqli_query($connect, $customer_active_query);
+
             $_SESSION['customer_name'] = $row['Customer_Name'];
             $_SESSION['customer_email'] = $row['Email'];
             $_SESSION['customer_id'] = $row['ID'];
@@ -60,6 +63,10 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
             $id = $row['ID'];
             $query = "UPDATE customer SET Status = 'verified', Confirm_Code = 0 WHERE ID = {$id};";
             mysqli_query($connect, $query);
+
+
+            $customer_active_query = "UPDATE customer SET  customer_active = 'Y' WHERE id = {$row['ID']};";
+            mysqli_query($connect, $customer_active_query);
 
             $_SESSION['customer_name'] = $row['Customer_Name'];
             $_SESSION['customer_email'] = $row['Email'];

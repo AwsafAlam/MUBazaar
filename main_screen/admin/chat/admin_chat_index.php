@@ -1,16 +1,16 @@
-<?php include "../db.php";?>
+<?php include "../../db.php";?>
 
 <?php if (session_status() == PHP_SESSION_NONE) {
     session_start();
-    if (isset($_SESSION['customer_id'])) {
-        $customer_id = $_SESSION['customer_id'];
-        $query = "SELECT * FROM customer ";
-        $query .= "WHERE ID = {$customer_id};";
+    if (isset($_SESSION['admin_id'])) {
+        $admin_id =$_SESSION['admin_id'];
+        $query = "SELECT * FROM admin ";
+        $query .= "WHERE id = {$admin_id};";
 
-        $select_customer_query = mysqli_query($connect, $query);
-        $row = mysqli_fetch_assoc($select_customer_query);
+        $select_admin_query = mysqli_query($connect, $query);
+        $row = mysqli_fetch_assoc($select_admin_query);
 
-        $customer_name = $row['Customer_Name'];
+        $admin_name = $row['admin_name'];
 
     }
 }
@@ -79,37 +79,26 @@
   <div class="chat__sidebar">
 
       <a href="../index.php" class="fa fa-home" style="font-size:36px; color:white;"></a>
-    <h3  style="margin-left: 0px">Admin</h3>
+    <h3 style="margin-left: 0; " >Customers</h3>
     <div id="users"></div>
 
     <div class="btn-group-vertical btn-block btn-group-toggle" data-toggle="buttons">
         <?php
-        $active_admin_query = "SELECT * FROM admin WHERE admin_active = 'Y';";
-        $active_admin_rslt = mysqli_query($connect, $active_admin_query);
-        if(mysqli_num_rows($active_admin_rslt) > 0){
-            $active_admin_row  = mysqli_fetch_assoc($active_admin_rslt);
-                $admin_name =  $active_admin_row['admin_name'];
-                $admin_id =  $active_admin_row['id'];
+        $customer_query = "SELECT ID, Customer_Name FROM customer WHERE customer_active = 'Y';";
+        $customer_rslt = mysqli_query($connect, $customer_query);
+        if(mysqli_num_rows($customer_rslt) > 0){
 
-            ?>
+        while($customer_row  = mysqli_fetch_assoc($customer_rslt)){
 
-            <label class="btn btn-success ">
-                <input type="radio" name="options" id="option1" value="<?php echo $admin_id ?>" autocomplete="off" > <?php echo $admin_name ; ?>
-            </label>
-
-       <?php
-
-        while($active_admin_row  = mysqli_fetch_assoc($active_admin_rslt)){
-
-            $admin_name =  $active_admin_row['admin_name'];
-            $admin_id =  $active_admin_row['id'];
+            $customer_name = $customer_row['Customer_Name'];
+            $customer_id = $customer_row['ID'];
 
 
         ?>
 
 
       <label class="btn btn-success">
-        <input type="radio" name="options" id="option2"  value="<?php echo $admin_id ?>"  autocomplete="off"> <?php echo $admin_name ; ?>
+        <input type="radio" name="options" id="option2"  value="<?php echo $customer_id ?>"  autocomplete="off"> <?php echo $customer_name ; ?>
       </label>
 
 
@@ -117,34 +106,32 @@
 
 
             <div class="alert alert-danger">
-                No Admin is currently online
+                Customer database is empty
             </div>
 
         <?php } ?>
 
         <?php
-        $active_admin_query = "SELECT * FROM admin WHERE admin_active = 'N';";
-        $active_admin_rslt = mysqli_query($connect, $active_admin_query);
-        if(mysqli_num_rows($active_admin_rslt) > 0){
+        $customer_query = "SELECT ID, Customer_Name FROM customer WHERE customer_active = 'N';";
+        $customer_rslt = mysqli_query($connect, $customer_query);
+        if(mysqli_num_rows($customer_rslt) > 0){
 
-            while($active_admin_row  = mysqli_fetch_assoc($active_admin_rslt)){
+            while($customer_row  = mysqli_fetch_assoc($customer_rslt)){
 
-                $admin_name =  $active_admin_row['admin_name'];
-                $admin_id =  $active_admin_row['id'];
+                $customer_name = $customer_row['Customer_Name'];
+                $customer_id = $customer_row['ID'];
 
 
                 ?>
 
 
                 <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option2"  value="<?php echo $admin_id ?>"  autocomplete="off"> <?php echo $admin_name ; ?>
+                    <input type="radio" name="options" id="option2"  value="<?php echo $customer_id ?>"  autocomplete="off"> <?php echo $customer_name ; ?>
                 </label>
 
 
             <?php  }   }
-            ?>
-
-
+        ?>
 
     </div>
 
@@ -157,10 +144,12 @@
   <div class="chat__main" >
 
       <div id="no_message_dialog"  class="alert alert-danger" style="text-align: center; display: none">
-          No messaging history is available with this admin!
+          No messaging history is available with this user!
       </div>
 
-      <ol id="messages" class="chat__messages" >
+
+    <ol id="messages" class="chat__messages" >
+
 
 
 
@@ -178,20 +167,22 @@
 
 <script type="text/javascript">
 
-    var customer_name = '<?php echo $customer_name ?>';
-    var adminId = -1;
+
+    var customerId = -1;
 
     var totalMessageCount = 0;
 
     document.getElementById("message_btn").disabled = true;
 
 
-    function messageUpdate(adminID){
+
+
+    function messageUpdate(customerID){
         var hr = new XMLHttpRequest();
 
-        var url = 'fetch_message.php';
+        var url = 'admin_fetch_message.php';
 
-        var vars = "adminId=" + adminID;
+        var vars = "customerId=" + customerID;
         hr.open("POST", url, true);
 
         hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -200,7 +191,7 @@
             if(hr.readyState === 4 && hr.status === 200) {
                 var result = $.parseJSON(hr.responseText);
 
-                if(adminID != adminId)
+                if(customerID != customerId)
                     return;
 
                 if(totalMessageCount === 0 && result.length === 0){
@@ -210,7 +201,7 @@
                 }
 
                 if(result.length <= totalMessageCount){
-                    setTimeout(messageUpdate(adminID), 3000);
+                    setTimeout(messageUpdate(customerID), 3000);
                     return;
                 }
 
@@ -220,7 +211,7 @@
 
                 for(var i = totalMessageCount; i < result.length; i++){
 
-                    if(parseFloat(result[i]['sender_id']) == adminId){
+                    if(parseFloat(result[i]['sender_id']) == customerId){
                         string = '<li class="leftMessage">';
                         string += '<div><span style="font-size: 80%">';
                         string += result[i]['chat_time'] + '</span></div><div class="message__body chat_content" id="green" ><p>';
@@ -232,17 +223,16 @@
                         string += result[i]['chat_content'] + '</p></div></li>';
                     }
 
-                    totalMessageCount += 1;
-
                     document.getElementById("messages").innerHTML +=   string ;
 
+                    totalMessageCount += 1;
 
                     var chat_main_scroll = document.getElementById('messages');
                     chat_main_scroll.scrollTop = chat_main_scroll.scrollHeight;
                 }
 
 
-                setTimeout(messageUpdate(adminID), 3000);
+                setTimeout(messageUpdate(customerID), 3000);
             }
         };
 
@@ -250,7 +240,6 @@
         hr.send(vars);
 
     }
-
 
 
     $(document).ready(function() {
@@ -261,12 +250,61 @@
             document.getElementById("messages").innerHTML = "" ;
 
 
-            adminId = this.value;
+            customerId = this.value;
 
             totalMessageCount = 0;
 
 
-            messageUpdate(adminId);
+            messageUpdate(customerId);
+
+
+
+
+//            var hr = new XMLHttpRequest();
+//
+//            var url = 'admin_fetch_message.php';
+//
+//            var vars = "customerId=" + customerId;
+//            hr.open("POST", url, true);
+//
+//            hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//
+//            hr.onreadystatechange = function() {
+//                if(hr.readyState === 4 && hr.status === 200) {
+//                    var result = $.parseJSON(hr.responseText);
+//
+//
+//                    var string = '';
+//
+//                    $.each(result, function (key, value) {
+//                        console.log(parseFloat(value['sender_id']));
+//                        if(parseFloat(value['sender_id']) == customerId){
+//                            string = '<li class="leftMessage">';
+//                            string += '<div><span style="font-size: 80%">';
+//                            string += value['chat_time'] + '</span></div><div class="message__body chat_content" id="green" ><p>';
+//                            string += value['chat_content'] + '</p></div></li>';
+//                        }else{
+//                            string = '<li class="rightMessage">';
+//                            string += '<div><span style="font-size: 80%">';
+//                            string += value['chat_time'] + '</span></div><div class="message__body chat_content" id="blue" ><p>';
+//                            string += value['chat_content'] + '</p></div></li>';
+//                        }
+//
+//                        document.getElementById("messages").innerHTML +=   string ;
+//
+//                        var chat_main_scroll = document.getElementById('messages');
+//                        chat_main_scroll.scrollTop = chat_main_scroll.scrollHeight;
+//
+//                    });
+//                }
+//            };
+//
+//
+//            hr.send(vars);
+//
+//            var chat_main_scroll = document.getElementById('messages');
+//            chat_main_scroll.scrollTop = chat_main_scroll.scrollHeight;
+
 
         });
 
@@ -279,7 +317,7 @@
 
             e.preventDefault();
 
-            var data0 = {message: $("#message-form").serialize(), adminId : adminId};
+            var data0 = {message: $("#message-form").serialize(), customerId : customerId};
 
             var json = JSON.stringify(data0 );
 
@@ -290,8 +328,8 @@
             $.ajax({
 
                 type: "POST",
-                url: "send_message.php",
-                data: {message: message_content, adminId:adminId},
+                url: "admin_send_message.php",
+                data: {message: message_content, customerId:customerId},
                 success: function (data) {
                     console.log(data);
 

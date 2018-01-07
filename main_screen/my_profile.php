@@ -152,7 +152,7 @@ if(isset($_POST['save'])){
         <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Home</a></li>
 
-            <li><a href="">Chat</a></li>
+            <li><a href="./chat/index.php">Chat</a></li>
 <!--            <li><a href="#">Page 3</a></li>-->
         </ul>
 

@@ -73,6 +73,10 @@
         <div class="logo">
             <a target="_blank" href="add_card.php"><h1 style="color:white;font-size:20px;"><span style="color:red;">Add Credit Card</a>
         </div>
+            <br>
+            <div class="logo">
+                <a target="_blank" href="chat/index.php"><h1 style="color:white;font-size:20px;"><span style="color:red;">Chat with Admin</a>
+            </div>
             
             <?php }?>
         
