@@ -1,6 +1,13 @@
 <?php include "db.php";
 
 
+
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+
+
 function endsWith($haystack, $needle)
 {
     $length = strlen($needle);
@@ -127,16 +134,77 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
 
 
 
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: block; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
     <body>
 
 
+    <?php if(!isset($_SESSION['entered'])) {
+        $offer_query = "SELECT occasion, image FROM special_offer WHERE offer_active = 'Y';";
+        $offer_rslt = mysqli_query($connect, $offer_query);
+        while($offer_row = mysqli_fetch_assoc($offer_rslt)){
+
+        ?>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 style="text-align: center; font-size: 200%">Special Discount in MUBazaar</h1>
+        <div style="text-align: center"><img style="text-align: center" src="images/<?php echo $offer_row['image'] ?>"/></div>
+
+    </div>
+
+</div>
+
+
+    <?php } } ?>
 
 
 
-
-
-<?php include "dell_header.php" ?>
+<?php
+$_SESSION['entered'] = 1;
+include "dell_header.php" ?>
 
 
     <!------------End Header ------------>
@@ -291,7 +359,20 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
                     <a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $single_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
                     <div class="price-details">
                         <div class="price-number">
-                            <p><span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></p>
+                            <p>
+                                <?php if (isset($_SESSION['is_buetian']) ) {
+
+
+                                    ?>
+                                    <del style="color:red;font-size:24px;"> <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></del>
+                                <?php } else{
+                                    ?>
+                                    <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span>
+
+                                <?php } ?>
+
+
+                            </p>
                         </div>
                         <div class="add-cart">
                             <h4><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>">More Info</a></h4>
@@ -519,6 +600,35 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
         <div id="expandChat" style="position: fixed; right: 0px; bottom: 375px;z-index: 2; display: block;">
             <a class="fa fa-angle-double-left" style="font-size:48px;color:dodgerblue"></a>
         </div>
+
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            //    var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            //    btn.onclick = function() {
+            //        modal.style.display = "block";
+            //    }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
 
         <script type="text/javascript">
             $('#collapseChat').click(function () {

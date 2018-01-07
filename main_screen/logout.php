@@ -16,6 +16,9 @@ if(isset($_GET['type'])){
         $_SESSION['admin_id'] = null;
         unset($_SESSION['admin_id'] );
         unset($_SESSION['admin_name']);
+
+//        unset($_SESSION['entered']);
+
         header("Location: index.php");
     }
     else if($type == 'customer'){
@@ -30,9 +33,13 @@ if(isset($_GET['type'])){
         unset($_SESSION['customer_name']);
         unset($_SESSION['customer_id']);
         unset($_SESSION['customer_email']);
-        if(isset($_POST['is_buetian'])){
+        if(isset($_SESSION['is_buetian'])){
+            $_SESSION['is_buetian'] = null;
             unset($_SESSION['is_buetian']);
+
         }
+
+//        unset($_SESSION['entered']);
 
         header("Location: index.php");
     }

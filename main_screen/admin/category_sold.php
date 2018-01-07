@@ -27,7 +27,7 @@ foreach ($category_tables as $single_table) {
         $sdate = $_GET['sdate'];
         $edate = $_GET['edate'];
         $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
-        $p_query .= "AND order_date BETWEEN {$sdate} AND {$edate};";
+        $p_query .= "AND order_date BETWEEN '{$sdate}' AND '{$edate}';";
     }else{
         $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
     }
@@ -35,7 +35,6 @@ foreach ($category_tables as $single_table) {
     $p_query_row = mysqli_fetch_assoc($p_query_rslt);
     array_push($pi_val, $p_query_row['SUM(product_quantity)']);
 
-    print_r($pi_val);
 }
 
 
@@ -83,12 +82,15 @@ foreach ($category_tables as $single_table) {
         <div id="page-wrapper">
 
 
-            <form action="/action_page.php">
+
+            <h4>Select date wise</h4>
+
+            <form action="" method="get">
                 Start Date:
                 <input type="date" name="sdate" required>
                 End Date:
                 <input type="date" name="edate" required>
-                <input type="submit">
+                <input class="btn btn-primary"  type="submit">
             </form>
 
 

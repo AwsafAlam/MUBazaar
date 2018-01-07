@@ -32,8 +32,9 @@ while($row = mysqli_fetch_assoc($select_all_categories)) {
     $query = "SELECT units_in_stock, item_sold FROM `{$category_name[$i]}`;";
     $result = mysqli_query($connect, $query);
     while($row_2 = mysqli_fetch_assoc($result)) {
-        $total_products += $row_2['units_in_stock'];
-        $total_sold += $row_2['item_sold'];
+        $total_products += 1;
+        if( $row_2['item_sold'] > 0 )
+            $total_sold += 1;
     }
 
     $i++;
@@ -42,6 +43,7 @@ while($row = mysqli_fetch_assoc($select_all_categories)) {
 $total_unsold = $total_products - $total_sold;
 
 ?>
+
 
 
 <?php
@@ -62,18 +64,50 @@ while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
 
 $category_tables = array("appliances", "electronics", "clothes", "office_supplies", "sports_equipments");
 foreach ($category_tables as $single_table) {
-    $p_query = "SELECT SUM(item_sold) FROM `{$single_table}` ;";
+
+    if(isset($_GET['sdate']) && isset($_GET['edate'])){
+        $sdate = $_GET['sdate'];
+        $edate = $_GET['edate'];
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
+        $p_query .= "AND order_date BETWEEN '{$sdate}' AND '{$edate}';";
+    }else{
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
+    }
     $p_query_rslt = mysqli_query($connect, $p_query);
     $p_query_row = mysqli_fetch_assoc($p_query_rslt);
-    array_push($pi_val, $p_query_row['SUM(item_sold)']);
+    array_push($pi_val, $p_query_row['SUM(product_quantity)']);
+
 }
 
 
 
+$distinct_movie_query = "SELECT DISTINCT category FROM movie;";
+$distinct_movie_rslt = mysqli_query($connect, $distinct_movie_query);
+
+
+$pi_lebel_movie= array();
+
+$pi_val_movie= array();
+
+while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
+    array_push($pi_lebel_movie, $distinct_movie_row['category']);
+
+    $cat =  $distinct_movie_row['category'];
+
+    $p_query = "SELECT SUM(sold) FROM movie WHERE category =  '{$cat}';";
+
+    $p_query_rslt = mysqli_query($connect, $p_query);
+    $p_query_row = mysqli_fetch_assoc($p_query_rslt);
+    array_push($pi_val_movie, $p_query_row['SUM(sold)']);
+
+}
+
 
 ?>
 
+
     <script src="./js/plotly-latest.min.js" type="text/javascript"></script>
+
     <div id="wrapper">
 
 
@@ -83,10 +117,6 @@ foreach ($category_tables as $single_table) {
     <?php include "includes/admin_navigation.php" ?>
 
     <div id="page-wrapper">
-
-
-
-
 
         <div class="container-fluid">
 
@@ -206,6 +236,7 @@ foreach ($category_tables as $single_table) {
             <div class="row">
 
 
+
                 <h1 style="color: black;"> Category wise sale chart on MUBazaar</h1>
                 <div class="container-fluid"  id="two"></div>
                 <script type="text/javascript">
@@ -223,6 +254,27 @@ foreach ($category_tables as $single_table) {
                     Plotly.newPlot('two',data,layout);
 
                 </script>
+
+                <h1 style="color: black;"> Category wise sale chart on MUMovies</h1>
+
+                <div class="container-fluid"  id="three"></div>
+                <script type="text/javascript">
+                    var values=<?php echo json_encode($pi_val_movie);?>;
+                    var labels=<?php echo json_encode($pi_lebel_movie);?>;
+
+                    var data=[{
+                        values:values,labels:labels,type:'pie'
+                    }];
+
+                    var layout={
+                        height:600,width:800
+                    };
+
+                    Plotly.newPlot('three',data,layout);
+
+                </script>
+
+
 
                 <script type="text/javascript">
                     google.charts.load('current', {'packages':['bar']});

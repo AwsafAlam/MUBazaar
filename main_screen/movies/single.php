@@ -138,6 +138,8 @@ $movie_poster = $row['poster'];
 $movie_source = $row['source'];
 $movie_summary = $row['summary'];
 $movie_image = $row['image'];
+$movie_director = $row['director'];
+$movie_rating = $row['imdb_rating'];
 
 ?>
 
@@ -223,16 +225,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php include "header.php"?>
 
 <!-- //nav -->
-<div class="general_social_icons">
-	<nav class="social">
-		<ul>
-			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
-			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
-			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
-			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
-		</ul>
-  </nav>
-</div>
+
 <!-- single -->
 <div class="single-page-agile-main">
 <div class="container">
@@ -254,7 +247,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-sm-8 single-left">
 					<div class="song">
 						<div class="song-info">
-							<h3 style="text-align: center"><?php echo $movie_name  ?></h3>
+							<h2 style="text-align: center"><?php echo $movie_name  ?></h2>
+                            <h4 style="text-align: center">Director: <?php echo $movie_director ?></h4>
+                            <h4 style="text-align: center">IMDB Rating: <?php echo $movie_rating ?></h4>
 					    </div>
 
 

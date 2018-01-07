@@ -106,7 +106,7 @@
 
 
             <div class="alert alert-danger">
-                Customer database is empty
+                No customer is online.
             </div>
 
         <?php } ?>

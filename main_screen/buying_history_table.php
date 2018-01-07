@@ -24,7 +24,6 @@
                                 <th style="text-align:center">Product Name</th>
                                 <th style="text-align:center">Quantity</th>
                                 <th style="text-align:center">Total Cost<br>BDT</th>
-                                <th style="text-align:center">Remove History</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,44 +50,151 @@
                                 $rowspanQueryRow = mysqli_fetch_assoc($rowspanQueryRslt);
                                 $rowspan =  $rowspanQueryRow['COUNT(order_id)'];
 
-                                echo "<tr>";
-                                echo "<td align='center'>{$order_id}</td>";
-                                echo "<td align='center'>{$shipping_address}</td>";
+                                if($rowspan == 1){
+                                    echo "<tr>";
+                                    echo "<td align='center'>{$order_id}</td>";
+                                    echo "<td align='center'>{$shipping_address}</td>";
 
 
-                                $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
-                                $name_rslt = mysqli_query($connect, $name_query);
-                                $name_row = mysqli_fetch_assoc($name_rslt);
-                                $prod_cat = $product_category;
+                                    $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                    $name_rslt = mysqli_query($connect, $name_query);
+                                    $name_row = mysqli_fetch_assoc($name_rslt);
+                                    $prod_cat = $product_category;
 
-                                switch ($product_category) {
-                                    case 'office_supplies':
-                                        $product_category = "Office Supplies";
-                                        break;
-                                    case 'sports_equipments':
-                                        $product_category = 'Sports';
-                                        break;
-                                    case 'electronics':
-                                        $product_category = 'Electronics';
-                                        break;
-                                    case 'clothes':
-                                        $product_category = 'Clothes';
-                                        break;
-                                    case 'appliances':
-                                        $product_category = 'Appliances';
-                                        break;
-                                }
+                                    switch ($product_category) {
+                                        case 'office_supplies':
+                                            $product_category = "Office Supplies";
+                                            break;
+                                        case 'sports_equipments':
+                                            $product_category = 'Sports';
+                                            break;
+                                        case 'electronics':
+                                            $product_category = 'Electronics';
+                                            break;
+                                        case 'clothes':
+                                            $product_category = 'Clothes';
+                                            break;
+                                        case 'appliances':
+                                            $product_category = 'Appliances';
+                                            break;
+                                    }
 
-                                echo "<td align='center'>{$product_category}</a></td>";
+                                    echo "<td align='center'>{$product_category}</a></td>";
 
-                                echo "<td align='center'>{$name_row['name']}</td>";
-                                echo "<td align='center'>{$product_quantity}</td>";
-                                echo "<td align='center'>{$total_cost}</td>";
+                                    echo "<td align='center'>{$name_row['name']}</td>";
+                                    echo "<td align='center'>{$product_quantity}</td>";
+                                    echo "<td align='center'>{$total_cost}</td>";
 //                                echo "<td align='center'>Remove</td>";
-                                echo "<td style='text-align: center;'><a style='font-size:24px' class='fa fa-trash' href='?delete={$customer_id}&order_id={$order_id}&prod_cat={$prod_cat}&prod_id={$product_id}' title='delete'></a>";
-                                echo "</tr>";
+                                    echo "</tr>";
+
+                                }else{
+
+                                    echo "<tr>";
+                                    echo "<td rowspan='{$rowspan}' align='center'>{$order_id}</td>";
+                                    echo "<td align='center'>{$shipping_address}</td>";
 
 
+                                    $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                    $name_rslt = mysqli_query($connect, $name_query);
+                                    $name_row = mysqli_fetch_assoc($name_rslt);
+                                    $prod_cat = $product_category;
+
+                                    switch ($product_category) {
+                                        case 'office_supplies':
+                                            $product_category = "Office Supplies";
+                                            break;
+                                        case 'sports_equipments':
+                                            $product_category = 'Sports';
+                                            break;
+                                        case 'electronics':
+                                            $product_category = 'Electronics';
+                                            break;
+                                        case 'clothes':
+                                            $product_category = 'Clothes';
+                                            break;
+                                        case 'appliances':
+                                            $product_category = 'Appliances';
+                                            break;
+                                    }
+
+                                    echo "<td align='center'>{$product_category}</a></td>";
+
+                                    echo "<td align='center'>{$name_row['name']}</td>";
+                                    echo "<td align='center'>{$product_quantity}</td>";
+                                    echo "<td rowspan='{$rowspan}'>{$total_cost}</td>";
+//                                echo "<td align='center'>Remove</td>";
+                                    echo "</tr>";
+
+                                    for($i = 1; $i < $rowspan; $i++){
+
+                                        $row = mysqli_fetch_assoc($rslt);
+
+                                        $order_id = $row['order_id'];
+                                        $shipping_address = $row['shipping_address'];
+                                        $product_category = $row['product_category'];
+
+                                        $product_id = $row['product_id'];
+
+                                        $product_quantity = $row['product_quantity'];
+                                        $total_cost = $row['total_cost'];
+
+
+                                        echo "<tr>";
+                                        echo "<td align='center'>{$shipping_address}</td>";
+
+
+                                        $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                        $name_rslt = mysqli_query($connect, $name_query);
+                                        $name_row = mysqli_fetch_assoc($name_rslt);
+                                        $prod_cat = $product_category;
+
+                                        switch ($product_category) {
+                                            case 'office_supplies':
+                                                $product_category = "Office Supplies";
+                                                break;
+                                            case 'sports_equipments':
+                                                $product_category = 'Sports';
+                                                break;
+                                            case 'electronics':
+                                                $product_category = 'Electronics';
+                                                break;
+                                            case 'clothes':
+                                                $product_category = 'Clothes';
+                                                break;
+                                            case 'appliances':
+                                                $product_category = 'Appliances';
+                                                break;
+                                        }
+
+                                        echo "<td align='center'>{$product_category}</a></td>";
+
+                                        echo "<td align='center'>{$name_row['name']}</td>";
+                                        echo "<td align='center'>{$product_quantity}</td>";
+//                                        echo "<td align='center'>{$total_cost}</td>";
+//                                echo "<td align='center'>Remove</td>";
+                                        echo "</tr>";
+
+
+
+
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                }
                             }
                             ?>
 

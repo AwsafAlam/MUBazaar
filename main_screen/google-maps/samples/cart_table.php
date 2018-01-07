@@ -1,4 +1,28 @@
+
 <?php
+
+if(isset($_GET['action']) && $_GET['action'] == 'delete'){
+    $customer_id = $_SESSION['customer_id'];
+    $product_category = $_GET['prod_cat'];
+    $product_id = $_GET['prod_id'];
+
+    $cart_query = "DELETE FROM shopping_cart WHERE customer_id = {$customer_id} AND ";
+    $cart_query .= "prod_category = '{$product_category}' AND prod_id = {$product_id};";
+
+    $cart_query_rslt = mysqli_query($connect,$cart_query);
+    if(!$cart_query_rslt){
+        die(mysqli_error($connect));
+    }
+
+//    header("Location: index.php");
+//    header("Location: show_content.php?source=cart#content_zoom");
+
+}
+
+?>
+
+<?php
+ob_start();
 $cart_empty = true;
 $total_cost = 0;
 $query = "SELECT * FROM shopping_cart WHERE customer_id = {$_SESSION['customer_id']};";
@@ -56,7 +80,7 @@ if(mysqli_num_rows($query_result) !== 0){
 
             //                echo "<td align='center'><p data-placement='top' data-toggle='tooltip' title='Delete'><form action='' method='post'> <button type='submit' name='remove_cart' class='btn btn-danger btn-xs' data-title='Delete' data-toggle='modal' data-target='#delete'><a href = 'show_content.php?source=cart&prod_cat={$product_category}&prod_id={$product_id}&customer_id={$customer_id}' style='color:white;text-decoration: underline;' class='delete_anchor glyphicon glyphicon-trash'></a></button></form></p></td>";
 
-            echo "<td align='center'><a  href = '../../show_content.php?source=cart&action=delete&prod_cat={$product_category}&prod_id={$product_id}' style='color:white;' class='trash-button delete_anchor glyphicon glyphicon-trash'></a></p></td>";
+            echo "<td align='center'><a  href = '?source=cart&action=delete&prod_cat={$product_category}&prod_id={$product_id}' style='color:black;' class='trash-button delete_anchor glyphicon glyphicon-trash'></a></p></td>";
 
         }
 
@@ -130,3 +154,6 @@ if(mysqli_num_rows($query_result) !== 0){
     </div>
 
 <?php } ?>
+
+
+

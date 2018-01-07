@@ -207,26 +207,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="desc span_3_of_2">
 
 
-                            <!--
-$prod_name = $_SESSION['prod_name'];
-$prod_price = $_SESSION['prod_price'];
-$prod_image_1 = $_SESSION['prod_image_1'];
-$prod_image_2 = $_SESSION['prod_image_2'];
-$prod_image_3 = $_SESSION['prod_image_3'];
-$prod_image_4 = $_SESSION['prod_image_4'];
-$prod_sub_category = $_SESSION['prod_sub_category'];
-$prod_description = $_SESSION['prod_description'];
-$prod_model = $_SESSION['prod_model'];
-$shipping_weight = $_SESSION['shipping_weight'];
-$units_in_stock = $_SESSION['units_in_stock'];
-$table_name
--->
+
 
 
                             <h2><?php echo $prod_name ?></h2>
                             <p><?php echo $prod_description ?></p>
 
-                            <?php if (isset($_SESSION['is_buetian']) && $table_name === 'electronics') {
+                            <?php if (isset($_SESSION['is_buetian']) ) {
                                 ?>
                                 <div class="price">
                                     <p>Price: &#x9f3;
@@ -645,7 +632,21 @@ $table_name
                                 <a href="preview_edit.php?table=<?php echo $query_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $query_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
                                 <div class="price-details">
                                     <div class="price-number">
-                                        <p><span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></p>
+                                        <p>
+
+                                            <?php if (isset($_SESSION['is_buetian']) ) {
+
+
+                                                ?>
+                                                <del style="color:red;font-size:24px;"> <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></del>
+                                            <?php } else{
+                                                ?>
+                                                <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span>
+
+                                            <?php } ?>
+
+
+                                        </p>
                                         </p>
                                     </div>
                                     <div class="add-cart">

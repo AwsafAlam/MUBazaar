@@ -192,7 +192,19 @@ $results = $paginator->getData( $limit, $page );
                                 <a href="preview_edit.php?table=electronics&id=<?php  echo $prod_id ?>"><img  width="120" height="120" src="images/electronics/<?php echo $prod_image_1?>" alt="" /></a>
                                 <div class="price-details">
                                     <div class="price-number">
-                                        <p><span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></p>
+                                        <p>
+                                            <?php if (isset($_SESSION['is_buetian']) ) {
+
+
+                                            ?>
+                                                <del style="color:red;font-size:24px;"> <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span></del>
+                                            <?php } else{
+                                            ?>
+                                            <span class="rupees">&#x9f3;<?php echo $prod_price ?> </span>
+
+                                            <?php } ?>
+
+                                        </p>
                                     </div>
                                     
                                     <div class="add-cart">								

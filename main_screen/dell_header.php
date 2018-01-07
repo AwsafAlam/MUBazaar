@@ -3,10 +3,10 @@
             <?php include "header.php" ?>
             <div class="header_bottom">
                 <div class="slider-text">
-                    <h2>Dear BUETians, Buy any product from Electronics category today & enjoy up to 25% discount!</h2>
+                    <h2>Dear BUETians, Buy any product today & enjoy up to 25% discount!</h2>
                     <p>You need to sign in with your BUET Email address.<br>MUBazaar is giving this privilege only for BUETians.<br/>Make Hurry  BUETians!</p>
 <!--                    <a href="search.php?searchText=dell&searchSubmit=#categories">Electronic Products</a>-->
-                    <a href="Electronics.php#categories">Electronic Products</a>
+
                 </div>
                 <div class="slider-img">
                     <img src="images/slider-img.png" alt="" />
