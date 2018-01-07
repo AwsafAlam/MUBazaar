@@ -43,6 +43,37 @@ $total_unsold = $total_products - $total_sold;
 
 ?>
 
+
+<?php
+
+$distinct_product_query = "SELECT DISTINCT Category_Name FROM category;";
+$distinct_product_rslt = mysqli_query($connect, $distinct_product_query);
+
+
+$pi_lebel= array();
+
+$pi_val= array();
+
+while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
+    array_push($pi_lebel, $distinct_product_row['Category_Name']);
+
+}
+
+
+$category_tables = array("appliances", "electronics", "clothes", "office_supplies", "sports_equipments");
+foreach ($category_tables as $single_table) {
+    $p_query = "SELECT SUM(item_sold) FROM `{$single_table}` ;";
+    $p_query_rslt = mysqli_query($connect, $p_query);
+    $p_query_row = mysqli_fetch_assoc($p_query_rslt);
+    array_push($pi_val, $p_query_row['SUM(item_sold)']);
+}
+
+
+
+
+?>
+
+    <script src="./js/plotly-latest.min.js" type="text/javascript"></script>
     <div id="wrapper">
 
 
@@ -52,6 +83,10 @@ $total_unsold = $total_products - $total_sold;
     <?php include "includes/admin_navigation.php" ?>
 
     <div id="page-wrapper">
+
+
+
+
 
         <div class="container-fluid">
 
@@ -169,6 +204,25 @@ $total_unsold = $total_products - $total_sold;
 
 
             <div class="row">
+
+
+                <h1 style="color: black;"> Category wise sale chart on MUBazaar</h1>
+                <div class="container-fluid"  id="two"></div>
+                <script type="text/javascript">
+                    var values=<?php echo json_encode($pi_val);?>;
+                    var labels=<?php echo json_encode($pi_lebel);?>;
+
+                    var data=[{
+                        values:values,labels:labels,type:'pie'
+                    }];
+
+                    var layout={
+                        height:600,width:800
+                    };
+
+                    Plotly.newPlot('two',data,layout);
+
+                </script>
 
                 <script type="text/javascript">
                     google.charts.load('current', {'packages':['bar']});
