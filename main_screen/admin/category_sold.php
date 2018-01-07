@@ -22,10 +22,20 @@ while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
 
 $category_tables = array("appliances", "electronics", "clothes", "office_supplies", "sports_equipments");
 foreach ($category_tables as $single_table) {
-    $p_query = "SELECT SUM(item_sold) FROM `{$single_table}` ;";
+
+    if(isset($_GET['sdate']) && isset($_GET['edate'])){
+        $sdate = $_GET['sdate'];
+        $edate = $_GET['edate'];
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
+        $p_query .= "AND order_date BETWEEN {$sdate} AND {$edate};";
+    }else{
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
+    }
     $p_query_rslt = mysqli_query($connect, $p_query);
     $p_query_row = mysqli_fetch_assoc($p_query_rslt);
-    array_push($pi_val, $p_query_row['SUM(item_sold)']);
+    array_push($pi_val, $p_query_row['SUM(product_quantity)']);
+
+    print_r($pi_val);
 }
 
 
@@ -75,9 +85,9 @@ foreach ($category_tables as $single_table) {
 
             <form action="/action_page.php">
                 Start Date:
-                <input type="date" name="bday" required>
+                <input type="date" name="sdate" required>
                 End Date:
-                <input type="date" name="bday" required>
+                <input type="date" name="edate" required>
                 <input type="submit">
             </form>
 
