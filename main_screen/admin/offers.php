@@ -3,11 +3,32 @@
 <?php session_start(); ?>
 
 <?php
-    if(isset($_POST['offer'])){
-        echo $offer = $_POST['offer'];
 
-        $offer_query = "UPDATE special_offer SET offer_active = 'N';";
-        mysqli_query($connect, $offer_query);
+
+$select_offer_query = "SELECT occasion FROM special_offer WHERE offer_active = 'Y';";
+$select_offer_rslt = mysqli_query($connect, $select_offer_query);
+
+
+$is_selected = false;
+$selected_offer = 'nothing selected';
+
+if(mysqli_num_rows($select_offer_rslt) > 0){
+    $select_offer_row = mysqli_fetch_assoc($select_offer_rslt);
+    $is_selected = true;
+    $selected_offer = $select_offer_row['occasion'];
+}
+
+
+    if(isset($_POST['offer'])){
+        $offer = $_POST['offer'];
+
+        if($is_selected){
+            $offer_query = "UPDATE special_offer SET offer_active = 'N' WHERE occasion = '{$selected_offer}';";
+            mysqli_query($connect, $offer_query);
+        }
+
+
+
         if($offer != "-1"){
 
             $offer_query = "UPDATE special_offer SET offer_active = 'Y' WHERE occasion = '{$offer}';";
@@ -18,18 +39,7 @@
         }
     }
 
-    $select_offer_query = "SELECT occasion FROM special_offer WHERE offer_active = 'Y';";
-    $select_offer_rslt = mysqli_query($connect, $select_offer_query);
 
-
-    $is_selected = false;
-    $selected_offer = 'nothing selected';
-
-    if(mysqli_num_rows($select_offer_rslt) > 0){
-        $select_offer_row = mysqli_fetch_assoc($select_offer_rslt);
-        $is_selected = true;
-        $selected_offer = $select_offer_row['occasion'];
-    }
 
 
 

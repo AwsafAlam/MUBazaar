@@ -24,6 +24,8 @@
                                 <th style="text-align:center">Product Name</th>
                                 <th style="text-align:center">Quantity</th>
                                 <th style="text-align:center">Total Cost<br>BDT</th>
+                                <th style="text-align:center">Shipping Status</th>
+                                <th style="text-align:center">Shipped Date </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,6 +42,9 @@
                                 $shipping_address = $row['shipping_address'];
                                 $product_category = $row['product_category'];
 
+                                $shipping_status = $row['shipping_status'];
+                                $shipped_date = $row['shipped_date'];
+
                                 $product_id = $row['product_id'];
 
                                 $product_quantity = $row['product_quantity'];
@@ -53,7 +58,7 @@
                                 if($rowspan == 1){
                                     echo "<tr>";
                                     echo "<td align='center'>{$order_id}</td>";
-                                    echo "<td align='center'>{$shipping_address}</td>";
+                                    echo "<td  align='center'>{$shipping_address}</td>";
 
 
                                     $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
@@ -84,6 +89,20 @@
                                     echo "<td align='center'>{$name_row['name']}</td>";
                                     echo "<td align='center'>{$product_quantity}</td>";
                                     echo "<td align='center'>{$total_cost}</td>";
+
+//                                    if ($_shipping_status == 'shipped') {
+//                                        echo "<td align='center'><a class='material-icons' style='color:green;' title='verified'>verified_user</a></td>";
+//                                    } else{
+//                                        echo "<td  align='center'><input type='checkbox' name='shipping_status[]' value='{$order_id}'></td>";
+//                                    }
+
+                                    if ($shipping_status == 'shipped') {
+                                        echo "<td align='center'><a class='material-icons' style='color:green;' title='verified'>Shipped</a></td>";
+                                    }else{
+                                        echo "<td align='center'><a class='material-icons' style='color:orange;' title='unverified'>Not shipped yet</a></td>";
+                                    }
+
+                                    echo "<td align='center'>{$shipped_date}</td>";
 //                                echo "<td align='center'>Remove</td>";
                                     echo "</tr>";
 
@@ -91,7 +110,7 @@
 
                                     echo "<tr>";
                                     echo "<td rowspan='{$rowspan}' align='center'>{$order_id}</td>";
-                                    echo "<td align='center'>{$shipping_address}</td>";
+                                    echo "<td rowspan='{$rowspan}' align='center'>{$shipping_address}</td>";
 
 
                                     $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
@@ -122,6 +141,12 @@
                                     echo "<td align='center'>{$name_row['name']}</td>";
                                     echo "<td align='center'>{$product_quantity}</td>";
                                     echo "<td rowspan='{$rowspan}'>{$total_cost}</td>";
+                                    if ($shipping_status == 'shipped') {
+                                        echo "<td rowspan='{$rowspan}' align='center'><a class='material-icons' style='color:green;' title='verified'>Shipped</a></td>";
+                                    }else{
+                                        echo "<td rowspan='{$rowspan}' align='center'><a class='material-icons' style='color:orange;' title='unverified'>Not shipped yet</a></td>";
+                                    }
+                                    echo "<td rowspan='{$rowspan}' align='center'>{$shipped_date}</td>";
 //                                echo "<td align='center'>Remove</td>";
                                     echo "</tr>";
 
@@ -139,8 +164,10 @@
                                         $total_cost = $row['total_cost'];
 
 
+
+
                                         echo "<tr>";
-                                        echo "<td align='center'>{$shipping_address}</td>";
+//                                        echo "<td align='center'>{$shipping_address}</td>";
 
 
                                         $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";

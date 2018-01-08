@@ -107,11 +107,16 @@ if(isset($_POST['save'])){
 
     <title>User Profile - Bootsnipp.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
     <style type="text/css">
         .img_choose{ max-width: 100%; max-height: 100%; }
         .img_button{ display: none; }
     </style>
+
+
 
 
 
@@ -139,7 +144,11 @@ if(isset($_POST['save'])){
     <script src="bootstrap-confirmation.js"></script>
 
 
+
+
 </head>
+
+
 <body>
 
 

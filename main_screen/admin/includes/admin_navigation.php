@@ -81,6 +81,20 @@
                     <li>
                         <a href="chat/admin_chat_index.php"><i class="fa fa-wechat"></i> Chat</a>
                     </li>
+
+                    <li class="active">
+                        <a href="orders.php"><i class="fa fa-shopping-cart"></i> Orders</a>
+                    </li>
+
+                    <li class="active">
+                        <a href="subscribers.php"><i class="fa fa-shopping-cart"></i> Movie Subscriber</a>
+                    </li>
+
+
+                    <li class="active">
+                        <a href="customer_email.php"><i class="fa fa-shopping-cart"></i> Email Customers</a>
+                    </li>
+
                     
                 </ul>
             </div>

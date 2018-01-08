@@ -140,7 +140,8 @@ if(isset($_GET['card_no'])){
         if(mysqli_num_rows($rslt) != 0){
 
 
-            $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost) VALUES({$customer_id}, '{$shipping_address}', {$total_cost});";
+            $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost, order_date) VALUES({$customer_id}, '{$shipping_address}', {$total_cost}, ";
+            $query .= "now());";
             $rslt = mysqli_query($connect, $query);
             $order_id = $connect->insert_id;
 
