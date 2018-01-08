@@ -76,6 +76,7 @@ while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
 
 
 
+
                 <div class="container-fluid"  id="three"></div>
                 <script type="text/javascript">
                     var values=<?php echo json_encode($pi_val_movie);?>;
@@ -95,6 +96,46 @@ while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
 
 
             <!-- /.container-fluid -->
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Movie Category</th>
+                    <th>Total Sold</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <?php
+
+                $distinct_movie_query = "SELECT DISTINCT category FROM movie;";
+                $distinct_movie_rslt = mysqli_query($connect, $distinct_movie_query);
+
+
+                while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
+
+
+                    $cat =  $distinct_movie_row['category'];
+
+                    $p_query = "SELECT SUM(sold) FROM movie WHERE category =  '{$cat}';";
+
+                    $p_query_rslt = mysqli_query($connect, $p_query);
+                    $p_query_row = mysqli_fetch_assoc($p_query_rslt);
+
+
+
+                    ?>
+                    <tr>
+                        <td><?php echo $cat ?></td>
+                        <td><?php echo $p_query_row['SUM(sold)'] ?></td>
+                    </tr>
+
+
+                <?php } ?>
+                </tbody>
+
+            </table>
 
         </div>
         <!-- /#page-wrapper -->

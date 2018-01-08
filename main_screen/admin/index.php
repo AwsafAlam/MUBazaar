@@ -237,7 +237,7 @@ while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
 
 
 
-                <h1 style="color: black;"> Category wise sale chart on MUBazaar</h1>
+                <a target="_blank" href="category_sold.php"><h1 style="color: black;"> Category wise sale chart on MUBazaar</h1></a>
                 <div class="container-fluid"  id="two"></div>
                 <script type="text/javascript">
                     var values=<?php echo json_encode($pi_val);?>;
@@ -255,7 +255,7 @@ while($distinct_movie_row = mysqli_fetch_assoc($distinct_movie_rslt)){
 
                 </script>
 
-                <h1 style="color: black;"> Category wise sale chart on MUMovies</h1>
+                <a target="_blank" href="category_sold.php"><h1 style="color: black;"> Category wise sale chart on MUMovies</h1></a>
 
                 <div class="container-fluid"  id="three"></div>
                 <script type="text/javascript">

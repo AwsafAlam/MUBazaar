@@ -1,6 +1,41 @@
 <?php ob_start(); ?>
 <?php include "../db.php"; ?>
 <?php session_start(); ?>
+
+<?php
+    if(isset($_POST['offer'])){
+        echo $offer = $_POST['offer'];
+
+        $offer_query = "UPDATE special_offer SET offer_active = 'N';";
+        mysqli_query($connect, $offer_query);
+        if($offer != "-1"){
+
+            $offer_query = "UPDATE special_offer SET offer_active = 'Y' WHERE occasion = '{$offer}';";
+            mysqli_query($connect, $offer_query);
+
+
+
+        }
+    }
+
+    $select_offer_query = "SELECT occasion FROM special_offer WHERE offer_active = 'Y';";
+    $select_offer_rslt = mysqli_query($connect, $select_offer_query);
+
+
+    $is_selected = false;
+    $selected_offer = 'nothing selected';
+
+    if(mysqli_num_rows($select_offer_rslt) > 0){
+        $select_offer_row = mysqli_fetch_assoc($select_offer_rslt);
+        $is_selected = true;
+        $selected_offer = $select_offer_row['occasion'];
+    }
+
+
+
+?>
+
+
     <!DOCTYPE html>
     <html lang="en">
 
@@ -74,19 +109,22 @@
 
         <div class="container-fluid">
 
+
+
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
 
-                    <h1>Offers</h1>
+                    <h1>Selected Offer: <?php if($is_selected) echo ucfirst($selected_offer); ?></h1>
 
                     <div class="col-sm-4">
                         <div class="b-select-wrap">
-                            <select name="diff" class="b-select">
+                            <form action="" method="post" name="offer_form">
+                            <select name="offer" class="b-select">
                                 <option value="-1" selected>Choose Offer</option>
-                                <option>Winter</option>
-                                <option>Summer</option>
-                                <option>EID</option>
+                                <option value="winter">Winter</option>
+                                <option value="summer">Summer</option>
+                                <option value="eid">EID</option>
                             </select>
                         </div>
 
@@ -102,7 +140,9 @@
 
                             <input class="btn btn-primary btn-block" style="-moz-border-radius: 20px;
                                                                             -webkit-border-radius: 20px;
-                                                                            border-radius: 20px;" type="submit" name="search_submit" value="Search">
+                                                                            border-radius: 20px;" type="submit" name="search_submit" value="Apply">
+
+                            </form>
                         </div>
                     </div>
 

@@ -79,6 +79,8 @@ foreach ($category_tables as $single_table) {
 
 
 
+
+
         <div id="page-wrapper">
 
 
@@ -92,6 +94,7 @@ foreach ($category_tables as $single_table) {
                 <input type="date" name="edate" required>
                 <input class="btn btn-primary"  type="submit">
             </form>
+
 
 
                 <div class="container-fluid"  id="two"></div>
@@ -112,9 +115,55 @@ foreach ($category_tables as $single_table) {
                 </script>
 
 
+
             <!-- /.container-fluid -->
 
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Product Category</th>
+                    <th>Total Sold</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <?php
+
+                $category_tables = array("appliances", "electronics", "clothes", "office_supplies", "sports_equipments");
+foreach ($category_tables as $single_table) {
+
+    if(isset($_GET['sdate']) && isset($_GET['edate'])){
+        $sdate = $_GET['sdate'];
+        $edate = $_GET['edate'];
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
+        $p_query .= "AND order_date BETWEEN '{$sdate}' AND '{$edate}';";
+    }else{
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
+    }
+    $p_query_rslt = mysqli_query($connect, $p_query);
+    $p_query_row = mysqli_fetch_assoc($p_query_rslt);
+    $prod_quantity = $p_query_row['SUM(product_quantity)'];
+
+
+
+                ?>
+<tr>
+    <td><?php echo $single_table ?></td>
+    <td><?php echo $prod_quantity ?></td>
+</tr>
+
+
+<?php } ?>
+                </tbody>
+
+            </table>
+
+
         </div>
+
+
+
         <!-- /#page-wrapper -->
 
 <?php include "includes/admin_footer.php" ?>
