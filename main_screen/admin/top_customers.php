@@ -166,7 +166,8 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 
                         if (isset($_SESSION['admin_name'])){
 
-                            $query = "SELECT * FROM customer C1 WHERE {$top_no} > (SELECT COUNT(*) FROM customer C2 WHERE C2.point > C1.point) ORDER BY C1.point DESC;";
+//                            $query = "SELECT * FROM customer C1 WHERE {$top_no} > (SELECT COUNT(*) FROM customer C2 WHERE C2.point > C1.point) ORDER BY C1.point DESC;";
+                            $query = "CALL TOP_CUSTOMERS({$top_no})";
 
                             $select_customer = mysqli_query($connect, $query);
 

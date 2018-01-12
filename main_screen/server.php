@@ -108,7 +108,7 @@ if(isset($_POST['register'])){
                 //            $_SESSION['customer_id'] = $last_id;
                 //            $_SESSION['customer_email'] = $email;
 
-                $message_body = "Click here to verify your email address: http://localhost/demo/e-commerce/main_screen/index.php?id={$last_id}&code=$confirm_code";
+                $message_body = "Click here to verify your email address: http://localhost/demo/e-commerce/main_screen/index.php?id={$last_id}&code=$confirm_code \n FAQ: http://localhost/demo/e-commerce/main_screen/faq.php";
                 $message_email = $email;
                 $mailSender = new MailSender($message_email, "MUBazaar :: Complete your registration process!!!", "Verify your email address", $message_body);
 
@@ -177,7 +177,7 @@ if(isset($_POST['signin'])){
                         die(mysqli_error($connect));
                     }
 
-                    $message_body = "Click here to complete verify your email address: http://localhost/demo/e-commerce/main_screen/index.php?id={$last_id}&code=$confirm_code"  ;
+                    $message_body = "Click here to verify your email address: http://localhost/demo/e-commerce/main_screen/index.php?id={$last_id}&code=$confirm_code \n FAQ: http://localhost/demo/e-commerce/main_screen/faq.php";
                     $mailSender = new MailSender( $row['Email'], "MUBazaar :: Complete your registration process!!!",  "Verify your email address", $message_body);
 
                     $mailSender->requestMailSend();

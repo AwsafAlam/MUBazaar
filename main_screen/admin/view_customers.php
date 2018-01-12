@@ -55,7 +55,38 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 }
 
 ?>
+
+<?php $customer_type = 'all' ?>
+
+<?php
+
+if(isset($_GET['customer_type'])){
+    $customer_type = $_GET['customer_type'];
+}
+?>
+
     <link rel="stylesheet" type="text/css" href="includes/admin_header.php">
+
+
+    <script>
+
+
+
+
+        jQuery(document).ready(function () {
+            jQuery('#top_select').change(function () {
+//           alert('Changed to ' + jQuery('#top_select').val());
+
+                window.location.replace("view_customers.php?customer_type=" +  jQuery('#top_select').val());
+
+//           xhttp.open("GET", "top_customers.php?table_name=" +  jQuery('#top_select').val() , true);
+//           xhttp.send();
+
+            });
+        });
+
+
+    </script>
 
     <div id="wrapper">
 
@@ -76,7 +107,22 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
                                         </h1>
                     -->
 
-                    <h1>All Customers</h1>
+
+                    <div style="display: inline-block;" class="form-group">
+                        <label for="sel1"></label>
+                        <form id="top_form" action="" method="get">
+                            <select name="table_name" class="form-control" id="top_select" >
+                                <option value="all"  <?php if($customer_type == 'all') {  ?> selected <?php } ?>>All </option>
+                                <option value="blocked"  <?php if($customer_type == 'blocked') {  ?> selected <?php } ?>>Blocked</option>
+                                <option value="verified"  <?php if($customer_type == 'verified') {  ?> selected <?php } ?>>Verfiied</option>
+                                <option value="unverified"  <?php if($customer_type == 'unverified') { ?> selected <?php } ?>>Unverified</option>
+                            </select>
+
+                    </div>
+
+
+                    <h1 style="display: inline-block;"> Customers</h1>
+
 
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -98,7 +144,18 @@ if (isset($_SESSION['admin_name']) && isset($_GET['block']) && isset($_GET['emai
 
                         if (isset($_SESSION['admin_name'])){
 
-                            $query = "SELECT * FROM customer";
+                            if($customer_type == "all"){
+                                $query = "SELECT * FROM customer";
+                            }
+                            else if($customer_type == "blocked")
+                                $query = "SELECT * FROM customer WHERE Status = 'blocked'";
+                            else if($customer_type == "verified")
+                                $query = "SELECT * FROM customer WHERE Status = 'verified'";
+                            else
+                                $query = "SELECT * FROM customer WHERE Status = 'unverified'";
+
+
+
                             $select_customer = mysqli_query($connect, $query);
 
                             while ($row = mysqli_fetch_assoc($select_customer)) {

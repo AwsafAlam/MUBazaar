@@ -292,7 +292,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                         if(isset($_GET['search'])){
 
-                                            $list_query = "SELECT * FROM movie WHERE LOWER(name) LIKE '{$_GET['search']}%' ORDER by name ASC;";
+//                                            $list_query = "SELECT * FROM movie WHERE LOWER(name) LIKE '{$_GET['search']}%' ORDER by name ASC;";
+                                            $sKey = $_GET['search'];
+                                            $list_query  = "CALL MOVIE_SEARCH('{$sKey}')";
                                             $list_rslt = mysqli_query($connect, $list_query);
 
                                         }else{

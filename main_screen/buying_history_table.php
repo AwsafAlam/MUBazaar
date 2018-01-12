@@ -16,6 +16,10 @@
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 <thead>
                             <tr>
                                 <th style="text-align:center">Order ID</th>
@@ -97,9 +101,9 @@
 //                                    }
 
                                     if ($shipping_status == 'shipped') {
-                                        echo "<td align='center'><a class='material-icons' style='color:green;' title='verified'>Shipped</a></td>";
+                                        echo "<td align='center'><a class=\"material-icons\">local_shipping</a></td>";
                                     }else{
-                                        echo "<td align='center'><a class='material-icons' style='color:orange;' title='unverified'>Not shipped yet</a></td>";
+                                        echo "<td align='center'>In queue</td>";
                                     }
 
                                     echo "<td align='center'>{$shipped_date}</td>";
@@ -142,9 +146,9 @@
                                     echo "<td align='center'>{$product_quantity}</td>";
                                     echo "<td rowspan='{$rowspan}'>{$total_cost}</td>";
                                     if ($shipping_status == 'shipped') {
-                                        echo "<td rowspan='{$rowspan}' align='center'><a class='material-icons' style='color:green;' title='verified'>Shipped</a></td>";
+                                        echo "<td rowspan='{$rowspan}' align='center'><a class=\"material-icons\">local_shipping</a></td>";
                                     }else{
-                                        echo "<td rowspan='{$rowspan}' align='center'><a class='material-icons' style='color:orange;' title='unverified'>Not shipped yet</a></td>";
+                                        echo "<td rowspan='{$rowspan}' align='center'>In queue</td>";
                                     }
                                     echo "<td rowspan='{$rowspan}' align='center'>{$shipped_date}</td>";
 //                                echo "<td align='center'>Remove</td>";

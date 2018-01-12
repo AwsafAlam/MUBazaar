@@ -6,6 +6,8 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 $customer_id = $_SESSION['customer_id'];
 
+
+
 $query = "SELECT * FROM customer ";
 $query .= "WHERE ID = {$customer_id};";
 
@@ -24,7 +26,32 @@ if($row['image'] == null){
 }else{
     $customer_image = $row['image'];
 }
+if(isset($_POST['delete_id'])){
+    $delete_id = $_POST['delete_id'];
+    $query = "DELETE FROM customer WHERE ID = {$delete_id}";
+    $delete_user_query = mysqli_query($connect, $query);
 
+    $message_body = " Your account has been deleted. Feel free to come back. Meanwhile, you can contact with admin using contact form in contacts portion ";
+    $message_email = $customer_email;
+    $mailSender = new MailSender($message_email, "MUBazaar :: your can't use your account anymore!!!", "Account Deleted", $message_body);
+
+    $mailSender->requestMailSend();
+
+    $_SESSION['customer_name'] = null;
+    $_SESSION['customer_id'] = null;
+    $_SESSION['customer_email'] = null;
+    unset($_SESSION['customer_name']);
+    unset($_SESSION['customer_id']);
+    unset($_SESSION['customer_email']);
+    if(isset($_SESSION['is_buetian'])){
+        $_SESSION['is_buetian'] = null;
+        unset($_SESSION['is_buetian']);
+
+    }
+
+    header("Location: index.php");
+
+}
 
 
 
@@ -223,9 +250,12 @@ if(isset($_POST['save'])){
 
 
                     <div style="text-align:center;margin-top:20px;">
-                        <input class="btn btn-danger btn-circle btn-block cd-popup-trigger" style="-moz-border-radius: 20px;
+                        <form action="" method="post">
+                        <button class="btn btn-danger btn-circle btn-block cd-popup-trigger" style="-moz-border-radius: 20px;
                                                                                                    -webkit-border-radius: 20px;
-                                                                                                   border-radius: 20px;" type="submit" name="deleteAcc" value="Delete Account">
+                                                                                                   border-radius: 20px;" type="submit" name="delete_id" value="<?php echo $customer_id; ?>">Delete Account</button>
+                        </form>
+
 
                     </div>
                 </div>

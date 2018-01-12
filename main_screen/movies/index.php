@@ -6,12 +6,8 @@ if (session_status() == PHP_SESSION_NONE) {
 //    $customer_id = $_SESSION['customer_id'];
 }
 
-
-
 $query = "SELECT * FROM movie;";
 $rslt = mysqli_query($connect, $query);
-
-
 
 ?>
 
@@ -243,8 +239,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 $movie_summary = $row['summary'];
                                 $movie_id = $row['id'];
                                 $movie_image = $row['image'];
-
-
 
 
 

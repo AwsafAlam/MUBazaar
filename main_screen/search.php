@@ -186,7 +186,7 @@ $results = $paginator->getData( $limit, $page );
                            
                            
                             <div class="grid_1_of_4 images_1_of_4">
-                                <h4><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                                <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
                                 <a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $single_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
                                 <div class="price-details">
                                     <div class="price-number">

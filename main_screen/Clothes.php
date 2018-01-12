@@ -192,7 +192,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
                             <div class="grid_1_of_4 images_1_of_4">
-                                <h4><a href="preview_edit.php?table=clothes&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                                <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=clothes&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
                                 <a href="preview_edit.php?table=clothes&id=<?php  echo $prod_id ?>"><img  width="120" height="120" src="images/clothes/<?php echo $prod_image_1?>" alt="" /></a>
                                 <div class="price-details">
                                     <div class="price-number">

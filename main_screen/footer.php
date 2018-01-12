@@ -3,10 +3,8 @@
 
             <div class="footer-nav">
                 <ul>
-                    <li><a href="#">Terms of Use</a> : </li>
-                    <li><a href="#">Privacy Policy</a> : </li>
+                    <li><a href="faq.php">FAQ</a> : </li>
                     <li><a href="contact.php">Contact Us</a> : </li>
-                    <li><a href="#">Sitemap</a></li>
                 </ul>
             </div>		
         </div>

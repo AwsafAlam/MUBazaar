@@ -18,6 +18,27 @@ if (isset($_SESSION['customer_id'])) {
 
 ?>
 
+
+
+<?php
+
+if(isset($_GET['action']) && $_GET['action'] == 'delete'){
+    $movie_id = $_GET['id'];
+
+    $cart_query = "DELETE FROM movie_cart WHERE customer_id = {$customer_id} AND ";
+    $cart_query .= "movie_id = {$movie_id};";
+
+
+    $cart_query_rslt = mysqli_query($connect,$cart_query);
+    if(!$cart_query_rslt){
+        die(mysqli_error($connect));
+    }
+    header("Location: cart.php");
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,6 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <tr>
                                                 <th>Movie</th>
                                                 <th>Price</th>
+                                                <th style="text-align:center">Remove</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -158,6 +180,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <tr>
                                                 <td style="text-align: left" class="w3-list-img"><a target="_blank" href="single.php?id=<?php echo $movie_id; ?>"><img width="56px" height="75px" src="images/<?php echo $movie_image ?>" alt="" /> <span><?php echo $movie_name ?></span></a></td>
                                                 <td style="text-align: left"><?php echo $movie_price ?></td>
+                                                <?php echo "<td align='center'><a  href = 'cart.php?action=delete&id={$movie_id}' style='color:black;' class='trash-button delete_anchor glyphicon glyphicon-trash'></a></p></td>"; ?>
                                             </tr>
 
 
@@ -170,7 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </tr>
 
                                             <tr>
-                                                <td style="text-align:center;border: 0;" colspan="2">
+                                                <td style="text-align:center;border: 0;" colspan="3">
                                                     <div style="text-align:center;">
 
                                                         <form action="movie_credit.php?"

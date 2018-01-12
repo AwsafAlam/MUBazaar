@@ -179,26 +179,42 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
     <body>
 
 
-    <?php if(!isset($_SESSION['entered'])) {
+    <?php
+        $myArray = "";
+        $flag = false;
+        $image = '';
+        if(!isset($_SESSION['entered'])) {
+
         $offer_query = "SELECT occasion, image FROM special_offer WHERE offer_active = 'Y';";
         $offer_rslt = mysqli_query($connect, $offer_query);
-        while($offer_row = mysqli_fetch_assoc($offer_rslt)){
 
+        if(mysqli_num_rows($offer_rslt) > 0){
+            $offer_row = mysqli_fetch_assoc($offer_rslt);
+            $flag = true;
+            $image = $offer_row['image'];
+            $myArray .= ucfirst($offer_row['occasion']) . "," ;
+        }
+
+        while($offer_row = mysqli_fetch_assoc($offer_rslt)) {
+
+            $myArray .= ucfirst($offer_row['occasion']) . "," ;
+        }}
         ?>
+<?php if($flag){ ?>
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h1 style="text-align: center; font-size: 200%">Special Discount in MUBazaar</h1>
-        <div style="text-align: center"><img style="text-align: center" src="images/<?php echo $offer_row['image'] ?>"/></div>
+        <h1 style="text-align: center; font-size: 200%">Special Discount in MUBazaar :: <?php echo rtrim($myArray,", "); ?> </h1>
+        <div style="text-align: center"><img style="text-align: center" src="images/<?php echo  $image?>"/></div>
 
     </div>
 
 </div>
 
+<?php } ?>
 
-    <?php } } ?>
 
 
 
@@ -355,7 +371,7 @@ include "dell_header.php" ?>
                 ?>
 
                 <div class="grid_1_of_4 images_1_of_4">
-                    <h4><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                    <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
                     <a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $single_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
                     <div class="price-details">
                         <div class="price-number">

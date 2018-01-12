@@ -6,19 +6,24 @@ require ('../mailer.php');
 
 if(isset($_POST['email'])){
     $email = $_POST['email'];
-    $subscriber_select_query = "SELECT * FROM movie_subscriber WHERE email = '{$email}';";
+
+    $subscriber_select_query = "SELECT SUBSCRIBER_ENTRY_CHECK('{$email}') ;";
+
+//    $subscriber_select_query = "SELECT * FROM movie_subscriber WHERE email = '{$email}';";
     $subscriber_select_rslt = mysqli_query($connect, $subscriber_select_query);
+//
+//    if(mysqli_num_rows($subscriber_select_rslt) < 1){
+$row = mysqli_fetch_assoc($subscriber_select_rslt);
+if($row["SUBSCRIBER_ENTRY_CHECK('{$email}')"] != 'TRUE'){
 
-    if(mysqli_num_rows($subscriber_select_rslt) < 1){
-
-
+//    echo $row["SUBSCRIBER_ENTRY_CHECK('{$email}')"];
         $subscriber_query = "INSERT INTO movie_subscriber(email) VALUES('{$email}');";
         mysqli_query($connect, $subscriber_query);
-
+//
         $message_body = "MUMovies is glad to get you as a subscriber for monthly newsletter. Here you will find your favourite movies. Don't forget to let us know if your favourite movie is not in our database.";
         $message_email = $email;
         $mailSender = new MailSender($message_email, "MUMovies :: Welcome to the world of movies!!!", "Take a break & enjoy your favourite movies", $message_body);
-
+//
         $mailSender->requestMailSend();
     }
 

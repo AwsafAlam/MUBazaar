@@ -613,7 +613,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <ul class="popular-products">
 
                         <?php
-                        $query = "SELECT * FROM " . $query_table . " T1 WHERE 3 > (SELECT COUNT(*) FROM " . $query_table . " T2 WHERE T1.item_sold < T2.item_sold) LIMIT 3;"  ;
+//                        $query = "SELECT * FROM " . $query_table . " T1 WHERE 3 > (SELECT COUNT(*) FROM " . $query_table . " T2 WHERE T1.item_sold < T2.item_sold) LIMIT 3;"  ;
+                        $query = "CALL TOP_SOLD_PRODUCTS('$query_table', 3);";
                         $rslt = mysqli_query($connect, $query);
                         while($row = mysqli_fetch_assoc($rslt)){
                             $prod_name = $row['name'];

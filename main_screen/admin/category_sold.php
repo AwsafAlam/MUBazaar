@@ -8,16 +8,28 @@
 
 $distinct_product_query = "SELECT DISTINCT Category_Name FROM category;";
 $distinct_product_rslt = mysqli_query($connect, $distinct_product_query);
+$sdate = '';
 
+$edate = 'Today';
 
 $pi_lebel= array();
 
 $pi_val= array();
 
+$grand_total = 0;
+
 while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
     array_push($pi_lebel, $distinct_product_row['Category_Name']);
 
 }
+
+$total_cost_q = "SELECT SUM(total_cost) FROM customer_order C1 INNER JOIN customer_ordered_products C2 ON C1.order_id = C2.order_id ";
+if(isset($_GET['sdate']) && isset($_GET['edate'])) {
+    $sdate = $_GET['sdate'];
+    $edate = $_GET['edate'];
+    $total_cost_q .= "WHERE order_date BETWEEN '{$sdate}' AND '{$edate}';";
+}
+
 
 
 $category_tables = array("appliances", "electronics", "clothes", "office_supplies", "sports_equipments");
@@ -26,16 +38,20 @@ foreach ($category_tables as $single_table) {
     if(isset($_GET['sdate']) && isset($_GET['edate'])){
         $sdate = $_GET['sdate'];
         $edate = $_GET['edate'];
-        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
+        $p_query = "SELECT SUM(total_cost) FROM customer_order C1 INNER JOIN customer_ordered_products C2 ON C1.order_id = C2.order_id WHERE C2.product_category =  '{$single_table}' ";
         $p_query .= "AND order_date BETWEEN '{$sdate}' AND '{$edate}';";
     }else{
-        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
+        $p_query = "SELECT SUM(total_cost) FROM customer_order C1 INNER JOIN customer_ordered_products C2 ON C1.order_id = C2.order_id WHERE C2.product_category =  '{$single_table}' ;";
     }
+
     $p_query_rslt = mysqli_query($connect, $p_query);
     $p_query_row = mysqli_fetch_assoc($p_query_rslt);
-    array_push($pi_val, $p_query_row['SUM(product_quantity)']);
+    $grand_total = $grand_total + $p_query_row['SUM(total_cost)'];
+    array_push($pi_val, $p_query_row['SUM(total_cost)']);
 
 }
+
+$total_cost_rslt = mysqli_query($connect, $total_cost_q);
 
 
 
@@ -96,6 +112,9 @@ foreach ($category_tables as $single_table) {
             </form>
 
 
+            <h2>Start Date: <?php echo $sdate ?></h2>
+            <h2>End Date: <?php echo $edate  ?></h2>
+            <h2>Total Income: <?php echo $grand_total ?> Taka</h2>
 
                 <div class="container-fluid"  id="two"></div>
                 <script type="text/javascript">
@@ -122,7 +141,7 @@ foreach ($category_tables as $single_table) {
                 <thead>
                 <tr>
                     <th>Product Category</th>
-                    <th>Total Sold</th>
+                    <th>Total Sold(Number of items)</th>
                 </tr>
                 </thead>
 
@@ -136,10 +155,10 @@ foreach ($category_tables as $single_table) {
     if(isset($_GET['sdate']) && isset($_GET['edate'])){
         $sdate = $_GET['sdate'];
         $edate = $_GET['edate'];
-        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ";
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 INNER JOIN customer_ordered_products C2 ON C1.order_id = C2.order_id WHERE C2.product_category =  '{$single_table}' ";
         $p_query .= "AND order_date BETWEEN '{$sdate}' AND '{$edate}';";
     }else{
-        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 JOIN customer_ordered_products C2 WHERE C2.product_category =  '{$single_table}' ;";
+        $p_query = "SELECT SUM(product_quantity) FROM customer_order C1 INNER JOIN customer_ordered_products C2 ON C1.order_id = C2.order_id WHERE C2.product_category =  '{$single_table}' ;";
     }
     $p_query_rslt = mysqli_query($connect, $p_query);
     $p_query_row = mysqli_fetch_assoc($p_query_rslt);

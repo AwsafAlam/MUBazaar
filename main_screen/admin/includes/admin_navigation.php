@@ -34,7 +34,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li class="active">
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     
@@ -49,13 +49,13 @@
 <!--                            </li>-->
 <!--                        </ul>-->
 <!--                    </li>-->
-                    <li>
+                    <li class="active">
                         <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Add Product</a>
                     </li>
                     
-                    <li class="active">
-                        <a href="review.php"><i class="fa fa-fw fa-file"></i> Product Reviews</a>
-                    </li>
+<!--                    <li class="active">-->
+<!--                        <a href="review.php"><i class="fa fa-fw fa-file"></i> Product Reviews</a>-->
+<!--                    </li>-->
                     
                     <li class="active">
                         <a href="view_customers.php"><i class="fa fa-user"></i> Customers</a>
@@ -67,20 +67,24 @@
                     </li>
 
                     <li class="active">
-                        <a href="view_polls.php"><i class="	fa fa-bar-chart"></i> View Polls</a>
+                        <a href="individual_category.php"><i class="fa fa-user"></i> Products Sale</a>
                     </li>
-                    
-                    <li class="active">
-                        <a href="view_contacts.php"><i class="fa fa-comment"></i> Contact</a>
-                    </li>
+
+<!--                    <li class="active">-->
+<!--                        <a href="view_polls.php"><i class="	fa fa-bar-chart"></i> View Polls</a>-->
+<!--                    </li>-->
+<!--                    -->
+<!--                    <li class="active">-->
+<!--                        <a href="view_contacts.php"><i class="fa fa-comment"></i> Contact</a>-->
+<!--                    </li>-->
 
                     <li class="active">
                         <a href="offers.php"><i class="fa fa-shopping-cart"></i> Offers</a>
                     </li>
                     
-                    <li>
-                        <a href="chat/admin_chat_index.php"><i class="fa fa-wechat"></i> Chat</a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="chat/admin_chat_index.php"><i class="fa fa-wechat"></i> Chat</a>-->
+<!--                    </li>-->
 
                     <li class="active">
                         <a href="orders.php"><i class="fa fa-shopping-cart"></i> Orders</a>

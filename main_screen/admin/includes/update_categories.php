@@ -61,7 +61,7 @@
                 die("FAILED " . mysqli_error($connect));
             }
 
-            //$offer = $_POST['offer_name'];
+            $offer = $_POST['offer_name'];
             $product_id = $connect->insert_id;
             foreach ($_POST['offer_name'] as $select)
             {

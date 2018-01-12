@@ -4,40 +4,73 @@
 
 <?php
 
+$is_selected = false;
+$selected_offer = 'nothing selected';
+$select_array = array();
+
 
 $select_offer_query = "SELECT occasion FROM special_offer WHERE offer_active = 'Y';";
 $select_offer_rslt = mysqli_query($connect, $select_offer_query);
 
 
-$is_selected = false;
-$selected_offer = 'nothing selected';
+
 
 if(mysqli_num_rows($select_offer_rslt) > 0){
-    $select_offer_row = mysqli_fetch_assoc($select_offer_rslt);
+    while($select_offer_row = mysqli_fetch_assoc($select_offer_rslt)){
+        array_push($select_array, $select_offer_row['occasion']);
+    }
     $is_selected = true;
-    $selected_offer = $select_offer_row['occasion'];
 }
 
 
-    if(isset($_POST['offer'])){
-        $offer = $_POST['offer'];
+if(isset($_POST['offer_btn'])){
+//    $offer = $_POST['offer'];
+//
+//    if($is_selected){
+//        $offer_query = "UPDATE special_offer SET offer_active = 'N' WHERE occasion = '{$selected_offer}';";
+//        mysqli_query($connect, $offer_query);
+//    }
+//
+//
+//
+//    if($offer != "-1"){
+//
+//        $offer_query = "UPDATE special_offer SET offer_active = 'Y' WHERE occasion = '{$offer}';";
+//        mysqli_query($connect, $offer_query);
+//        $selected_offer = $offer;
+//    }else{
+//        $selected_offer = 'nothing selected';
+//    }
 
-        if($is_selected){
-            $offer_query = "UPDATE special_offer SET offer_active = 'N' WHERE occasion = '{$selected_offer}';";
-            mysqli_query($connect, $offer_query);
-        }
+
+    $offer = $_POST['offer_name'];
+
+
+        $offer_query = "UPDATE special_offer SET offer_active = 'N' ;";
+        mysqli_query($connect, $offer_query);
 
 
 
-        if($offer != "-1"){
-
-            $offer_query = "UPDATE special_offer SET offer_active = 'Y' WHERE occasion = '{$offer}';";
-            mysqli_query($connect, $offer_query);
-
-
-
+    $select_array = array();
+    foreach ($_POST['offer_name'] as $select)
+    {
+        //echo "You have selected :" .$select; // Displaying Selected Value
+        $query = "UPDATE special_offer SET offer_active = 'Y' WHERE occasion = '{$select}';";
+        $rslt = mysqli_query($connect,$query);
+        array_push($select_array, $select);
+        if(!$rslt){
+            die("FAILED " . mysqli_error($connect));
         }
     }
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -125,18 +158,28 @@ if(mysqli_num_rows($select_offer_rslt) > 0){
             <div class="row">
                 <div class="col-lg-12">
 
-                    <h1>Selected Offer: <?php if($is_selected) echo ucfirst($selected_offer); ?></h1>
+                    <h1>Selected Offer: <?php $myArray = "" ; foreach ($select_array as $singleOffer) $myArray .= ucfirst($singleOffer) . "," ; echo rtrim($myArray,", ");?></h1>
 
                     <div class="col-sm-4">
-                        <div class="b-select-wrap">
+
+
                             <form action="" method="post" name="offer_form">
-                            <select name="offer" class="b-select">
-                                <option value="-1" selected>Choose Offer</option>
-                                <option value="winter">Winter</option>
-                                <option value="summer">Summer</option>
-                                <option value="eid">EID</option>
-                            </select>
-                        </div>
+
+<!--                            <select name="offer" class="b-select">-->
+<!--                                <option value="-1" selected>Invalidate Offer</option>-->
+<!--                                <option value="winter">Winter</option>-->
+<!--                                <option value="summer">Summer</option>-->
+<!--                                <option value="eid">EID</option>-->
+<!--                            </select>-->
+
+                                <select multiple class="form-control" id="sel2" name="offer_name[]">
+                                    <option value="summer">summer</option>
+                                    <option value="winter">winter</option>
+                                    <option value="eid">eid</option>
+                                    <option value="none">none</option>
+                                </select>
+
+
 
                     </div>
 
@@ -150,7 +193,7 @@ if(mysqli_num_rows($select_offer_rslt) > 0){
 
                             <input class="btn btn-primary btn-block" style="-moz-border-radius: 20px;
                                                                             -webkit-border-radius: 20px;
-                                                                            border-radius: 20px;" type="submit" name="search_submit" value="Apply">
+                                                                            border-radius: 20px;" type="submit" name="offer_btn" value="Apply">
 
                             </form>
                         </div>
