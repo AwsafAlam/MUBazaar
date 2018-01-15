@@ -65,7 +65,7 @@
                                     echo "<td  align='center'>{$shipping_address}</td>";
 
 
-                                    $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                    $name_query = "SELECT name FROM product WHERE category = '{$product_category}' AND id = {$product_id};";
                                     $name_rslt = mysqli_query($connect, $name_query);
                                     $name_row = mysqli_fetch_assoc($name_rslt);
                                     $prod_cat = $product_category;
@@ -117,7 +117,7 @@
                                     echo "<td rowspan='{$rowspan}' align='center'>{$shipping_address}</td>";
 
 
-                                    $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                    $name_query = "SELECT name FROM product WHERE category =  '{$product_category}' AND id = {$product_id};";
                                     $name_rslt = mysqli_query($connect, $name_query);
                                     $name_row = mysqli_fetch_assoc($name_rslt);
                                     $prod_cat = $product_category;
@@ -174,7 +174,7 @@
 //                                        echo "<td align='center'>{$shipping_address}</td>";
 
 
-                                        $name_query = "SELECT name FROM `{$product_category}` WHERE id = {$product_id};";
+                                        $name_query = "SELECT name FROM product WHERE category =  '{$product_category}' AND  id = {$product_id};";
                                         $name_rslt = mysqli_query($connect, $name_query);
                                         $name_row = mysqli_fetch_assoc($name_rslt);
                                         $prod_cat = $product_category;
@@ -228,7 +228,6 @@
                                 }
                             }
                             ?>
-
 
 </tbody>
 

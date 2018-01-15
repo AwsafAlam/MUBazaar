@@ -241,7 +241,7 @@ include "dell_header.php" ?>
 
                         $category_tables = array("electronics", "appliances", "clothes", "office_supplies", "sports_equipments");
                         foreach ($category_tables as $single_table) {
-                            $query = "SELECT name, image_1, id FROM `{$single_table}` ORDER BY id DESC LIMIT 5;";
+                            $query = "SELECT name, image_1, id FROM product WHERE category = '{$single_table}' ORDER BY id DESC LIMIT 5;";
                             $rslt = mysqli_query($connect, $query);
                             $count = mysqli_num_rows($rslt);
                             if ($count == 0) {
@@ -258,7 +258,7 @@ include "dell_header.php" ?>
                                        title="img1"> <img
                                                 src="images/<?php echo $single_table . "/" . $prod_image_1; ?>"
                                                 width="100px" height="100px" alt="<?php echo $prod_name; ?>"/>
-                                        <p><?php echo $prod_name; ?></p></a>
+                                        <p><?php echo $prod_name ; ?></p></a>
 
 
                                 <?php }
@@ -354,7 +354,7 @@ include "dell_header.php" ?>
 
     $category_tables = array("electronics", "appliances", "clothes", "office_supplies", "sports_equipments");
     foreach ($category_tables as $single_table) {
-        $query = "SELECT name,price,image_1,id FROM `{$single_table}` ";
+        $query = "SELECT name,price,image_1,id FROM product WHERE category = '{$single_table}' ";
         $rslt = mysqli_query($connect, $query);
         $count = mysqli_num_rows($rslt);
         if ($count == 0) {
@@ -371,7 +371,7 @@ include "dell_header.php" ?>
                 ?>
 
                 <div class="grid_1_of_4 images_1_of_4">
-                    <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                    <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><?php echo strlen($prod_name) > 50 ? substr($prod_name,0,50)."..." : $prod_name; ?></a></h4>
                     <a href="preview_edit.php?table=<?php echo $single_table; ?>&id=<?php  echo $prod_id ?>"><img src="images/<?php echo $single_table."/".$prod_image_1?>" alt="" width="120" height="120"/></a>
                     <div class="price-details">
                         <div class="price-number">
@@ -402,174 +402,6 @@ include "dell_header.php" ?>
             <?php } } } ?>
 
 
-
-
-<!--        <div class="grid_1_of_4 images_1_of_4">-->
-<!--            <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--            <a href="preview.html"><img src="images/product-img1.jpg" alt=""/></a>-->
-<!--            <div class="price-details">-->
-<!--                <div class="price-number">-->
-<!--                    <p><span class="rupees">$839.93 </span></p>-->
-<!--                </div>-->
-<!--                <div class="add-cart">-->
-<!--                    <h4><a href="preview.html">More Info</a></h4>-->
-<!--                </div>-->
-<!--                <div class="clear"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--                <div class="grid_1_of_4 images_1_of_4">-->
-<!--                    <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                    <a href="preview.html"><img src="images/product-img2.jpg" alt=""/></a>-->
-<!--                    <div class="price-details">-->
-<!--                        <div class="price-number">-->
-<!--                            <p><span class="rupees">$839.93 </span></p>-->
-<!--                        </div>-->
-<!--                        <div class="add-cart">-->
-<!--                            <h4><a href="preview.html">More Info</a></h4>-->
-<!--                        </div>-->
-<!--                        <div class="clear"></div>-->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
-<!--                <div class="grid_1_of_4 images_1_of_4">-->
-<!--                    <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                    <a href="preview.html"><img src="images/product-img3.jpg" alt=""/></a>-->
-<!--                    <div class="price-details">-->
-<!--                        <div class="price-number">-->
-<!--                            <p><span class="rupees">$839.93 </span></p>-->
-<!--                        </div>-->
-<!--                        <div class="add-cart">-->
-<!--                            <h4><a href="preview.html">More Info</a></h4>-->
-<!--                        </div>-->
-<!--                        <div class="clear"></div>-->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
-<!--                <div class="grid_1_of_4 images_1_of_4">-->
-<!--                    <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                    <a href="preview.html"><img src="images/product-img4.jpg" alt=""/></a>-->
-<!--                    <div class="price-details">-->
-<!--                        <div class="price-number">-->
-<!--                            <p><span class="rupees">$839.93 </span></p>-->
-<!--                        </div>-->
-<!--                        <div class="add-cart">-->
-<!--                            <h4><a href="preview.html">More Info</a></h4>-->
-<!--                        </div>-->
-<!--                        <div class="clear"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                </div>-->
-<!--                <div class="section group">-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img1.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img2.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img3.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img4.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="section group">-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img1.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img2.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img3.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="grid_1_of_4 images_1_of_4">-->
-<!--                        <h4><a href="preview.html">Whirlpool LTE5243D 3.4 CuFt.... </a></h4>-->
-<!--                        <a href="preview.html"><img src="images/product-img4.jpg" alt=""/></a>-->
-<!--                        <div class="price-details">-->
-<!--                            <div class="price-number">-->
-<!--                                <p><span class="rupees">$839.93 </span></p>-->
-<!--                            </div>-->
-<!--                            <div class="add-cart">-->
-<!--                                <h4><a href="preview.html">More Info</a></h4>-->
-<!--                            </div>-->
-<!--                            <div class="clear"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
 
 
 

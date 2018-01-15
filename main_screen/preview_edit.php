@@ -10,7 +10,7 @@ $query_id = $_GET['id'];
 $query_table = $_GET['table'];
 
 
-$query = "SELECT * FROM " . $query_table . " WHERE id = " . $query_id . ";";
+$query = "SELECT * FROM product WHERE category = '" . $query_table . "' AND id = " . $query_id . ";";
 
 $rslt = mysqli_query($connect, $query);
 
@@ -285,7 +285,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 $get_result = mysqli_query($connect, $get_query);
                                                 $num_rows = mysqli_num_rows($get_result);
 
-                                                $check_query = "SELECT units_in_stock FROM `{$prod_category}` WHERE id = {$prod_id};";
+                                                $check_query = "SELECT units_in_stock FROM product WHERE category = '{$prod_category}' AND id = {$prod_id};";
                                                 $check_query_result = mysqli_query($connect, $check_query);
                                                 $check_query_row = mysqli_fetch_assoc($check_query_result);
 
@@ -751,17 +751,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <?php
                         if (isset($_SESSION['customer_id'])){
 
+                            include "db.php";
+
                         $customer_id = $_SESSION['customer_id'];
-                        echo $recent_list_query = "SELECT id, product_table, product_id FROM `recently_viewed` WHERE customer_id = {$customer_id} ORDER BY id DESC;";
+                        $recent_list_query = "SELECT id, product_table, product_id FROM `recently_viewed` WHERE customer_id = {$customer_id} ORDER BY id DESC;";
                         $recent_list_rslt = mysqli_query($connect,$recent_list_query);
 
-                        if(mysqli_num_rows($recent_list_rslt) > 0){
+
                         while($recent_list_row = mysqli_fetch_assoc($recent_list_rslt)){
                         $recent_list_primary_key = $recent_list_row['id'];
                         $product_table =  $recent_list_row['product_table'];
                         $product_id = $recent_list_row['product_id'];
 
-                        $single_product_query = "SELECT name, image_1, id FROM `{$product_table}` WHERE id = {$product_id};";
+                        $single_product_query = "SELECT name, image_1, id FROM product WHERE category = '{$product_table}' AND id = {$product_id};";
                         $single_product_rslt = mysqli_query($connect, $single_product_query);
                         $single_product_row =  mysqli_fetch_assoc($single_product_rslt);
 
@@ -777,9 +779,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         ?>
 
-                        <a href="preview_edit.php?table=<?php echo  $product_table; ?>&id=<?php echo $prod_id; ?>" title="img1"> <img src="images/<?php echo $product_table . "/" . $prod_image_1 ; ?>" width="100px" height="100px" alt="<?php echo $prod_name;?>"/>
+                        <a href="preview_edit.php?table=<?php echo  $product_table; ?>&id=<?php echo $prod_id; ?>" title="img1"> <img src="images/<?php echo $product_table . "/" . $prod_image_1 ; ?>" width="100px" height="100px" alt="<?php echo strlen($prod_name) > 50 ? substr($prod_name,0,50)."..." : $prod_name;?>"/>
 
-                            <?php } } } ?>
+                            <?php }  } ?>
 
 
                             <!--                            <a href="#" title="img2"> <img src="images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>-->
@@ -802,9 +804,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </span>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
+
+
 
 <?php include "footer.php" ?>
 

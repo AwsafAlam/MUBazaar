@@ -19,11 +19,13 @@ $customer_name = $row['Customer_Name'];
 
 $latitudeArray = array();
 $longitudeArray = array();
+$indexArray = array();
 $shop_query = "SELECT * FROM shop_branch;";
 $shop_rslt = mysqli_query($connect, $shop_query);
 
 
 while($shop_row = mysqli_fetch_assoc($shop_rslt)){
+    array_push($indexArray, $shop_row['id']);
     array_push($latitudeArray ,$shop_row['latitude']);
     array_push($longitudeArray ,$shop_row['longitude']);
 }
@@ -114,14 +116,14 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
           var maxDistance = 9007199254740991;
 
 
-          function ajaxPHPCall(minDistance){
+          function ajaxPHPCall(minDistance, minBranch){
               // Create our XMLHttpRequest object
               var hr = new XMLHttpRequest();
               // Create some variables we need to send to our PHP file
               var url = "ajaxPHP.php";
               var fn = minDistance;
 
-              var vars = "minDist="+fn;
+              var vars = "minDist="+fn + "&minBranch=" + minBranch;
               hr.open("POST", url, true);
               // Set content type header information for sending url encoded variables in the request
 
@@ -149,6 +151,8 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
 
           function getDistance(locationObj){
 
+
+              var idArr = <?php echo json_encode($indexArray);?>;
 
               var stringLatArr = <?php echo json_encode($latitudeArray);?>;
               var stringLongArr = <?php echo json_encode($longitudeArray);?>;
@@ -185,6 +189,8 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
 
                       var minDist = maxDistance;
 
+                      var minIndex = undefined;
+
                       for (var i = 0; i < origins.length; i++) {
                           var results = response.rows[i].elements;
                           for (var j = 0; j < results.length; j++) {
@@ -205,6 +211,7 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
                                   actualDistance = parseFloat(actualDistance);
                                   if(actualDistance < minDist){
                                       minDist = actualDistance;
+                                      minIndex = i;
                                   }
                               }
                               catch (e){
@@ -213,10 +220,10 @@ while($shop_row = mysqli_fetch_assoc($shop_rslt)){
                           }
                       }
                       var numericalMinDist = minDist;
-                      console.log("Minimum Distance is " + minDist);
+                      console.log("Minimum Distance is " + minDist + " index is " + minIndex);
 
                       if(numericalMinDist !== maxDistance){
-                          ajaxPHPCall(numericalMinDist);
+                          ajaxPHPCall(numericalMinDist, idArr[minIndex]);
                           document.getElementById("proceedCheckout").disabled = false;
                       }else{ // means try block couldn't execute for at least one time
                           document.getElementById("deliveryCost").innerHTML =   "Undefined";

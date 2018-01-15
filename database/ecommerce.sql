@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2018 at 01:50 AM
+-- Generation Time: Jan 15, 2018 at 11:52 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -95,7 +95,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `admin_name`, `admin_email`, `admin_password`, `admin_active`) VALUES
-(1, 'Farhan Tanvir Utshaw', 'utshaw105@gmail.com', '123456', 'Y'),
+(1, 'Farhan Tanvir Utshaw', 'utshaw105@gmail.com', '123456', 'N'),
 (2, 'Masfiqur Rahaman', 'masfiqallid@gmail.com', '123456', 'N');
 
 -- --------------------------------------------------------
@@ -125,7 +125,7 @@ CREATE TABLE `appliances` (
 --
 
 INSERT INTO `appliances` (`sub_category`, `id`, `name`, `description`, `price`, `product_model`, `shipping_weight`, `units_in_stock`, `image_1`, `image_2`, `image_3`, `image_4`, `item_sold`) VALUES
-('washing machine', 1, 'Lg Washing Machine FH0B8NDL22', 'Capacity: 6 KG\r\nType: Auto\r\n6 Motion Direct Drive\r\nInverter Direct Drive Motor\r\nEasy Installment Payment Facilities', 49410, 'FH0B8NDL22', 50, 13, 'lg-wash-machine-FH0B8NDL22-front.jpg', 'lg-wash-machine-FH0B8NDL22-angle.jpg', 'lg-wash-machine-FH0B8NDL22-open.jpg', 'lg-wash-machine-FH0B8NDL22-angle-reverse.jpg', 0);
+('washing machine', 103, 'Lg Washing Machine FH0B8NDL22', 'Capacity: 6 KG\r\nType: Auto\r\n6 Motion Direct Drive\r\nInverter Direct Drive Motor\r\nEasy Installment Payment Facilities', 49410, 'FH0B8NDL22', 50, 13, 'lg-wash-machine-FH0B8NDL22-front.jpg', 'lg-wash-machine-FH0B8NDL22-angle.jpg', 'lg-wash-machine-FH0B8NDL22-open.jpg', 'lg-wash-machine-FH0B8NDL22-angle-reverse.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -305,6 +305,7 @@ INSERT INTO `credit_card` (`ID`, `Password`, `Card_Type`, `CVV`, `Credit_No`, `C
 (1152017, '123456', 'master', '1234', '516728118938273', 410204),
 (1152017, '123456', 'visa', '1234', '1806346937862585', 27558.999999999996),
 (1152017, '123456', 'visa', '1234', '4485306253891722', 2),
+(1152017, '123456', 'visa', '1234', '852349322448392', 9611634.243999999),
 (1152020, '123456', 'visa', '1234', '4249547810258841', 84103),
 (1152022, '123456', 'visa', '1234', '1778665406544689', 21927),
 (1152025, '123456', 'visa', '1234', '1656135708769424', 37309.59999999999),
@@ -340,7 +341,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`ID`, `Customer_Name`, `Password`, `Mobile`, `Address`, `Email`, `Status`, `Confirm_Code`, `point`, `image`, `customer_active`) VALUES
 (1152015, 'Yunus Khan', '123456', '+8801111111111', 'House No.72, Road No. 2, West Polashi,Dhaka', 'yunus@gmail.com', 'blocked', 0, 16700, '1152015.jpg', 'N'),
-(1152017, 'Farhan Utshaw', '123456', '+8801781973546', 'Narayanganj,Bangladesh', 'farhan.tanvir.utshaw@gmail.com', 'blocked', 0, 116867.2, 'Creative-Tail-People-boy.svg.png', 'N'),
+(1152017, 'Farhan Utshaw', '123456', '+8801781973546', 'Narayanganj,Bangladesh', 'farhan.tanvir.utshaw@gmail.com', 'verified', 0, 143159.87559999997, 'Creative-Tail-People-boy.svg.png', 'Y'),
 (1152019, 'Nasir Hossain', '123456', '+8801111111111', 'Dhaka,Bangladesh', 'nasir@example.com', 'unverified', 1392166867, 0, '', 'N'),
 (1152020, 'Masfiq', '123456', '+8801521332156', 'Cantonment, Dhaka, Bangladesh', 'masfiq111@gmail.com', 'verified', 0, 0, '', 'N'),
 (1152021, 'Miadad Hassan', '123456', '+8801111111111', 'Chittagong , Bangladesh', 'unregistered@example.com', 'unverified', 2014392384, 0, '', 'N'),
@@ -419,7 +420,8 @@ INSERT INTO `customer_order` (`customer_id`, `order_id`, `shipping_address`, `to
 (1152017, 20, 'Shahid Smirti Hall Connecting Road, Dhaka, Bangladesh', 35047.2, '2018-01-08', 'not_shipped', NULL),
 (1152026, 22, 'BUET Central Road, Dhaka, Bangladesh', 86756.2, '2018-01-10', NULL, NULL),
 (1152017, 23, 'Kuakata Tours, Shaheed Tajuddin Ahmed Avenue, Dhaka, Dhaka Division, Bangladesh', 3317.2, '2018-01-10', 'shipped', '2018-01-10'),
-(1152034, 24, 'Bangladesh', 4430, '2018-01-10', 'shipped', '2018-01-10');
+(1152034, 24, 'Bangladesh', 4430, '2018-01-10', 'shipped', '2018-01-10'),
+(1152017, 25, 'à¦°à§‹à¦•à§‡à¦¯à¦¼à¦¾ à¦®à¦žà§à¦œà¦¿à¦², Narayanganj, Bangladesh', 87642.252, '2018-01-12', NULL, NULL);
 
 --
 -- Triggers `customer_order`
@@ -476,7 +478,10 @@ INSERT INTO `customer_ordered_products` (`id`, `order_id`, `product_category`, `
 (24, 22, 'electronics', 1012, 1),
 (25, 22, 'sports_equipments', 1, 1),
 (26, 23, 'sports_equipments', 2, 1),
-(27, 24, 'sports_equipments', 2, 1);
+(27, 24, 'sports_equipments', 2, 1),
+(28, 25, 'office_supplies', 1, 1),
+(29, 25, 'electronics', 1002, 1),
+(30, 25, 'sports_equipments', 101, 1);
 
 -- --------------------------------------------------------
 
@@ -506,7 +511,7 @@ CREATE TABLE `electronics` (
 
 INSERT INTO `electronics` (`sub_category`, `id`, `name`, `description`, `price`, `product_model`, `shipping_weight`, `units_in_stock`, `image_1`, `image_2`, `image_3`, `image_4`, `item_sold`) VALUES
 ('smartphone', 1001, 'Samsung Galaxy S8', 'Dimensions: 148.9 x 68.1 x 8.0 mm \r\nWeight: 155 g<br>	\r\nDisplay: 5.8\" Quad HD+ Super AMOLED (2960x1440)\r\n570 ppi<br>\r\nCamera: 8 MP', 53990, 'SM-G950UZVATFN ', '155 gm', 78, 'samsung-galaxy-s8.jpg', 'samsung_galaxy_s8-front.png', 'S8_Black_back.jpg', 'samsung-galaxy-s8.jpg', 2),
-('smartphone', 1002, 'Iphone X', 'Display:	5.8-inch (diagonal) all-screen OLED Multi-Touch display<br>\r\nOS	iOS 11<br>\r\nCamera	Primary- Dual 12 MP,secondary-7 MP<br>\r\nCPU	Hexa-core<br>\r\nBATTERY	Non-removable Li-Ion battery<br>\r\nRAM	3GB<br>\r\nROM	64/256 GB<br>\r\nSensor	Face ID<br>\r\nBarometer<br>\r\nThree-axis gyro<br>\r\nAccelerometer<br>\r\nProximity sensor<br>\r\nAmbient light sensor<br>', 82142, 'A1865', '174 gm', 94, 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 2),
+('smartphone', 1002, 'Iphone X', 'Display:	5.8-inch (diagonal) all-screen OLED Multi-Touch display<br>\r\nOS	iOS 11<br>\r\nCamera	Primary- Dual 12 MP,secondary-7 MP<br>\r\nCPU	Hexa-core<br>\r\nBATTERY	Non-removable Li-Ion battery<br>\r\nRAM	3GB<br>\r\nROM	64/256 GB<br>\r\nSensor	Face ID<br>\r\nBarometer<br>\r\nThree-axis gyro<br>\r\nAccelerometer<br>\r\nProximity sensor<br>\r\nAmbient light sensor<br>', 82142, 'A1865', '174 gm', 93, 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 3),
 ('smartphone', 1003, 'Samsung Galaxy j7 Prime', 'Network Scope	2G, 3G<br>\r\nBattery Type & Performance	Lithium-ion 3000 mAh (removable)<br>\r\nTalk-time: up to 18 hours<br>\r\n3G-usage time: up to 9 hours<br>\r\nBody & Weight	152.4 x 78.6 x 7.5 millimeter, 171 grams<br>\r\nCamera Factors (Back)	4128 x 3096 pixels, autofocus, LED flash, auto face recognition, f/1.9 aperture, panorama mode<br>\r\nCamera Resolution (Back)	13 Megapixel<br>\r\nCamera Resolution (Front)	5 Megapixel, CMOS, LED Flash<br>\r\nChipset	Exynos 7580<br>\r\nDisplay Size & Resolution	5.5 inches, HD 720 x 1200 pixels<br>\r\nDisplay Type	Super AMOLED Touchscreen<br>\r\nGraphics Processing Unit (GPU)	Adreno 405<br>\r\nMemory Card Slot	MicroSD, up to 128 GB<br>\r\nOperating System	Android Lollipop v5.1<br>\r\nProcessor	Octa-core, 1.5 GHz\r\nRAM	1.5 GB<br>\r\nROM	16 GB<br>\r\nSensors	Accelerometer, proximity, hall sensor<br>\r\nSIM Card Type	Dual SIM (Micro-SIM, dual stand-by)<br>\r\nUSB	MicroUSB v2.0<br>\r\nVideo	Full HD (1080p)<br>\r\nWireless LAN	Yes, Wi-Fi direct, hotspot<br>\r\nOther Features	- Bluetooth, GPS, A-GPS, MP3, MP4, Radio, GPRS, Edge, Multitouch, Loudspeaker<br>', 13491, 'SM-J700K', '171 gm', 112, 'samsung-galaxy-j7-prime.jpg', 'samsung-galaxy-j7-prime-front.jpg', 'samsung-galaxy-j7-prime-back.jpg', 'samsung-galaxy-j7-prime-side.jpg', 0),
 ('smartphone', 1004, 'Huawei Honor 8', 'Operating system	Android™ 7.0\r\nUI	Huawei Emotion UI 5.0\r\nCPU Model	Hisilicon Kirin 950\r\nCPU Cores	Octa-core\r\nCPU Frequency	4*Cortex A72 2.3GHz + 4*Cortex A53 1.8GHz + i5 co-processor\r\nSIM	Single nano-SIM (4FF)\r\nUpdate	Huawei OTA (HOTA)\r\nDimensions	145.5 mm (L) x71.0 mm (W) x7.45 mm (T)\r\nColors	Pearl White, Sapphire Blue, Midnight Black\r\nWeight	About 153 g (including the battery)', 34900, 'honor-8', '153 gm', 91, 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 1),
 ('smartphone', 1005, 'Iphone 7', 'Size	 138.3 x 67.1 x 7.1 mm (5.44 x 2.64 x 0.28 in)	<br>\r\nWeight	4.87 ounces (138 grams)<br>\r\nScreen	4.7-inch Retina HD LED-backlit widescreen	<br>\r\nResolution	1,334 x 750 pixels (326 ppi)	<br>\r\nOS	iOS 10	<br>\r\nStorage	32, 128, 256GB	<br>\r\nMicroSD card slot	No<br>	\r\nNFC support	Yes	<br>\r\nProcessor	A10 Fusion with 64-bit architecture, M10 motion coprocessor	<br>\r\nRAM	2GB	<br>\r\nConnectivity	4G LTE, GSM, CDMA, HSPA+, 802.11a/b/g/n/ac Wi-Fi	<br>\r\nCamera	12MP rear, 7MP front	<br>\r\nVideo	4K at 30fps, 1080p at 30 or 60fps	<br>\r\nBluetooth	Yes, version 4.2	<br>\r\nFingerprint sensor	Touch ID	<br>\r\nOther sensors	Barometer, 3-axis gyro, accelerometer, proximity sensor, ambient light sensor	<br>\r\nWater resistant	Yes, IP67 rated	<br>\r\nBattery	Up to 12 hours of internet use on LTE	<br>\r\nCharger	Lightning	<br>\r\nMarketplace	Apple App Store	<br>\r\nColor offerings	Gold, rose gold, silver, black, jet black	<br>', 68400, 'A1660', '138.56 gm', 92, 'iphone-7.jpg', 'iphone-7.jpg', 'iphone-7.jpg', 'iphone-7.jpg', 0),
@@ -679,8 +684,55 @@ CREATE TABLE `office_supplies` (
 --
 
 INSERT INTO `office_supplies` (`sub_category`, `id`, `name`, `description`, `price`, `product_model`, `shipping_weight`, `units_in_stock`, `image_1`, `image_2`, `image_3`, `image_4`, `item_sold`) VALUES
-('paper', 1, 'HP Paper, LaserJet Poly Wrap , 2', 'Ultra white shade perfect for color and black-and-white documents<br>\r\nMedium weight heavy enough for two-sided printing without show-through<br>\r\nForest Stewardship Council (FSC)certified<br>\r\nNOTE: 24lb is the basis weight or thickness which is what paper is sold by along with brightness. 6 pounds is how much the package weighs<br>\r\nMade In The USA<br>', 1000, '115300R', '1.02 kg', 506, '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', '61DxD4WP3ZL._SY355_.jpg', '61ot1ZSZLwL._SY355_.jpg', '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', 6),
-('paper', 2, 'sample', 'sample\r\n        ', 1924.5, 'ee', '1.36 kg', 25, 'default.png', 'default.png', 'default.png', 'default.png', 0);
+('paper', 2, 'sample', 'sample\r\n        ', 1924.5, 'ee', '1.36 kg', 25, 'default.png', 'default.png', 'default.png', 'default.png', 0),
+('paper', 104, 'HP Paper, LaserJet Poly Wrap , 2', 'Ultra white shade perfect for color and black-and-white documents<br>\r\nMedium weight heavy enough for two-sided printing without show-through<br>\r\nForest Stewardship Council (FSC)certified<br>\r\nNOTE: 24lb is the basis weight or thickness which is what paper is sold by along with brightness. 6 pounds is how much the package weighs<br>\r\nMade In The USA<br>', 1000, '115300R', '1.02 kg', 506, '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', '61DxD4WP3ZL._SY355_.jpg', '61ot1ZSZLwL._SY355_.jpg', '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `category` varchar(20) NOT NULL,
+  `sub_category` varchar(32) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `description` varchar(3000) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `product_model` varchar(32) DEFAULT NULL,
+  `shipping_weight` varchar(10) DEFAULT NULL,
+  `units_in_stock` int(11) DEFAULT NULL,
+  `image_1` varchar(64) DEFAULT NULL,
+  `image_2` varchar(64) DEFAULT NULL,
+  `image_3` varchar(64) DEFAULT NULL,
+  `image_4` varchar(64) DEFAULT NULL,
+  `item_sold` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`category`, `sub_category`, `id`, `name`, `description`, `price`, `product_model`, `shipping_weight`, `units_in_stock`, `image_1`, `image_2`, `image_3`, `image_4`, `item_sold`) VALUES
+('clothes', 'boys', 1, 'Columbia Boys\' Steens Mt Ii Flee', '100% Polyester<br>\r\nImported<br>\r\nMachine Wash<br>\r\nZippered hand pockets<br>\r\nModern classic fit <br>\r\n        ', 2500, 'J5A256', '985 gm', 253, '51UROOiSqpL.jpg', '81-IiP7aI5L._UX522_.jpg', '51UROOiSqpL.jpg', '81-IiP7aI5L._UX522_.jpg', 3),
+('office_supplies', 'paper', 2, 'sample', 'sample\r\n        ', 1924.5, 'ee', '1.36 kg', 25, 'default.png', 'default.png', 'default.png', 'default.png', 0),
+('sports_equipments', 'football', 101, 'adidas MLS Glider Soccer Ball', 'Part of the MLS Soccer collection, the design is inspired by the three MLS pillars of club, country, and community<br>\r\nMachine stitched construction and internal nylon wound carcass for maximum durability and long-lasting performance<br>\r\nSpecial TPU exterior material is designed to resist abrasion and last longer<br>\r\nButyl bladder for best air retention to keep the ball\'s shape and stay inflated longer<br>\r\nSize 3 ball suggested for ages 8 and under; size 4 ball suggested for ages 8-12; size 5 ball (official size) suggested for ages 12+. Size 1<br> is a mini ball. Check with your local league for size requirements.', 4500, 'ML5', '650 gm', 645, '51v-NPvUo2L._SY355_.jpg', '818fqUf9YqL._SX355_.jpg', 'AZ3211-2.jpg', 'HEW001420.jpg', 5),
+('sports_equipments', 'helmet', 102, 'Forma Pro Axis Helmet With Steel', 'Full Face Protection<br>\r\nSize Adjustment Strap (SRS)<br>\r\nFabric Covered Shell<br>\r\nMultiple Vents for Easy Air Flow<br>\r\nEngineering Plastic Outer Shell for <br>Optimum Protection<br>', 4200, 'PT003 ', '1.39 kg', 54, '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', 2),
+('appliances', 'washing machine', 103, 'Lg Washing Machine FH0B8NDL22', 'Capacity: 6 KG\r\nType: Auto\r\n6 Motion Direct Drive\r\nInverter Direct Drive Motor\r\nEasy Installment Payment Facilities', 49410, 'FH0B8NDL22', '50', 13, 'lg-wash-machine-FH0B8NDL22-front.jpg', 'lg-wash-machine-FH0B8NDL22-angle.jpg', 'lg-wash-machine-FH0B8NDL22-open.jpg', 'lg-wash-machine-FH0B8NDL22-angle-reverse.jpg', 0),
+('office_supplies', 'paper', 104, 'HP Paper, LaserJet Poly Wrap , 2', 'Ultra white shade perfect for color and black-and-white documents<br>\r\nMedium weight heavy enough for two-sided printing without show-through<br>\r\nForest Stewardship Council (FSC)certified<br>\r\nNOTE: 24lb is the basis weight or thickness which is what paper is sold by along with brightness. 6 pounds is how much the package weighs<br>\r\nMade In The USA<br>', 1000, '115300R', '1.02 kg', 506, '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', '61DxD4WP3ZL._SY355_.jpg', '61ot1ZSZLwL._SY355_.jpg', '522eb6e1-2130-4ff9-8e47-48b2705346b7.jpg', 6),
+('electronics', 'smartphone', 1001, 'Samsung Galaxy S8', 'Dimensions: 148.9 x 68.1 x 8.0 mm \r\nWeight: 155 g<br>	\r\nDisplay: 5.8\" Quad HD+ Super AMOLED (2960x1440)\r\n570 ppi<br>\r\nCamera: 8 MP', 53990, 'SM-G950UZVATFN ', '155 gm', 78, 'samsung-galaxy-s8.jpg', 'samsung_galaxy_s8-front.png', 'S8_Black_back.jpg', 'samsung-galaxy-s8.jpg', 2),
+('electronics', 'smartphone', 1002, 'Iphone X', 'Display:	5.8-inch (diagonal) all-screen OLED Multi-Touch display<br>\r\nOS	iOS 11<br>\r\nCamera	Primary- Dual 12 MP,secondary-7 MP<br>\r\nCPU	Hexa-core<br>\r\nBATTERY	Non-removable Li-Ion battery<br>\r\nRAM	3GB<br>\r\nROM	64/256 GB<br>\r\nSensor	Face ID<br>\r\nBarometer<br>\r\nThree-axis gyro<br>\r\nAccelerometer<br>\r\nProximity sensor<br>\r\nAmbient light sensor<br>', 82142, 'A1865', '174 gm', 94, 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 'iphone-x.jpg', 2),
+('electronics', 'smartphone', 1003, 'Samsung Galaxy j7 Prime', 'Network Scope	2G, 3G<br>\r\nBattery Type & Performance	Lithium-ion 3000 mAh (removable)<br>\r\nTalk-time: up to 18 hours<br>\r\n3G-usage time: up to 9 hours<br>\r\nBody & Weight	152.4 x 78.6 x 7.5 millimeter, 171 grams<br>\r\nCamera Factors (Back)	4128 x 3096 pixels, autofocus, LED flash, auto face recognition, f/1.9 aperture, panorama mode<br>\r\nCamera Resolution (Back)	13 Megapixel<br>\r\nCamera Resolution (Front)	5 Megapixel, CMOS, LED Flash<br>\r\nChipset	Exynos 7580<br>\r\nDisplay Size & Resolution	5.5 inches, HD 720 x 1200 pixels<br>\r\nDisplay Type	Super AMOLED Touchscreen<br>\r\nGraphics Processing Unit (GPU)	Adreno 405<br>\r\nMemory Card Slot	MicroSD, up to 128 GB<br>\r\nOperating System	Android Lollipop v5.1<br>\r\nProcessor	Octa-core, 1.5 GHz\r\nRAM	1.5 GB<br>\r\nROM	16 GB<br>\r\nSensors	Accelerometer, proximity, hall sensor<br>\r\nSIM Card Type	Dual SIM (Micro-SIM, dual stand-by)<br>\r\nUSB	MicroUSB v2.0<br>\r\nVideo	Full HD (1080p)<br>\r\nWireless LAN	Yes, Wi-Fi direct, hotspot<br>\r\nOther Features	- Bluetooth, GPS, A-GPS, MP3, MP4, Radio, GPRS, Edge, Multitouch, Loudspeaker<br>', 13491, 'SM-J700K', '171 gm', 112, 'samsung-galaxy-j7-prime.jpg', 'samsung-galaxy-j7-prime-front.jpg', 'samsung-galaxy-j7-prime-back.jpg', 'samsung-galaxy-j7-prime-side.jpg', 0),
+('electronics', 'smartphone', 1004, 'Huawei Honor 8', 'Operating system	Android™ 7.0\r\nUI	Huawei Emotion UI 5.0\r\nCPU Model	Hisilicon Kirin 950\r\nCPU Cores	Octa-core\r\nCPU Frequency	4*Cortex A72 2.3GHz + 4*Cortex A53 1.8GHz + i5 co-processor\r\nSIM	Single nano-SIM (4FF)\r\nUpdate	Huawei OTA (HOTA)\r\nDimensions	145.5 mm (L) x71.0 mm (W) x7.45 mm (T)\r\nColors	Pearl White, Sapphire Blue, Midnight Black\r\nWeight	About 153 g (including the battery)', 34900, 'honor-8', '153 gm', 91, 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 'huawei-honor-8.jpg', 1),
+('electronics', 'smartphone', 1005, 'Iphone 7', 'Size	 138.3 x 67.1 x 7.1 mm (5.44 x 2.64 x 0.28 in)	<br>\r\nWeight	4.87 ounces (138 grams)<br>\r\nScreen	4.7-inch Retina HD LED-backlit widescreen	<br>\r\nResolution	1,334 x 750 pixels (326 ppi)	<br>\r\nOS	iOS 10	<br>\r\nStorage	32, 128, 256GB	<br>\r\nMicroSD card slot	No<br>	\r\nNFC support	Yes	<br>\r\nProcessor	A10 Fusion with 64-bit architecture, M10 motion coprocessor	<br>\r\nRAM	2GB	<br>\r\nConnectivity	4G LTE, GSM, CDMA, HSPA+, 802.11a/b/g/n/ac Wi-Fi	<br>\r\nCamera	12MP rear, 7MP front	<br>\r\nVideo	4K at 30fps, 1080p at 30 or 60fps	<br>\r\nBluetooth	Yes, version 4.2	<br>\r\nFingerprint sensor	Touch ID	<br>\r\nOther sensors	Barometer, 3-axis gyro, accelerometer, proximity sensor, ambient light sensor	<br>\r\nWater resistant	Yes, IP67 rated	<br>\r\nBattery	Up to 12 hours of internet use on LTE	<br>\r\nCharger	Lightning	<br>\r\nMarketplace	Apple App Store	<br>\r\nColor offerings	Gold, rose gold, silver, black, jet black	<br>', 68400, 'A1660', '138.56 gm', 92, 'iphone-7.jpg', 'iphone-7.jpg', 'iphone-7.jpg', 'iphone-7.jpg', 0),
+('electronics', 'smartphone', 1006, 'Asus Zenfone 4', 'Screen size (inches)	5.50 Touchscreen	Yes Resolution	720x1280 pixels HARDWARE Processor	1.4GHz octa-core Processor make	Snapdragon 430 RAM	4GB Internal storage	64GB Expandable storage	Yes Expandable storage type	microSD Expandable storage up to (GB)	128 CAMERA Rear camera	16-megapixel Flash	Yes Front camera	20-megapixel SOFTWARE Operating System	Android 7.1.1 Skin	ZenUI 4.0 CONNECTIVITY Wi-Fi	Yes Wi-Fi standards supported	802.11 b/g/n GPS	Yes Bluetooth	Yes, v 4.10 NFC	No Infrared	No USB OTG	Yes Headphones	3.5mm FM	No Number of SIMs	2', 50000, 'ZE554KL', '154 gm', 66, 'asus-zenfone-4.jpg', 'asus-zenfone-4.jpg', 'asus-zenfone-4.jpg', 'asus-zenfone-4.jpg', 0),
+('electronics', 'computer', 1007, 'Team Elite Ram 4GB DDR3 (1x8GB) 1600', 'Product Description: Team Elite - DDR3 - 8 GB - SO DIMM 204-pin Product type: RAM memory Capacity: 8 GB Memory Type: DDR3 SDRAM - SO DIMM 204-pin Data Integrity Check: Non-ECC Speed: 1600 MHz (PC3-12800) Latency Timings: CL11 (11-11-11-28) Voltage: 1.5 V', 4600, 'Elite-DDR3', '150 gm', 29, 'team-elite-4gb.jpg', 'team-elite-4gb.jpg', 'team-elite-4gb.jpg', 'team-elite-4gb.jpg', 3),
+('electronics', 'computer', 1008, 'Intel Kaby Lake Core i7 7700K', 'Model - Intel Core i7 7700K<br>\r\nCode-Name - Kaby Lake<br>\r\nGeneration - 7th<br>\r\nBase Frequency - 4.20 GHz<br>\r\nTurbo Frequency Max. - 4.50 GHz<br>\r\nSmart Cache - 8 MB<br>\r\nTDP - 91 W<br>\r\nMemory Max. - 64 GB<br>', 28300, '7700K', '860 gm', 0, 'core-i7-7700k.jpg', 'core-i7-7700k.jpg', 'core-i7-7700k.jpg', 'core-i7-7700k.jpg', 1),
+('electronics', 'computer', 1012, 'Asus PG27AQ-ROG 27 Inch IPS 4K Gaming Monitor', 'Model - Asus PG27AQ-ROG<br>\r\nDisplay Size (Inch) - 27\"<br>\r\nDisplay Resolution - 3840 x 2160<br>\r\nContrast Ratio (TCR/DCR) - 1000:1<br>', 82000, 'PG27AQ', '1.8 kg', 52, 'asus-rog-swift-pg27.jpg', 'asus-rog-swift-pg27.jpg', 'asus-rog-swift-pg27.jpg', 'asus-rog-swift-pg27.jpg', 2),
+('electronics', 'computer', 1014, 'Apple iMac 4K Retina 21.5 Inch (2017) ', 'Model - Apple iMac (2017)<br>\r\nProcessor - Quad Core Intel Core i5<br>\r\nProcessor Clock Speed - 3.4-3.8GHz<br>\r\nRAM - 8GB<br>\r\nHDD - 1TB Fusion Drive<br>\r\nGraphics Memory - 4GB<br>\r\nAudio Port - 3.5mm Headphone Jack, microphone<br>', 157000, 'MNE02ZP/A', '11 kg', 11, 'apple-imac-2017-main.jpg', 'apple-imac-2017-front.png', 'apple-imac-2017-side.jpg', 'apple-imac-2017-angle.jpg', 1),
+('electronics', 'smartphone', 1015, 'LG Q8', '- Quad-Core Snapdragon 820 Processor<br>\r\n- 4GB RAM With 32GB ROM<br>\r\n- 5.2 Inch QHD Touchscreen Display<br>\r\n- Dual SIM<br>\r\n- IP67 Rated<br>\r\n- 16MP + 8MP Rear Camera With Dual Tone LED Flash & OIS<br>\r\n- 5MP Front Facing Camera<br>\r\n- Bluetooth 4.2/NFC/WiFi<br>\r\n- USB Type-C/IR<br>\r\n- Fingerprint Sensor<br>\r\n- 3000mAh.<br>', 62990, 'LG-H970', '146.00 gm', 8, 'lg-q8-front.jpg', 'LG-Q8-Back.jpg', 'lg-q8-side.jpg', 'lg-q8-front.jpg', 0),
+('electronics', 'computer', 1016, 'Dell 34 UltraSharp Curved Monitor', 'Creates a heightened sense of immersion, 34\" diagonal wide viewing experience with an Array of connectivity<br>\r\nEnhanced clarity: full WQHD 3440 1440 clarity at 60 Hz and consistent colors across an ultrawide 178Â°/172Â° viewing angle combine <br>to create a more appealing Display<br>\r\nMultiple connections: with HDMI 2.0, MHL, DP, mini-dp, 2 x USB 3.0 upstream, 4 x USB 3.0 downstream ports, audio out, connecting <br>to all your secondary devices at once is both easy and convenient<br>\r\nPowerful 18W integrated speakers<br>\r\nHeight-adjustable (115mm), tilt and swivel      <br>\r\n        ', 80000, 'U3417W', '15.4 kg', 212, '10533029.jpg', '523960-dell-ultrasharp-34-curved-monitor-u3417w.jpg', 'OriginalJPG.jpg', 'dell_u3417w_34_screen_led_1280769.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -772,7 +824,8 @@ INSERT INTO `recently_viewed` (`id`, `customer_id`, `product_table`, `product_id
 (38, 1152026, 'office_supplies', 1),
 (39, 1152017, 'sports_equipments', 2),
 (40, 1152034, 'sports_equipments', 2),
-(41, 1152034, 'electronics', 1002);
+(41, 1152034, 'electronics', 1002),
+(42, 1152017, 'sports_equipments', 101);
 
 -- --------------------------------------------------------
 
@@ -855,9 +908,7 @@ CREATE TABLE `shopping_cart` (
 --
 
 INSERT INTO `shopping_cart` (`cart_id`, `prod_category`, `prod_id`, `prod_name`, `prod_quantity`, `price_per_product`, `customer_id`) VALUES
-(41, 'sports_equipments', 1, 'adidas MLS Glider Soccer Ball', 1, 4500, 1152028),
-(45, 'office_supplies', 1, 'HP Paper, LaserJet Poly Wrap , 2', 1, 1000, 1152017),
-(46, 'electronics', 1002, 'Iphone X', 1, 82142, 1152017);
+(41, 'sports_equipments', 1, 'adidas MLS Glider Soccer Ball', 1, 4500, 1152028);
 
 -- --------------------------------------------------------
 
@@ -997,8 +1048,8 @@ CREATE TABLE `sports_equipments` (
 --
 
 INSERT INTO `sports_equipments` (`sub_category`, `id`, `name`, `description`, `price`, `product_model`, `shipping_weight`, `units_in_stock`, `image_1`, `image_2`, `image_3`, `image_4`, `item_sold`) VALUES
-('football', 1, 'adidas MLS Glider Soccer Ball', 'Part of the MLS Soccer collection, the design is inspired by the three MLS pillars of club, country, and community<br>\r\nMachine stitched construction and internal nylon wound carcass for maximum durability and long-lasting performance<br>\r\nSpecial TPU exterior material is designed to resist abrasion and last longer<br>\r\nButyl bladder for best air retention to keep the ball\'s shape and stay inflated longer<br>\r\nSize 3 ball suggested for ages 8 and under; size 4 ball suggested for ages 8-12; size 5 ball (official size) suggested for ages 12+. Size 1<br> is a mini ball. Check with your local league for size requirements.', 4500, 'ML5', '650 gm', 645, '51v-NPvUo2L._SY355_.jpg', '818fqUf9YqL._SX355_.jpg', 'AZ3211-2.jpg', 'HEW001420.jpg', 5),
-('helmet', 2, 'Forma Pro Axis Helmet With Steel', 'Full Face Protection<br>\r\nSize Adjustment Strap (SRS)<br>\r\nFabric Covered Shell<br>\r\nMultiple Vents for Easy Air Flow<br>\r\nEngineering Plastic Outer Shell for <br>Optimum Protection<br>', 4200, 'PT003 ', '1.39 kg', 54, '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', 2);
+('football', 101, 'adidas MLS Glider Soccer Ball', 'Part of the MLS Soccer collection, the design is inspired by the three MLS pillars of club, country, and community<br>\r\nMachine stitched construction and internal nylon wound carcass for maximum durability and long-lasting performance<br>\r\nSpecial TPU exterior material is designed to resist abrasion and last longer<br>\r\nButyl bladder for best air retention to keep the ball\'s shape and stay inflated longer<br>\r\nSize 3 ball suggested for ages 8 and under; size 4 ball suggested for ages 8-12; size 5 ball (official size) suggested for ages 12+. Size 1<br> is a mini ball. Check with your local league for size requirements.', 4500, 'ML5', '650 gm', 644, '51v-NPvUo2L._SY355_.jpg', '818fqUf9YqL._SX355_.jpg', 'AZ3211-2.jpg', 'HEW001420.jpg', 6),
+('helmet', 102, 'Forma Pro Axis Helmet With Steel', 'Full Face Protection<br>\r\nSize Adjustment Strap (SRS)<br>\r\nFabric Covered Shell<br>\r\nMultiple Vents for Easy Air Flow<br>\r\nEngineering Plastic Outer Shell for <br>Optimum Protection<br>', 4200, 'PT003 ', '1.39 kg', 54, '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', '41GTchVa22L.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -1166,6 +1217,12 @@ ALTER TABLE `office_supplies`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_less_amount`
 --
 ALTER TABLE `product_less_amount`
@@ -1232,7 +1289,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appliances`
 --
 ALTER TABLE `appliances`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -1268,13 +1325,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `customer_order`
 --
 ALTER TABLE `customer_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `customer_ordered_products`
 --
 ALTER TABLE `customer_ordered_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `electronics`
@@ -1310,13 +1367,19 @@ ALTER TABLE `movie_customer`
 -- AUTO_INCREMENT for table `office_supplies`
 --
 ALTER TABLE `office_supplies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1017;
 
 --
 -- AUTO_INCREMENT for table `recently_viewed`
 --
 ALTER TABLE `recently_viewed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -1328,7 +1391,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `shop_branch`
@@ -1340,7 +1403,7 @@ ALTER TABLE `shop_branch`
 -- AUTO_INCREMENT for table `sports_equipments`
 --
 ALTER TABLE `sports_equipments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

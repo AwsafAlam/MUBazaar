@@ -50,13 +50,13 @@ $total_sold = 0;
 $total_zero_sold = 0;
 while($row = mysqli_fetch_assoc($select_all_categories)) {
     $category_name[$i] = strtolower(str_replace(" ","_",$row['Category_Name']));
-    $query = "SELECT COUNT(*) FROM `{$category_name[$i]}`";
+    $query = "SELECT COUNT(*) FROM product WHERE category =  '{$category_name[$i]}'";
     $result = mysqli_query($connect, $query);
     $row_1 = mysqli_fetch_assoc($result);
     $category_wise_count[$i] = $row_1['COUNT(*)'];
 
     //counting total prod, total sold
-    $query = "SELECT units_in_stock, item_sold FROM `{$category_name[$i]}`;";
+    $query = "SELECT units_in_stock, item_sold FROM product WHERE category =  '{$category_name[$i]}';";
     $result = mysqli_query($connect, $query);
     while($row_2 = mysqli_fetch_assoc($result)) {
         $total_unsold += $row_2['units_in_stock'];
@@ -81,7 +81,7 @@ $total_products = $total_unsold + $total_sold;
 
 <?php
 
-$distinct_product_query = "SELECT DISTINCT Category_Name FROM category;";
+$distinct_product_query = "SELECT DISTINCT category FROM product;";
 $distinct_product_rslt = mysqli_query($connect, $distinct_product_query);
 
 
@@ -90,7 +90,7 @@ $pi_lebel= array();
 $pi_val= array();
 
 while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
-    array_push($pi_lebel, $distinct_product_row['Category_Name']);
+    array_push($pi_lebel, $distinct_product_row['category']);
 
 }
 

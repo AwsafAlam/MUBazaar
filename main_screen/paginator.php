@@ -51,6 +51,8 @@ class Paginator {
         
         $rs = $this->_conn->query( $query ) or die($this->_conn->error);
 
+        $results = array();
+
         while ( $row = $rs->fetch_assoc() ) {
             //store this array in $result->data below
             $results[]  = $row; 
@@ -63,6 +65,7 @@ class Paginator {
         $result->page   = $this->_page;
         $result->limit  = $this->_limit;
         $result->total  = $this->_total;
+
         $result->data   = $results; //$result->data = array
 
         //print_r($result);die;

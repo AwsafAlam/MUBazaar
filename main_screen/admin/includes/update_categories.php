@@ -50,9 +50,9 @@
 
 
 
-            $query = "INSERT INTO `{$cat_table}` ";
-            $query .= "(sub_category,name,description,price,product_model,shipping_weight,units_in_stock,image_1,image_2,image_3,image_4) ";
-            $query .= "VALUES('{$sub_category}', '{$name}', '{$description}', '{$price}', '{$product_model}', '{$shipping_weight}', '{$units_in_stock}', '{$image_1}', '{$image_2}', '{$image_3}', '{$image_4}');";
+            $query = "INSERT INTO product  ";
+            $query .= "(category, sub_category,name,description,price,product_model,shipping_weight,units_in_stock,image_1,image_2,image_3,image_4) ";
+            $query .= "VALUES('{$cat_table}', '{$sub_category}', '{$name}', '{$description}', '{$price}', '{$product_model}', '{$shipping_weight}', '{$units_in_stock}', '{$image_1}', '{$image_2}', '{$image_3}', '{$image_4}');";
 
 //            echo $query;
 

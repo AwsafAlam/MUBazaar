@@ -88,21 +88,23 @@
         <a class="toggleMenu" href="#">Menu</a>
         <ul class="nav">
             <li>
+
                 <a href="index.php">Home</a>
             </li>
             <!--                    <li  class="test">-->
 
             <?php 
 
-            $query = "SELECT Category_Name FROM category";
+            $query = "SELECT DISTINCT category FROM product";
             $rslt = mysqli_query($connect,$query);
             while($row = mysqli_fetch_assoc($rslt)){
-                $category_name = $row['Category_Name'];
+                $category_name = $row['category'];
                 $link = str_replace(" ","_",$category_name).'.php'.'#categories';
                 echo "<li>";
-                echo"<a href=$link>$category_name</a>";
+                $cat_name = ucfirst(str_replace("_", " ", $category_name));
+                echo"<a href=$link>$cat_name</a>";
 
-                $sub_category_query = "SELECT DISTINCT sub_category FROM " . strtolower(str_replace(" ","_",$category_name));
+                $sub_category_query = "SELECT DISTINCT sub_category FROM product WHERE category =  " . "'" . strtolower(str_replace(" ","_",$category_name)) . "'";
                 $sub_category_result = mysqli_query($connect,$sub_category_query);
                 echo "<ul>";
                 while($sub_category_row = mysqli_fetch_assoc($sub_category_result)){

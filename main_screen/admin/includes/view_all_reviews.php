@@ -55,7 +55,7 @@
 
             echo "<td>{$review_email}</td>";
             
-            $query = "SELECT * FROM `{$product_table}` WHERE id = $product_id;";
+            $query = "SELECT * FROM product WHERE category = '{$product_table}' AND id = $product_id;";
             $select_post_id_query = mysqli_query($connect,$query);
             $row = mysqli_fetch_assoc($select_post_id_query);
             $product_id = $row['id'];

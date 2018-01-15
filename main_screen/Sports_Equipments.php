@@ -7,10 +7,10 @@ global $connect;
 
 if(isset($_GET['sub_cat'])){
     $sub_category = $_GET['sub_cat'];
-    $query = "SELECT name, price, image_1, id FROM sports_equipments WHERE sub_category = '{$sub_category}'";
+    $query = "SELECT name, price, image_1, id FROM product WHERE category = 'sports_equipments' AND sub_category = '{$sub_category}'";
 }
 else{
-    $query = "SELECT name,price,image_1,id FROM sports_equipments";
+    $query = "SELECT name,price,image_1,id FROM product WHERE category = 'sports_equipments'";
 }
 
 
@@ -68,7 +68,7 @@ $results = $paginator->getData( $limit, $page );
 
                                 $category_tables = array("electronics", "appliances", "clothes", "office_supplies", "sports_equipments");
                                 foreach ($category_tables as $single_table) {
-                                    $query = "SELECT name, image_1, id FROM `{$single_table}` ORDER BY id DESC LIMIT 5;";
+                                    $query = "SELECT name, image_1, id FROM product WHERE category =  '{$single_table}' ORDER BY id DESC LIMIT 5;";
                                     $rslt = mysqli_query($connect, $query);
                                     $count = mysqli_num_rows($rslt);
                                     if ($count == 0) {
@@ -188,7 +188,7 @@ $results = $paginator->getData( $limit, $page );
 
 
                             <div class="grid_1_of_4 images_1_of_4">
-                                <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=sports_equipments&id=<?php  echo $prod_id ?>"><?php echo $prod_name ?></a></h4>
+                                <h4 style="min-height: 4.5em"><a href="preview_edit.php?table=sports_equipments&id=<?php  echo $prod_id ?>"><?php echo strlen($prod_name) > 50 ? substr($prod_name,0,50)."..." : $prod_name; ?></a></h4>
                                 <a href="preview_edit.php?table=sports_equipments&id=<?php  echo $prod_id ?>"><img  width="120" height="120" src="images/sports_equipments/<?php echo $prod_image_1?>" alt="" /></a>
                                 <div class="price-details">
                                     <div class="price-number">

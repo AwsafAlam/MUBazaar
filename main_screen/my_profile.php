@@ -280,7 +280,9 @@ if(isset($_POST['save'])){
 
 
                         </table>
+
                         <hr>
+                        <h2 style="color: #5e5e5e; text-align: center"><a target="_blank" href="chat/index.php">Have any complains? Let us know</a></h2>
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4 text-center">
                                 <ul class="pagination" id="myPager"></ul>

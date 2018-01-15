@@ -61,6 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
         </table>
 
+        <h2 style="color: white; text-align: center; font-size: 50px"><a style="color: white;"  target="_blank" href="chat/index.php">Have any complains? Let us know</a></h2>
 
 
     </div>

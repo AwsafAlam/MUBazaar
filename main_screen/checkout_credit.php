@@ -15,6 +15,8 @@ $_SESSION['total_cost'] = $_SESSION['total_cost'] +$_SESSION['delivery_cost'];
 
 $total_cost = $_SESSION['total_cost'];
 
+$branch_id = $_SESSION['branchId'];
+
 
 $shipping_address  = '';
 if(isset($_POST['shipping_address'])){
@@ -140,8 +142,8 @@ if(isset($_GET['card_no'])){
         if(mysqli_num_rows($rslt) != 0){
 
 
-            $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost, order_date) VALUES({$customer_id}, '{$shipping_address}', {$total_cost}, ";
-            $query .= "now());";
+            $query = "INSERT INTO customer_order (customer_id, shipping_address, total_cost, order_date, branch_id) VALUES({$customer_id}, '{$shipping_address}', {$total_cost}, ";
+            $query .= "now() , {$branch_id});";
             $rslt = mysqli_query($connect, $query);
             $order_id = $connect->insert_id;
 
@@ -158,12 +160,12 @@ if(isset($_GET['card_no'])){
                 $product_quantity = $query_rows['prod_quantity'];
 
 
-                $delete_prod_query = "UPDATE `{$product_category}` SET units_in_stock = units_in_stock  - {$product_quantity} ";
-                $delete_prod_query .= "WHERE id = {$product_id}";
+                $delete_prod_query = "UPDATE product SET units_in_stock = units_in_stock  - {$product_quantity} ";
+                $delete_prod_query .= "WHERE id = {$product_id} AND category = '{$product_category}' ";
                 mysqli_query($connect, $delete_prod_query);
 
-                $sell_update_query = "UPDATE `{$product_category}` SET item_sold = item_sold + {$product_quantity} ";
-                $sell_update_query .= "WHERE id = {$product_id}";;
+                $sell_update_query = "UPDATE product `{$product_category}` SET item_sold = item_sold + {$product_quantity} ";
+                $sell_update_query .= "WHERE id = {$product_id} AND category = '{$product_category}' ";
                 mysqli_query($connect, $sell_update_query);
 
 

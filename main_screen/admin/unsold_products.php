@@ -79,7 +79,7 @@ else
     for($i=0; $i < $N; $i++)
     {
         //echo($status[$i] . " ");
-        $query2 = "UPDATE `{$table_name}` SET price= ROUND(price-price*{$discount_pctg}/100, 2) WHERE id = {$discount[$i]}";
+        $query2 = "UPDATE product SET price= ROUND(price-price*{$discount_pctg}/100, 2) WHERE id = {$discount[$i]} AND category = '{$table_name}'";
         mysqli_query($connect, $query2);
     }
 }
@@ -182,16 +182,16 @@ else
                                 //MASFIQ EDITTED
                                 // $query = "CALL TOP_CUSTOMERS(4);";
                                 if($table_name == "all") {
-                                    $query = "SELECT * FROM category ";
+                                    $query = "SELECT DISTINCT category FROM product";
                                     $select_all_categories = mysqli_query($connect, $query);
                                     $category_count = mysqli_num_rows($select_all_categories);
 
                                     $i = 0;
                                     while ($row = mysqli_fetch_assoc($select_all_categories)) {
-                                        $category_name[$i] = strtolower(str_replace(" ", "_", $row['Category_Name']));
+                                        $category_name[$i] = strtolower(str_replace(" ", "_", $row['category']));
 
                                         //counting total prod, total sold
-                                        $query = "SELECT sub_category, name, price, units_in_stock FROM `{$category_name[$i]}` WHERE item_sold=0;";
+                                        $query = "SELECT sub_category, name, price, units_in_stock FROM product WHERE category =  '{$category_name[$i]}' AND item_sold=0;";
                                         $result = mysqli_query($connect, $query);
                                         while ($row_2 = mysqli_fetch_assoc($result)) {
                                             echo "<tr>";
@@ -206,7 +206,7 @@ else
                                         $i++;
                                     }
                                 }else{
-                                    $query = "SELECT id, sub_category, name, price, units_in_stock FROM `{$table_name}` WHERE item_sold=0;";
+                                    $query = "SELECT id, sub_category, name, price, units_in_stock FROM product WHERE category = '{$table_name}' AND  item_sold=0;";
                                     $result = mysqli_query($connect, $query);
                                     while ($row_2 = mysqli_fetch_assoc($result)) {
                                         echo "<tr>";

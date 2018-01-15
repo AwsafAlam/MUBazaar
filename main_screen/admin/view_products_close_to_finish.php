@@ -162,7 +162,7 @@
 //                                    $id = $row['id'];
 //                                    $product_table_name = $row['product_table_name'];
 //
-                                    $query = "SELECT sub_category, id, name, price, units_in_stock FROM `{$table_name}` WHERE   units_in_stock < $x_var ORDER BY units_in_stock ASC;";
+                                    $query = "SELECT sub_category, id, name, price, units_in_stock FROM product  WHERE category = '{$table_name}' AND  units_in_stock < $x_var ORDER BY units_in_stock ASC;";
                                     $result = mysqli_query($connect, $query);
 
                                     while($row_2 = mysqli_fetch_assoc($result)) {

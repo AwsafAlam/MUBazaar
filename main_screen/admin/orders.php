@@ -5,6 +5,8 @@
 
 <?php $top_no = "all" ?>
 
+<?php //$delivery_man_no = "all" ?>
+
 <?php
 
 if(isset($_GET['top_no'])){
@@ -15,11 +17,17 @@ if(isset($_GET['top_no'])){
 
 if(isset($_POST['shipping_status'])) {
     $status = $_POST['shipping_status'];
+    $delivery_man = $_POST['delivery_man_no'];
 }
 if(empty($status))
 {
     //echo("You didn't select any buildings.");
 }
+if(empty($delivery_man))
+{
+   // echo("You didn't select any buildings.");
+}
+
 else
 {
     $N = count($status);
@@ -27,8 +35,10 @@ else
     //echo("You selected $N door(s): ");
     for($i=0; $i < $N; $i++)
     {
-        //echo($status[$i] . " ");
-        $query = "UPDATE customer_order SET shipping_status='shipped', shipped_date=sysdate() WHERE order_id = {$status[$i]}";
+        echo($status[$i] . " ");
+        echo($delivery_man[$i] . " ");
+
+        $query = "UPDATE customer_order SET shipping_status='shipped', shipped_date=sysdate(),  delivery_man_id={$delivery_man[$i]}  WHERE order_id = {$status[$i]}";
         mysqli_query($connect, $query);
     }
 }
@@ -98,6 +108,8 @@ else
                             <th>Total Cost</th>
                             <th>Order Date</th>
                             <th>Shipping Status</th>
+                            <th>Delivery Branch</th>
+                            <th>Delivery Man</th>
                         </tr>
                         </thead>
 
@@ -123,12 +135,18 @@ else
                                 $_total_cost = $row['total_cost'];
                                 $_order_date = $row['order_date'];
                                 $_shipping_status = $row['shipping_status'];
+                                $branch_id = $row['branch_id'];
+                                $delivery_man_id = $row['delivery_man_id'];
 
+                                $query = "SELECT place from shop_branch WHERE id= '{$branch_id}'";
+                                $select_branch = mysqli_query($connect, $query);
+                                $row = mysqli_fetch_assoc($select_branch);
+                                $_delivery_branch = $row['place'];
 
                                 echo "<tr>";
                                 echo "<td>{$customer_id}</td>";
                                 echo "<td>{$order_id}</td>";
-                                echo "<td>{$_shipping_address}</td>";
+                                echo "<td width='30%''>{$_shipping_address}</td>";
 
 
                                 echo "<td>{$_total_cost}</td>";
@@ -140,6 +158,39 @@ else
                                     echo "<td  align='center'><input type='checkbox' name='shipping_status[]' value='{$order_id}'></td>";
                                 }
 
+                                echo "<td>{$_delivery_branch}</td>";
+                                echo "<td> ";
+                                if($_shipping_status == 'not_shipped'){
+                                ?>
+
+                                <select name="delivery_man_no[]" class="form-control" id="delivery_man_select" >
+                                    <?php
+
+                                    $query2 = "SELECT id, name from employees WHERE branch_id= '{$branch_id}' AND department_id=1;";
+                                    $result2 = mysqli_query($connect, $query2);
+                                    $delivery_man_count = mysqli_num_rows($result2);
+
+                                    while($row2 = mysqli_fetch_assoc($result2)){
+                                        ?>
+
+                                        <option value='<?php echo $row2['id'] ?>' > <?php echo $row2['name'] ?> </option>";
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+
+                                <?php }
+                                else{//status = shipped
+                                    $query2 = "SELECT name from employees WHERE id = '{$delivery_man_id}' ;";
+                                    $result2 = mysqli_query($connect, $query2);
+                                    $row2 = mysqli_fetch_assoc($result2);
+                                    $delivery_man_name = $row2['name'];
+                                    echo $delivery_man_name;
+                                }
+
+                                ?>
+
+                               <?php  echo  "</td>";
                                 echo "</tr>";
 
                             }
