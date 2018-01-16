@@ -356,8 +356,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                                                 <?php
                                                 if (isset($_POST['add_wishlist'])) {
-                                                    $wishlist_insert_query = "INSERT INTO wishlist(customer_id, product_category, product_id, product_name) ";
-                                                    $wishlist_insert_query .= "VALUES({$_SESSION['customer_id']}, '{$query_table}', '{$query_id}', '{$prod_name}');";
+                                                    $wishlist_insert_query = "INSERT INTO wishlist(customer_id, product_category, product_id) ";
+                                                    $wishlist_insert_query .= "VALUES({$_SESSION['customer_id']}, '{$query_table}', '{$query_id}');";
                                                     mysqli_query($connect, $wishlist_insert_query);
                                                     header('Location: ' . $_SERVER['REQUEST_URI'] . '#prod_zoom');
 

@@ -6,7 +6,7 @@
 
 <?php
 
-$distinct_product_query = "SELECT DISTINCT Category_Name FROM category;";
+$distinct_product_query = "SELECT DISTINCT category FROM product;";
 $distinct_product_rslt = mysqli_query($connect, $distinct_product_query);
 $sdate = '';
 
@@ -19,7 +19,7 @@ $pi_val= array();
 $grand_total = 0;
 
 while($distinct_product_row = mysqli_fetch_assoc($distinct_product_rslt)){
-    array_push($pi_lebel, $distinct_product_row['Category_Name']);
+    array_push($pi_lebel, $distinct_product_row['category']);
 
 }
 

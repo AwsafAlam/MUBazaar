@@ -101,14 +101,16 @@ if (isset($_GET['sub_cat'])) {
 
                             <?php
 
-                            $query = "SELECT Category_Name FROM category";
+                            $query = "SELECT DISTINCT category  FROM product";
                             $rslt = mysqli_query($connect, $query);
                             while ($row = mysqli_fetch_assoc($rslt)) {
-                                $category_name = $row['Category_Name'];
-                                $link = str_replace(" ", "-", $category_name);
-                                echo "<li><a href='$link.php#categories'>$category_name</a></li>";
+                                $category_name = $row['category'];
+                                $link = str_replace(" ", "_", $category_name);
+                                $cat_name = ucfirst(str_replace("_", " ", $category_name));
+                                echo "<li><a href='$link.php#categories'>$cat_name</a></li>";
                             }
                             ?>
+
 
                         </ul>
                     </div>

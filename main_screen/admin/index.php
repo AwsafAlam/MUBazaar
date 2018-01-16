@@ -2,7 +2,7 @@
 <?php include "../db.php" ?>
 
 <?php
-$query = "SELECT * FROM category";
+$query = "SELECT DISTINCT category FROM product";
 $select_all_categories= mysqli_query($connect, $query);
 $category_count = mysqli_num_rows($select_all_categories);
 
@@ -27,9 +27,6 @@ $count_polls_row = mysqli_fetch_assoc($count_polls_rslt);
 $poll_count = $count_polls_row["SUM(count)"];
 
 
-$query = "SELECT * FROM product_less_amount";
-$select_all_less_amount= mysqli_query($connect, $query);
-$less_amount_count = mysqli_num_rows($select_all_less_amount);
 
 
 $query = "SELECT * FROM customer";
@@ -49,7 +46,7 @@ $total_unsold = 0;
 $total_sold = 0;
 $total_zero_sold = 0;
 while($row = mysqli_fetch_assoc($select_all_categories)) {
-    $category_name[$i] = strtolower(str_replace(" ","_",$row['Category_Name']));
+    $category_name[$i] = strtolower(str_replace(" ","_",$row['category']));
     $query = "SELECT COUNT(*) FROM product WHERE category =  '{$category_name[$i]}'";
     $result = mysqli_query($connect, $query);
     $row_1 = mysqli_fetch_assoc($result);

@@ -47,7 +47,6 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Category</th>
                                     <th>Action</th>
                                 </tr>
@@ -58,14 +57,14 @@
                                 <?php
                                 // Find all categories query
 
-                                $query = "SELECT * FROM category";
+                                $query = "SELECT DISTINCT category FROM product";
                                 $select_categories = mysqli_query($connect,$query);
 
                                 while($row = mysqli_fetch_assoc($select_categories)){
-                                    $cat_id = $row['Category_ID'];
-                                    $cat_title = $row['Category_Name'];
+
+                                    $cat_title = $row['category'];
                                     echo "<tr>";
-                                    echo "<td>{$cat_id}</td>";
+
                                     echo "<td>{$cat_title}</td>"; 
                                     $url_category = strtolower(str_replace(" ","_",$cat_title));
                                     echo "<td><a href='categories.php?add={$url_category}'>Add product to this category</a></td>";                                   

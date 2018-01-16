@@ -52,6 +52,10 @@
                     <li class="active">
                         <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Add Product</a>
                     </li>
+
+                    <li class="active">
+                        <a href="reduce_price.php"><i class="fa fa-codepen"></i> All Products</a>
+                    </li>
                     
 <!--                    <li class="active">-->
 <!--                        <a href="review.php"><i class="fa fa-fw fa-file"></i> Product Reviews</a>-->
@@ -67,7 +71,7 @@
                     </li>
 
                     <li class="active">
-                        <a href="individual_category.php"><i class="fa fa-user"></i> Products Sale</a>
+                        <a href="individual_category.php"><i class="fa fa-folder-open"></i> Products Sale</a>
                     </li>
 
 <!--                    <li class="active">-->
@@ -79,7 +83,7 @@
 <!--                    </li>-->
 
                     <li class="active">
-                        <a href="offers.php"><i class="fa fa-shopping-cart"></i> Offers</a>
+                        <a href="offers.php"><i class="fa fa-gift"></i> Offers</a>
                     </li>
                     
 <!--                    <li>-->
@@ -91,12 +95,12 @@
                     </li>
 
                     <li class="active">
-                        <a href="subscribers.php"><i class="fa fa-shopping-cart"></i> Movie Subscriber</a>
+                        <a href="subscribers.php"><i class="fa fa-chain"></i> Movie Subscriber</a>
                     </li>
 
 
                     <li class="active">
-                        <a href="customer_email.php"><i class="fa fa-shopping-cart"></i> Email Customers</a>
+                        <a href="customer_email.php"><i class="	fa fa-cloud"></i> Email Customers</a>
                     </li>
 
                     

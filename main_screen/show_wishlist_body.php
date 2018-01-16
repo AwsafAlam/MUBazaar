@@ -29,7 +29,12 @@
                 $wishlist_id = $query_rows['id'];
                 $product_category = $query_rows['product_category'];
                 $product_id = $query_rows['product_id'];
-                $product_name = $query_rows['product_name'];
+
+                $prod_q = "SELECT name FROM product WHERE category = '{$product_category}' AND id = {$product_id}";
+                $prod_rslt = mysqli_query($connect, $prod_q);
+                $prod_row = mysqli_fetch_assoc($prod_rslt);
+
+                $product_name = $prod_row['name'];
                 echo "<tr>";
                 echo "<td align='center'>{$wishlist_id}</td>";
                 echo "<td align='center'>{$product_category}</td>";
