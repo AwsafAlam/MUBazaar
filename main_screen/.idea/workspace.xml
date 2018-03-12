@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="9253">
               <caret line="487" column="44" lean-forward="false" selection-start-line="487" selection-start-column="38" selection-end-line="487" selection-end-column="44" />
               <folding>
                 <marker date="1516074154560" expanded="true" signature="91:121" ph="SELECT * FRO... category" />
@@ -68,6 +68,16 @@
                 <marker date="1516074154560" expanded="true" signature="4155:4190" ph="SELECT DISTI... movie" />
                 <marker date="1516074154560" expanded="true" signature="4540:4602" ph="SELECT SUM(s... movie" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="random_credit_no_generator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/random_credit_no_generator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -232,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,7 +344,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,12 +449,13 @@
       <workItem from="1515581803429" duration="477000" />
       <workItem from="1515719377701" duration="2332000" />
       <workItem from="1516002511361" duration="16373000" />
-      <workItem from="1516061031018" duration="15660000" />
+      <workItem from="1516061031018" duration="16857000" />
+      <workItem from="1517459213661" duration="1185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366870000" />
+    <option name="totallyTimeSpent" value="369252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -457,11 +468,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13313162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13464448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19609967" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -512,11 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <marker date="1515554773631" expanded="true" signature="148:190" ph="SELECT SUBSC... movie_subscriber" />
-            <marker date="1515554773631" expanded="true" signature="229:284" ph="SELECT * FRO... movie_subscriber" />
-            <marker date="1515554773631" expanded="true" signature="622:676" ph="INSERT INTO movie_subscriber... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -524,12 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="192" column="45" lean-forward="true" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
-          <folding>
-            <marker date="1515551674841" expanded="true" signature="298:330" ph="DELETE FROM " />
-            <marker date="1515551674841" expanded="true" signature="947:998" ph="UPDATE custo... " />
-            <marker date="1515551674841" expanded="true" signature="1626:1676" ph="UPDATE custo... " />
-            <marker date="1515551674841" expanded="true" signature="5836:5963" ph="SELECT * FRO... customer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -537,26 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="179" column="59" lean-forward="false" selection-start-line="179" selection-start-column="53" selection-end-line="179" selection-end-column="59" />
-          <folding>
-            <marker date="1515502244552" expanded="true" signature="277:309" ph="DELETE FROM " />
-            <marker date="1515502244552" expanded="true" signature="926:977" ph="UPDATE custo... " />
-            <marker date="1515502244552" expanded="true" signature="1605:1655" ph="UPDATE custo... " />
-            <marker date="1515502244552" expanded="true" signature="5093:5115" ph="SELECT * FRO... customer" />
-            <marker date="1515502244552" expanded="true" signature="5255:5302" ph="SELECT * FRO... customer" />
-            <marker date="1515502244552" expanded="true" signature="5413:5461" ph="SELECT * FRO... customer" />
-            <marker date="1515502244552" expanded="true" signature="5539:5589" ph="SELECT * FRO... customer" />
-            <marker date="1515502244552" expanded="true" signature="6703:6715" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7007:7032" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7226:7239" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7438:7457" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7470:7512" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7642:7656" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7906:7925" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="7937:7981" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="8108:8122" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="8337:8356" ph="..." />
-            <marker date="1515502244552" expanded="true" signature="8368:8382" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -564,12 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <marker date="1515557612145" expanded="true" signature="432:493" ph="DELETE FROM " />
-            <marker date="1515557612145" expanded="true" signature="5831:5876" ph="SELECT * FRO... movie_cart" />
-            <marker date="1515557612145" expanded="true" signature="6286:6317" ph="SELECT * FRO... movie" />
-            <marker date="1515557612145" expanded="true" signature="7935:7947" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,7 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -585,13 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6973">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1515721274054" expanded="true" signature="168:190" ph="SELECT * FRO... customer" />
-            <marker date="1515721274054" expanded="true" signature="752:784" ph="DELETE FROM " />
-            <marker date="1515721274054" expanded="true" signature="1648:1752" ph="SELECT COUNT... customer" />
-            <marker date="1515721274054" expanded="true" signature="2585:2604" ph="UPDATE custo... " />
-            <marker date="1515721274054" expanded="true" signature="3054:3146" ph="SELECT ID FR... customer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -599,13 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6669">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1513402316698" expanded="true" signature="610:731" ph="SELECT Credi... credit_card" />
-            <marker date="1513402316698" expanded="true" signature="1232:1389" ph="SELECT Credi... credit_card" />
-            <marker date="1513402316698" expanded="true" signature="1997:2165" ph="UPDATE credi... " />
-            <marker date="1513402316698" expanded="true" signature="7361:7463" ph="SELECT Credi... credit_card" />
-            <marker date="1513402316698" expanded="true" signature="15320:15370" ph="SELECT Credi... credit_card" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,7 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1261">
           <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,12 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2014">
           <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding>
-            <marker date="1514724345389" expanded="true" signature="1282:1330" ph="SELECT * FRO... shopping_cart" />
-            <marker date="1514724345389" expanded="true" signature="4169:4181" ph="..." />
-            <marker date="1514724345389" expanded="true" signature="5052:5150" ph="SELECT Credi... credit_card" />
-            <marker date="1514724345389" expanded="true" signature="8971:9035" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,11 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1930">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1514887341059" expanded="true" signature="33:81" ph="SELECT * FRO... shopping_cart" />
-            <marker date="1514887341059" expanded="true" signature="2668:2680" ph="..." />
-            <marker date="1514887341059" expanded="true" signature="3349:3447" ph="SELECT Credi... credit_card" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -646,14 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3637">
           <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <marker date="1516015154100" expanded="true" signature="309:433" ph="DELETE FROM " />
-            <marker date="1516015154100" expanded="true" signature="1642:1738" ph="SELECT * FRO... customer_order" />
-            <marker date="1516015154100" expanded="true" signature="2524:2664" ph="SELECT COUNT... customer_order" />
-            <marker date="1516015154100" expanded="true" signature="3264:3337" ph="SELECT name ${{$product_category}}" />
-            <marker date="1516015154100" expanded="true" signature="6371:6445" ph="SELECT name ${{$product_category}}" />
-            <marker date="1516015154100" expanded="true" signature="9563:9638" ph="SELECT name ${{$product_category}}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1197">
           <caret line="63" column="93" lean-forward="false" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,12 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1513362128804" expanded="true" signature="1751:1855" ph="INSERT INTO customer_order... " />
-            <marker date="1513362128804" expanded="true" signature="1960:2008" ph="SELECT * FRO... shopping_cart" />
-            <marker date="1513362128804" expanded="true" signature="2342:2438" ph="INSERT INTO customer_ordered_products... " />
-            <marker date="1513362128804" expanded="true" signature="4021:4085" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,10 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2679">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1514712071584" expanded="true" signature="232:251" ph="SELECT * FRO... movie" />
-            <marker date="1514712071584" expanded="true" signature="4601:4651" ph="SELECT * FRO... movie" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,21 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2574">
           <caret line="145" column="42" lean-forward="false" selection-start-line="145" selection-start-column="42" selection-end-line="145" selection-end-column="42" />
-          <folding>
-            <marker date="1516028866695" expanded="true" signature="1013:1070" ph="UPDATE credi... " />
-            <marker date="1516028866695" expanded="true" signature="1829:1950" ph="SELECT Credi... credit_card" />
-            <marker date="1516028866695" expanded="true" signature="2540:2697" ph="SELECT Credi... credit_card" />
-            <marker date="1516028866695" expanded="true" signature="3554:3672" ph="SELECT * FRO... credit_card" />
-            <marker date="1516028866695" expanded="true" signature="3859:4013" ph="INSERT INTO customer_order... " />
-            <marker date="1516028866695" expanded="true" signature="4190:4238" ph="SELECT * FRO... shopping_cart" />
-            <marker date="1516028866695" expanded="true" signature="4615:4669" ph="UPDATE `${{$... " />
-            <marker date="1516028866695" expanded="true" signature="4895:4960" ph="UPDATE `${{$... " />
-            <marker date="1516028866695" expanded="true" signature="5180:5276" ph="INSERT INTO customer_ordered_products... " />
-            <marker date="1516028866695" expanded="true" signature="5497:5661" ph="UPDATE credi... " />
-            <marker date="1516028866695" expanded="true" signature="5762:5808" ph="DELETE FROM " />
-            <marker date="1516028866695" expanded="true" signature="5914:5979" ph="UPDATE custo... " />
-            <marker date="1516028866695" expanded="true" signature="11066:11168" ph="SELECT Credi... credit_card" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,9 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-589">
           <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-          <folding>
-            <marker date="1516031450669" expanded="true" signature="3867:3874" ph="«" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,19 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1843">
           <caret line="97" column="57" lean-forward="false" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
-          <folding>
-            <marker date="1516034911522" expanded="true" signature="440:462" ph="SELECT * FRO... customer" />
-            <marker date="1516034911522" expanded="true" signature="3107:3132" ph="SELECT Categ... category" />
-            <marker date="1516034911522" expanded="true" signature="3107:3144" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3638" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3640" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3646" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3673" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3702" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="3580:3703" ph="SELECT DISTI... product" />
-            <marker date="1516034911522" expanded="true" signature="5667:5723" ph="SELECT COUNT... shopping_cart" />
-            <marker date="1516034911522" expanded="true" signature="5967:5980" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,11 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3116">
           <caret line="164" column="149" lean-forward="false" selection-start-line="164" selection-start-column="149" selection-end-line="164" selection-end-column="149" />
-          <folding>
-            <marker date="1516037721845" expanded="true" signature="6429:6483" ph="SELECT id, p... product_less_amount" />
-            <marker date="1516037721845" expanded="true" signature="6856:6978" ph="SELECT sub_c... ${{$product_table_name}}" />
-            <marker date="1516037721845" expanded="true" signature="6856:7012" ph="SELECT sub_c... ${{$table_name}}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,9 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <marker date="1515426732366" expanded="true" signature="208:238" ph="SELECT * FRO... movie_subscriber" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1083">
           <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,19 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <marker date="1516037597186" expanded="true" signature="277:309" ph="DELETE FROM " />
-            <marker date="1516037597186" expanded="true" signature="926:977" ph="UPDATE custo... " />
-            <marker date="1516037597186" expanded="true" signature="1605:1655" ph="UPDATE custo... " />
-            <marker date="1516037597186" expanded="true" signature="2641:2721" ph="UPDATE `${{$... " />
-            <marker date="1516037597186" expanded="true" signature="2641:2751" ph="UPDATE produ... " />
-            <marker date="1516037597186" expanded="true" signature="2641:2752" ph="UPDATE produ... " />
-            <marker date="1516037597186" expanded="true" signature="2641:2767" ph="UPDATE produ... " />
-            <marker date="1516037597186" expanded="true" signature="6775:6805" ph="SELECT * FRO... category" />
-            <marker date="1516037597186" expanded="true" signature="6775:6812" ph="SELECT DISTI... product" />
-            <marker date="1516037597186" expanded="true" signature="7383:7501" ph="SELECT sub_c... ${{$category_name[$i]}}" />
-            <marker date="1516037597186" expanded="true" signature="8414:8529" ph="SELECT id, s... ${{$table_name}}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,10 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-195">
           <caret line="300" column="6" lean-forward="false" selection-start-line="300" selection-start-column="6" selection-end-line="300" selection-end-column="6" />
-          <folding>
-            <marker date="1516026845214" expanded="true" signature="150:172" ph="SELECT * FRO... customer" />
-            <marker date="1516026845214" expanded="true" signature="461:486" ph="SELECT * FRO... shop_branch" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,32 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="105" column="102" lean-forward="false" selection-start-line="105" selection-start-column="102" selection-end-line="105" selection-end-column="102" />
-          <folding>
-            <element signature="e#2817#2823#0#HTML" expanded="true" />
-            <element signature="e#2824#2830#0#HTML" expanded="true" />
-            <element signature="e#2831#2837#0#HTML" expanded="true" />
-            <element signature="e#2838#2844#0#HTML" expanded="true" />
-            <element signature="e#2844#2850#0#HTML" expanded="true" />
-            <element signature="e#2850#2856#0#HTML" expanded="true" />
-            <element signature="e#2856#2862#0#HTML" expanded="true" />
-            <element signature="e#2862#2868#0#HTML" expanded="true" />
-            <element signature="e#2868#2874#0#HTML" expanded="true" />
-            <element signature="e#2874#2880#0#HTML" expanded="true" />
-            <marker date="1516071210206" expanded="true" signature="364:391" ph="UPDATE produ... " />
-            <marker date="1516071210206" expanded="true" signature="364:409" ph="UPDATE produ... " />
-            <marker date="1516071210206" expanded="true" signature="364:436" ph="UPDATE produ... " />
-            <marker date="1516071210206" expanded="true" signature="364:446" ph="UPDATE produ... " />
-            <marker date="1516071210206" expanded="true" signature="364:458" ph="UPDATE produ... " />
-            <marker date="1516071210206" expanded="true" signature="526:565" ph="SELECT * FRO... product" />
-            <marker date="1516071210206" expanded="true" signature="526:590" ph="SELECT * FRO... product" />
-            <marker date="1516071210206" expanded="true" signature="526:602" ph="SELECT * FRO... product" />
-            <marker date="1516071210206" expanded="true" signature="980:1031" ph="SELECT offer... product_offer" />
-            <marker date="1516071210206" expanded="true" signature="980:1050" ph="SELECT offer... product_offer" />
-            <marker date="1516071210206" expanded="true" signature="980:1064" ph="SELECT offer... product_offer" />
-            <marker date="1516071210206" expanded="true" signature="980:1074" ph="SELECT offer... product_offer" />
-            <marker date="1516071210206" expanded="true" signature="1545:1574" ph="SELECT occas... special_" />
-            <marker date="1516071210206" expanded="true" signature="1545:1604" ph="SELECT occas... special_offer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,12 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <marker date="1516073238420" expanded="true" signature="3918:3955" ph="SELECT DISTI... product" />
-            <marker date="1516073238420" expanded="true" signature="4526:4632" ph="SELECT id, s... product" />
-            <marker date="1516073238420" expanded="true" signature="4526:4633" ph="SELECT sub_c... product" />
-            <marker date="1516073238420" expanded="true" signature="5841:5939" ph="SELECT id, s... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,20 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="307" column="0" lean-forward="true" selection-start-line="296" selection-start-column="16" selection-end-line="307" selection-end-column="0" />
-          <folding>
-            <marker date="1516073313924" expanded="true" signature="1171:1277" ph="SELECT Custo... customer" />
-            <marker date="1516073313924" expanded="true" signature="1497:1551" ph="UPDATE custo... " />
-            <marker date="1516073313924" expanded="true" signature="2293:2362" ph="UPDATE custo... " />
-            <marker date="1516073313924" expanded="true" signature="2455:2509" ph="UPDATE custo... " />
-            <marker date="1516073313924" expanded="true" signature="6302:6368" ph="SELECT occas... special_offer" />
-            <marker date="1516073313924" expanded="true" signature="8034:8131" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073313924" expanded="true" signature="11805:11836" ph="SELECT Categ... category" />
-            <marker date="1516073313924" expanded="true" signature="11805:11843" ph="SELECT DISTI... product" />
-            <marker date="1516073313924" expanded="true" signature="12192:12241" ph="..." />
-            <marker date="1516073313924" expanded="true" signature="12223:12236" ph="..." />
-            <marker date="1516073313924" expanded="true" signature="13850:13909" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073313924" expanded="true" signature="13850:13926" ph="SELECT name,... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -930,12 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding>
-            <marker date="1516073346165" expanded="true" signature="199:311" ph="SELECT name,... product" />
-            <marker date="1516073346165" expanded="true" signature="336:408" ph="SELECT name,... product" />
-            <marker date="1516073346165" expanded="true" signature="2572:2670" ph="SELECT name,... product" />
-            <marker date="1516073346165" expanded="true" signature="4616:4654" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -943,13 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1516073363514" expanded="true" signature="199:307" ph="SELECT name,... product" />
-            <marker date="1516073363514" expanded="true" signature="332:400" ph="SELECT name,... product" />
-            <marker date="1516073363514" expanded="true" signature="2755:2853" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073363514" expanded="true" signature="4799:4837" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,13 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1516073402571" expanded="true" signature="199:315" ph="SELECT name,... product" />
-            <marker date="1516073402571" expanded="true" signature="340:416" ph="SELECT name,... product" />
-            <marker date="1516073402571" expanded="true" signature="2601:2699" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073402571" expanded="true" signature="4645:4683" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,14 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1516073402382" expanded="true" signature="199:317" ph="SELECT name,... product" />
-            <marker date="1516073402382" expanded="true" signature="342:370" ph="SELECT name,... product" />
-            <marker date="1516073402382" expanded="true" signature="342:420" ph="SELECT name,... product" />
-            <marker date="1516073402382" expanded="true" signature="2602:2700" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073402382" expanded="true" signature="4646:4684" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -986,13 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1516073402668" expanded="true" signature="199:310" ph="SELECT name,... product" />
-            <marker date="1516073402668" expanded="true" signature="335:406" ph="SELECT name,... product" />
-            <marker date="1516073402668" expanded="true" signature="2586:2684" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073402668" expanded="true" signature="4630:4668" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,14 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="869">
           <caret line="235" column="0" lean-forward="true" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding>
-            <marker date="1516073437402" expanded="true" signature="201:287" ph="SELECT name,... appliances" />
-            <marker date="1516073437402" expanded="true" signature="313:357" ph="SELECT name,... appliances" />
-            <marker date="1516073437402" expanded="true" signature="2129:2227" ph="SELECT name,... ${{$single_table}}" />
-            <marker date="1516073437402" expanded="true" signature="4256:4294" ph="SELECT DISTI... product" />
-            <marker date="1516073437402" expanded="true" signature="6443:6527" ph="SELECT name,... product" />
-            <marker date="1516073437402" expanded="true" signature="7264:7290" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,14 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8398">
           <caret line="442" column="53" lean-forward="true" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
-          <folding>
-            <marker date="1515581969669" expanded="true" signature="153:172" ph="SELECT * FRO... movie" />
-            <marker date="1515581969669" expanded="true" signature="8845:8864" ph="SELECT * FRO... movie" />
-            <marker date="1515581969669" expanded="true" signature="11097:11135" ph="SELECT * FRO... movie" />
-            <marker date="1515581969669" expanded="true" signature="13264:13309" ph="SELECT * FRO... movie" />
-            <marker date="1515581969669" expanded="true" signature="15415:15451" ph="SELECT * FRO... movie" />
-            <marker date="1515581969669" expanded="true" signature="17473:17511" ph="SELECT * FRO... movie" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,11 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="102" column="26" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="102" selection-end-column="26" />
-          <folding>
-            <marker date="1515552942789" expanded="true" signature="6634:6677" ph="SELECT name,... ${{$table_name}}" />
-            <marker date="1515552942789" expanded="true" signature="6634:6678" ph="SELECT name,... {}" />
-            <marker date="1515552942789" expanded="true" signature="6634:6701" ph="SELECT name,... ${{$table_name}}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,15 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding>
-            <marker date="1516073621048" expanded="true" signature="166:196" ph="SELECT DISTI... category" />
-            <marker date="1516073621048" expanded="true" signature="166:203" ph="SELECT DISTI... product" />
-            <marker date="1516073621048" expanded="true" signature="531:645" ph="SELECT SUM(t... customer_order" />
-            <marker date="1516073621048" expanded="true" signature="1136:1297" ph="SELECT SUM(i... ${{$single_table}}" />
-            <marker date="1516073621048" expanded="true" signature="1405:1566" ph="SELECT SUM(p... customer_order" />
-            <marker date="1516073621048" expanded="true" signature="4447:4614" ph="SELECT SUM(p... customer_order" />
-            <marker date="1516073621048" expanded="true" signature="4722:4889" ph="SELECT SUM(p... customer_order" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,10 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="64" column="63" lean-forward="false" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
-          <folding>
-            <marker date="1516073694016" expanded="true" signature="1337:1367" ph="SELECT * FRO... category" />
-            <marker date="1516073694016" expanded="true" signature="1337:1374" ph="SELECT DISTI... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1069,11 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="122" column="44" lean-forward="false" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
-          <folding>
-            <marker date="1516075567065" expanded="true" signature="453:546" ph="UPDATE custo... " />
-            <marker date="1516075567065" expanded="true" signature="2078:2106" ph="SELECT * FRO... customer_order" />
-            <marker date="1516075567065" expanded="true" signature="3292:3304" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,14 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
-          <folding>
-            <marker date="1516077663090" expanded="true" signature="111:154" ph="SELECT * FRO... wishlist" />
-            <marker date="1516077663090" expanded="true" signature="1221:1263" ph="SELECT name product" />
-            <marker date="1516077663090" expanded="true" signature="1221:1294" ph="SELECT name product" />
-            <marker date="1516077663090" expanded="true" signature="1221:1307" ph="SELECT name product" />
-            <marker date="1516077663090" expanded="true" signature="2422:2434" ph="..." />
-            <marker date="1516077663090" expanded="true" signature="3066:3125" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1096,29 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="359" column="145" lean-forward="false" selection-start-line="359" selection-start-column="145" selection-end-line="359" selection-end-column="145" />
-          <folding>
-            <marker date="1516077769550" expanded="true" signature="193:264" ph="SELECT * FRO... product" />
-            <marker date="1516077769550" expanded="true" signature="991:1111" ph="SELECT * FRO... recently_viewed" />
-            <marker date="1516077769550" expanded="true" signature="1304:1431" ph="INSERT INTO `recently_viewed`... " />
-            <marker date="1516077769550" expanded="true" signature="1594:1649" ph="UPDATE commu... " />
-            <marker date="1516077769550" expanded="true" signature="11484:11570" ph="SELECT cart_... shopping_cart" />
-            <marker date="1516077769550" expanded="true" signature="11954:12034" ph="SELECT units... ${{$prod_category}}" />
-            <marker date="1516077769550" expanded="true" signature="13394:13618" ph="INSERT INTO `shopping_cart`... " />
-            <marker date="1516077769550" expanded="true" signature="14683:14781" ph="UPDATE `shop... " />
-            <marker date="1516077769550" expanded="true" signature="16109:16251" ph="SELECT * FRO... wishlist" />
-            <marker date="1516077769550" expanded="true" signature="17016:17079" ph="INSERT INTO wishlist... " />
-            <marker date="1516077769550" expanded="true" signature="27475:27628" ph="INSERT INTO review... " />
-            <marker date="1516077769550" expanded="true" signature="37845:37956" ph="SELECT id, p... recently_viewed" />
-            <marker date="1516077769550" expanded="true" signature="38410:38493" ph="SELECT name,... ${{$product_table}}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/random_credit_no_generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,13 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="151" column="67" lean-forward="true" selection-start-line="150" selection-start-column="20" selection-end-line="151" selection-end-column="67" />
-          <folding>
-            <marker date="1515507030263" expanded="true" signature="1562:1596" ph="SELECT Email... customer" />
-            <marker date="1515507030263" expanded="true" signature="2416:2494" ph="INSERT INTO customer... " />
-            <marker date="1515507030263" expanded="true" signature="4342:4410" ph="SELECT * FRO... customer" />
-            <marker date="1515507030263" expanded="true" signature="4663:4717" ph="UPDATE custo... " />
-            <marker date="1515507030263" expanded="true" signature="5673:5735" ph="UPDATE custo... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,13 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="151" column="67" lean-forward="false" selection-start-line="151" selection-start-column="67" selection-end-line="151" selection-end-column="67" />
-          <folding>
-            <marker date="1516082000984" expanded="true" signature="1568:1602" ph="SELECT Email... customer" />
-            <marker date="1516082000984" expanded="true" signature="2422:2500" ph="INSERT INTO customer... " />
-            <marker date="1516082000984" expanded="true" signature="4287:4355" ph="SELECT * FRO... customer" />
-            <marker date="1516082000984" expanded="true" signature="4608:4662" ph="UPDATE custo... " />
-            <marker date="1516082000984" expanded="true" signature="5618:5680" ph="UPDATE custo... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,7 +884,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="9253">
           <caret line="487" column="44" lean-forward="false" selection-start-line="487" selection-start-column="38" selection-end-line="487" selection-end-column="44" />
           <folding>
             <marker date="1516074154560" expanded="true" signature="91:121" ph="SELECT * FRO... category" />
@@ -1206,6 +908,14 @@
             <marker date="1516074154560" expanded="true" signature="4155:4190" ph="SELECT DISTI... movie" />
             <marker date="1516074154560" expanded="true" signature="4540:4602" ph="SELECT SUM(s... movie" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random_credit_no_generator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

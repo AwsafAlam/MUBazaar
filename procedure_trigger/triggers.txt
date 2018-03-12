@@ -1,0 +1,131 @@
+-- TRIG1: Trigger for deletion of customer account?
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER BEFORE_CUSTOMER_DELETE 
+    BEFORE DELETE ON customer
+    FOR EACH ROW
+BEGIN
+    
+		DELETE FROM chat WHERE sender_id=OLD.ID OR recipient_id=OLD.ID;
+		DELETE T FROM credit_card AS T WHERE T.ID=OLD.ID;
+		DELETE T FROM customer_order T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM movie_cart T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM movie_comment T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM movie_customer T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM movie_subscriber T WHERE T.email=OLD.Email;
+		DELETE T FROM recently_viewed T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM shopping_cart T WHERE T.customer_id=OLD.ID;
+		DELETE T FROM wishlist T WHERE T.customer_id=OLD.ID;	
+		DELETE T FROM review T WHERE T.review_email=OLD.Email;
+
+END//	
+DELIMITER ;
+
+
+///////////////////////////////////////////////////////////////////
+
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER BEFORE_ORDER_DELETE 
+    BEFORE DELETE ON customer_order
+    FOR EACH ROW
+BEGIN
+    
+		DELETE T FROM customer_ordered_products T WHERE T.order_id=OLD.order_id;	
+
+END//	
+DELIMITER ;
+
+///////////////////////////////////////////////////////////////////////////
+
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER BEFORE_REVIEW_INSERT
+    BEFORE INSERT ON review
+    FOR EACH ROW
+BEGIN
+   DECLARE BAD_COMMENT1 VARCHAR(20);
+	 DECLARE BAD_COMMENT2 VARCHAR(20) ;
+	 DECLARE BAD_COMMENT3 VARCHAR(20) ;
+	 SET BAD_COMMENT1 = "bad_comment_1";
+	 SET BAD_COMMENT2 = "bad_comment_2";
+	 SET BAD_COMMENT3 = "bad_comment_3";
+
+	IF LOWER(NEW.review_content) LIKE CONCAT('%' ,BAD_COMMENT1, '%') 
+	OR LOWER(NEW.review_content) LIKE CONCAT('%' ,BAD_COMMENT2, '%')
+  OR LOWER(NEW.review_content) LIKE CONCAT('%' ,BAD_COMMENT3, '%')  THEN 
+		UPDATE customer SET point=point-10 WHERE Email=NEW.review_email;
+		-- signal sqlstate '45000';
+	END IF;	 
+END//
+DELIMITER ;
+
+///////////////////////////////////////////////////////////////////////
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER AFTER_UPDATE_SPECIAL_OFFER
+    AFTER UPDATE ON special_offer
+    FOR EACH ROW
+BEGIN
+		DECLARE TB_NAME VARCHAR(20);
+		DECLARE PROD_ID INT(8);
+		DECLARE n INT DEFAULT 0;
+		DECLARE i INT DEFAULT 0;
+	  -- CREATE  TABLE IF NOT EXISTS temp_table (table_name VARCHAR(20), product_id INT(8)) ;
+		DELETE FROM temp_table;
+		INSERT INTO temp_table (table_name, product_id) 
+				SELECT table_name, product_id FROM product_offer WHERE offer=OLD.occasion;
+		
+	  SELECT COUNT(*) FROM temp_table INTO n;
+		SET i=0;
+		WHILE i<n DO
+			SELECT table_name,product_id INTO TB_NAME,PROD_ID FROM temp_table LIMIT i,1;
+
+			 IF TB_NAME='clothes' THEN
+					IF	OLD.offer_active='Y' AND NEW.offer_active='N' THEN
+						UPDATE clothes SET price=price/(1-OLD.percentage/100)  WHERE id=PROD_ID;
+          END IF;
+					IF	OLD.offer_active='N' AND NEW.offer_active='Y' THEN
+					  UPDATE clothes SET price=price-price*OLD.percentage/100 WHERE id=PROD_ID;
+				  END IF;
+			
+			 ELSEIF TB_NAME='appliances' THEN
+					IF	OLD.offer_active='Y' AND NEW.offer_active='N' THEN
+						UPDATE appliances SET price=price/(1-OLD.percentage/100)  WHERE id=PROD_ID;
+          END IF;
+					IF	OLD.offer_active='N' AND NEW.offer_active='Y' THEN
+					  UPDATE appliances SET price=price-price*OLD.percentage/100 WHERE id=PROD_ID;
+				  END IF;
+			 
+			 ELSEIF TB_NAME='electronics' THEN
+					IF	OLD.offer_active='Y' AND NEW.offer_active='N' THEN
+						UPDATE electronics SET price=price/(1-OLD.percentage/100)  WHERE id=PROD_ID;
+          END IF;
+					IF	OLD.offer_active='N' AND NEW.offer_active='Y' THEN
+					  UPDATE electronics SET price=price-price*OLD.percentage/100 WHERE id=PROD_ID;
+				  END IF;
+
+			 ELSEIF TB_NAME='office_supplies' THEN
+					IF	OLD.offer_active='Y' AND NEW.offer_active='N' THEN
+						UPDATE office_supplies SET price=price/(1-OLD.percentage/100)  WHERE id=PROD_ID;
+          END IF;
+					IF	OLD.offer_active='N' AND NEW.offer_active='Y' THEN
+					  UPDATE office_supplies SET price=price-price*OLD.percentage/100 WHERE id=PROD_ID;
+				  END IF;
+
+			 ELSEIF TB_NAME='sports_equipments' THEN
+					IF	OLD.offer_active='Y' AND NEW.offer_active='N' THEN
+						UPDATE sports_equipments SET price=price/(1-OLD.percentage/100)  WHERE id=PROD_ID;
+          END IF;
+					IF	OLD.offer_active='N' AND NEW.offer_active='Y' THEN
+					  UPDATE sports_equipments SET price=price-price*OLD.percentage/100 WHERE id=PROD_ID;
+				  END IF;
+
+
+			 END IF;
+
+			SET i = i + 1;
+		END WHILE;
+END//
+DELIMITER ;
+//////////////////////////////////////////////////////////////////////////////////////
